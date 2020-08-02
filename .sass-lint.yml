@@ -1,0 +1,422 @@
+# Linter Options
+options:
+  merge-default-rules: false
+  formatter: stylish
+
+# File Options
+files:
+  include: '**/*.s+(a|c)ss'
+  ignore: 'node_modules/**/*.s+(a|c)ss'
+
+# Rule Configuration
+rules:
+
+  # Rules Description:
+  # https://github.com/sasstools/sass-lint/tree/master/docs/rules
+
+  # Extends
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+
+  # Mixins
+  mixins-before-declarations:
+    - 2
+    -
+      exclude: 'respond-to between'
+
+  # Line Spacing
+  one-declaration-per-line: 2
+  empty-line-between-blocks:
+    - 0
+    -
+      allow-single-line-rulesets: false
+  single-line-per-selector: 2
+
+  # Disallows
+  no-attribute-selectors: 0
+  no-color-hex: 2
+  no-color-keywords: 2
+  no-color-literals: 2
+  no-combinators: 0
+  no-css-comments: 2
+  no-debug: 1
+  no-disallowed-properties: 0
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-extends: 2
+  no-ids: 2
+  no-important: 2
+  no-invalid-hex: 2
+  no-mergeable-selectors: 2
+  no-misspelled-properties:
+    - 2
+    -
+      'extra-properties':
+        - 'overflow-scrolling'
+  no-qualifying-elements:
+    - 2
+    -
+      allow-element-with-attribute: true
+  no-trailing-whitespace: 2
+  no-trailing-zero: 2
+  no-transition-all: 1
+  no-universal-selectors: 2
+  no-url-domains: 2
+  no-url-protocols: 1
+  no-vendor-prefixes: 1
+  no-warn: 0
+  property-units: 0
+
+  # Nesting
+  declarations-before-nesting: 2
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+
+  # Name Formats
+  class-name-format:
+    - 2
+    -
+      allow-leading-underscore: true
+      convention: 'hyphenatedbem'
+  function-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+  id-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+  mixin-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+  placeholder-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+  variable-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+
+  # Style Guide
+  attribute-quotes: 2
+  bem-depth: 0
+  border-zero: 2
+  brace-style:
+    - 2
+    -
+      style: '1tbs'
+      allow-single-line: false
+  clean-import-paths: 2
+  empty-args: 1
+  hex-length: 2
+  hex-notation: 2
+  indentation: 2
+  leading-zero:
+    - 2
+    -
+      include: true
+  max-line-length: 0
+  max-file-line-count: 0
+  nesting-depth:
+    - 2
+    -
+      max-depth: 3
+  property-sort-order:
+    - 2
+    -
+      order:
+
+        # Our groups are sorted from the outside to the inside, from important to less important.
+        # The properties themself are sorted in different ways:
+        # - Summarising shorthand properties always stand before their subproperties:
+        #   `background` -> `background-color`
+        # - How the CSS Standard defines the subproperties, like within the `background` property:
+        #   [`background-color` || `background-image` || `background-repeat` || `background-attachment` || `background-position`]
+        # - Clockwise definition how it’s done in the CSS Standard:
+        #   `top` -> `right` -> `bottom' -> `left`
+        # - Logical, what makes sense, e.g. first the parent then the child properties
+        # - Alphabetical if there is no difference in emphasis, e.g. the whole Typography block
+
+        # Superordinate
+        - content
+        - will-change
+
+        # Overall visibility
+        # ------------------
+        # Order-Type:
+        # 1. There’re four different blocks which work independently:
+        #    appearance | clip, visibility, opacity | display | all overflow properties
+        # 2. CSS standard
+        - appearance
+        - clip
+        - clip-path
+        - visibility
+        - opacity
+        - display
+        - overflow
+        - overflow-x
+        - overflow-y
+        - -webkit-overflow-scrolling
+
+        # Grid
+        # ----
+        # Order-Type:
+        # 1. CSS standard
+        # 2. logical: parent -> child
+        - grid
+        - grid-template
+        - grid-template-columns
+        - grid-template-rows
+        - grid-template-areas
+        - grid-gap
+        - grid-column-gap
+        - grid-row-gap
+        - justify-items
+        - grid-auto-columns
+        - grid-auto-rows
+        - grid-auto-flow
+        - grid-column
+        - grid-column-start
+        - grid-column-end
+        - grid-row
+        - grid-row-start
+        - grid-row-end
+        - grid-area
+        - justify-self
+        - align-self
+
+        # Flexbox
+        # -------
+        # Order-Type:
+        # 1. CSS standard
+        # 2. logical: parent -> child
+        - flex-direction
+        - flex-wrap
+        - flex-flow
+        - justify-content
+        - order
+        - flex
+        - flex-grow
+        - flex-shrink
+        - flex-basis
+        - align-self
+
+        # Shared Grid and Flexbox properties have to stand below
+        - align-items
+        - align-content
+
+        # Columns
+        # -------
+        # Order-Type: CSS standard
+        - columns
+        - column-span
+        - column-width
+        - column-count
+        - column-fill
+        - column-gap
+        - column-rule
+        - column-rule-width
+        - column-rule-style
+        - column-rule-color
+
+        # Table
+        # -----
+        # Order-Type: logical from outside to inside
+        - table-layout
+        - border-collapse
+        - border-spacing
+
+        # List
+        # ----
+        # Order-Type: CSS standard
+        - list-style
+        - list-style-position
+        - list-style-type
+        - list-style-image
+        - counter-increment
+        - counter-reset
+
+        # Positioning in space
+        # --------------------
+        # Order-Type:
+        # 1. There’re three different blocks which work independently:
+        #    float/clear | position/z-index/top/right/bottom/left | vertical-align
+        # 2. CSS standard
+        - float
+        - clear
+        - position
+        - z-index
+        - top
+        - right
+        - bottom
+        - left
+        - vertical-align
+
+        # Box model incl. transformation of it
+        # ------------------------------------
+        # Order-Type:
+        # 1. CSS standard
+        # 2. logical from outside to inside
+        - box-sizing
+        - width
+        - min-width
+        - max-width
+        - height
+        - min-height
+        - max-height
+        - outline
+        - outline-width
+        - outline-style
+        - outline-color
+        - outline-offset
+        - margin
+        - margin-top
+        - margin-right
+        - margin-bottom
+        - margin-left
+        - border
+        - border-width
+        - border-style
+        - border-color
+        - border-top
+        - border-right
+        - border-bottom
+        - border-left
+        - border-image
+        - border-image-source
+        - border-image-slice
+        - border-image-width
+        - border-image-outset
+        - border-image-repeat
+        - border-top-image
+        - border-right-image
+        - border-bottom-image
+        - border-left-image
+        - border-corner-image
+        - border-top-left-image
+        - border-top-right-image
+        - border-bottom-right-image
+        - border-bottom-left-image
+        - border-radius
+        - padding
+        - padding-top
+        - padding-right
+        - padding-bottom
+        - padding-left
+        - box-shadow
+        - stroke-dasharray
+        - stroke-dashoffset
+        - stroke-linecap
+        - transform
+        - transform-origin
+        - transform-style
+
+        # Typography
+        # ----------
+        # Order-Type: alphabetical
+        - -moz-osx-font-smoothing
+        - -webkit-font-smoothing
+        - font
+        - font-family
+        - font-feature-settings
+        - font-kerning
+        - font-size
+        - font-size-adjust
+        - font-stretch
+        - font-style
+        - font-variant
+        - font-weight
+        - hyphens
+        - letter-spacing
+        - line-height
+        - overflow-wrap
+        - quotes
+        - text-align
+        - text-align-last
+        - text-decoration
+        - text-decoration-skip
+        - text-emphasis
+        - text-emphasis-color
+        - text-emphasis-position
+        - text-emphasis-style
+        - text-indent
+        - text-justify
+        - text-outline
+        - text-overflow
+        - text-rendering
+        - text-shadow
+        - text-size-adjust
+        - text-transform
+        - white-space
+        - word-break
+        - word-spacing
+        - word-wrap
+
+        # Color
+        # -----
+        # Order-Type:
+        # 1. logical: foreground -> background
+        # 2. CSS standard
+        - fill
+        - color
+        - background
+        - background-color
+        - background-image
+        - background-attachment
+        - background-repeat
+        - background-position
+        - background-position-x
+        - background-position-y
+        - background-clip
+        - background-origin
+        - background-size
+
+        # Rest
+        # ----
+        # Order-Type: alphabetical
+        - animation
+        - backface-visibility
+        - cursor
+        - filter
+        - perspective
+        - pointer-events
+        - resize
+        - touch-action
+        - transition
+        - user-select
+        - -webkit-tap-highlight-color
+
+  pseudo-element: 2
+  quotes: 2
+  shorthand-values: 2
+  url-quotes: 2
+  variable-for-property:
+    - 2
+    -
+      properties:
+        - color
+        - background-color
+  zero-unit: 2
+
+  # Inner Spacing
+  space-after-comma: 2
+  space-before-colon: 2
+  space-after-colon: 2
+  space-before-brace: 2
+  space-before-bang: 2
+  space-after-bang: 2
+  space-between-parens: 2
+  space-around-operator: 2
+
+  # Final Items
+  trailing-semicolon: 2
+  final-newline: 2

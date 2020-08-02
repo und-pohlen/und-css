@@ -1,0 +1,51 @@
+$o-frame--default-ratio: (16 : 9) !default;
+
+$o-frame--ratios: (
+  '1\\:1'   : (1 : 1),
+  '2\\:1'   : (2 : 1),
+  '4\\:3'   : (4 : 3),
+) !default;
+
+@function calculate-ratio($ratio) {
+  @each $antecedent, $consequent in $ratio {
+    @if (type-of($antecedent) != number) {
+      @error '`#{$antecedent}` needs to be a number.';
+    }
+    @if (type-of($consequent) != number) {
+      @error '`#{$consequent}` needs to be a number.';
+    }
+    @return ($consequent / $antecedent);
+  }  
+}
+
+.o-frame {
+  --o-frame--ratio: #{calculate-ratio($o-frame--default-ratio)};
+  position: relative;
+  padding-bottom: calc(var(--o-frame--ratio) * 100%);
+
+  & > * {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & > img,
+  & > svg,
+  & > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@each $frame-name, $frame-value in $o-frame--ratios {
+  .o-frame--#{$frame-name} {
+    --o-frame--ratio: #{calculate-ratio($frame-value)};
+  }
+}

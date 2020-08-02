@@ -1,0 +1,41 @@
+@each $size-name, $size-value in $typography--sizes {
+  .u-text-#{$size-name} {
+    font-size: var(--typography-size--#{$size-name});
+  }
+
+  @each $breakpoint in map-keys($responsive--breakpoints) {
+    .u-text-#{$size-name}\@#{$breakpoint} {
+      font-size: var(--typography-size--#{$size-name});
+    }
+  }
+}
+
+@each $leading-name, $leading-value in $typography--leading {
+  .u-leading-#{$leading-name} {
+    line-height: var(--typograph-leading--#{$leading-name});
+  }
+}
+
+@each $tracking-name, $tracking-value in $typography--tracking {
+  .u-tracking-#{$tracking-name} {
+    letter-spacing: var(--typography-tracking--#{$tracking-name});
+  }
+}
+
+@each $font-name, $font-value in $typography--fonts {
+  .u-font-#{$font-name} {
+    font-family: var(--typography-font--#{$font-name});
+  }
+}
+
+@each $weight-name, $weight-value in $typography--weights {
+  .u-font-#{$weight-name} {
+    font-weight: #{$weight-value};
+  }
+}
+
+@each $measure-name, $measure-value in $typography--measures {
+  .u-measure-#{$measure-name} {
+    max-width: var(--typography-measure--#{$measure-name});
+  }
+}

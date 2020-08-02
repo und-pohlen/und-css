@@ -1,0 +1,33 @@
+// VENDOR IMPORTS
+@import "../node_modules/modern-css-reset/dist/reset";
+
+// SETTINGS
+@import "settings/settings";
+
+// IMPORT TOOLS
+@import "tools/responsive.tool";
+@import "tools/vendor.tool";
+@import "tools/visibility.tool";
+
+// SET UP DESIGN TOKENS AS CSS VARIABLES
+@import "tokens/colors.styles";
+@import "tokens/spacing.styles";
+@import "tokens/typography.styles";
+
+// BASE STYLES
+@import "globals/base";
+
+// OBJECTS
+@import "objects/box/box.styles";
+@import "objects/frame/frame.styles";
+@import "objects/grid/grid.styles";
+@import "objects/layout/layout.styles";
+@import "objects/media/media.styles";
+@import "objects/stack/stack.styles";
+
+// UTILITIES
+@import "utilities/colors.utility";
+@import "utilities/typography.utility";
+@import "utilities/spacing.utility";
+@import "utilities/visibility.utility";
+@import "utilities/widths.utility";

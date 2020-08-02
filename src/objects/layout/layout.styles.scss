@@ -1,0 +1,47 @@
+.o-layout {
+  --o-layout--spacing: var(--layout-spacing--default);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  list-style: 0;
+  margin: calc(var(--o-layout--spacing) / 2 * -1);
+  padding: 0;
+
+  & > * {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: calc(var(--o-layout--spacing) / 2);
+  }
+}
+
+@each $spacing-name, $spacing-value in $layout-spacing--variants {
+  .o-layout--#{$spacing-name} {
+    --o-layout--spacing: var(--layout-spacing--#{spacing-name});
+  }
+}
+
+.o-layout--center {
+  justify-content: center;
+}
+
+.o-layout--right {
+  justify-content: flex-end;
+}
+
+.o-layout--middle {
+  align-items: center;
+}
+
+.o-layout--bottom {
+  align-items: flex-end;
+}
+
+.o-layout--stretch {
+  align-items: stretch;
+}
+
+.o-layout--reverse {
+  flex-direction: row-reverse;
+}

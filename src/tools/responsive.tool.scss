@@ -1,0 +1,30 @@
+$responsive--breakpoints: (
+  small: 640px,
+  medium: 920px,
+  large: 1200px
+) !default;
+
+@mixin respond-to($args...) {
+  @each $bp in $args {
+    @if map-has-key($responsive--breakpoints, $bp) {
+      $bp: map-get($responsive--breakpoints, $bp);
+    }
+    @media only screen and (min-width: #{$bp}) {
+      @content;
+    }
+  }
+}
+
+@mixin between($min, $max) {
+  @if map-has-key($responsive--breakpoints, $min) {
+    $min: map-get($responsive--breakpoints, $min);
+  }
+
+  @if map-has-key($responsive--breakpoints, $max) {
+    $max: map-get($responsive--breakpoints, $max);
+  }
+
+  @media only screen and (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}

@@ -1,0 +1,22 @@
+:root {
+  @each $size-name, $size-value in $typography--sizes {
+    @include rfs($size-value, "--typography-size--#{$size-name}");
+  }
+
+  @each $leading-name, $leading-value in $typography--leading {
+    --typography-leading--#{$leading-name}: #{$leading-value};
+  }
+
+  @each $tracking-name, $tracking-value in $typography--tracking {
+    --typography-tracking--#{$tracking-name}: #{$tracking-value};
+  }
+
+  --typography--default-font: #{$typography--default-font};
+  @each $font-name, $font-value in $typography--fonts {
+    --typography-font--#{$font-name}: #{$font-value};
+  }
+
+  @each $measure-name, $measure-value in $typography--measures {
+    --typography-measure--#{$measure-name}: #{$measure-value};
+  }
+}

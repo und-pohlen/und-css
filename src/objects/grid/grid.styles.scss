@@ -1,0 +1,8 @@
+.o-grid {
+  --o-grid--spacing: var(--layout-spacing--default);
+  --o-grid--min-width: 20rem;
+  display: grid;
+  align-content: start;
+  grid-gap: var(--o-grid--spacing);
+  grid-template-columns: repeat(auto-fill, minmax(var(--o-grid--min-width), 1fr));
+}

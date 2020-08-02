@@ -1,0 +1,81 @@
+// COLORS
+$colors--default-background: #ffffff !default;
+$colors--default-text: #000000 !default;
+
+$colors--named-colors: (
+  accent: #0000ff,
+) !default;
+
+// RESPONSIVE
+$responsive--biggest-screen: 72em !default;
+
+$responsive--breakpoints: (
+  "sm": "36em",
+  "md": "48em",
+  "lg": $responsive--biggest-screen
+) !default;
+
+// SPACING AND LAYOUT
+$layout-spacing--default: 1rem !default;
+
+$layout-spacing--variants: (
+  flush: 0,
+  tiny: $layout-spacing--default * 0.25,
+  small: $layout-spacing--default * 0.5,
+  large: $layout-spacing--default * 2,
+  huge: $layout-spacing--default * 4,
+) !default;
+
+$layout--spacing-shorthands: (
+  null: null,
+  t: "-top",
+  r: "-right",
+  b: "-bottom",
+  l: "-left",
+  x: "-right" "-left",
+  y: "-top" "-bottom",
+) !default;
+
+$layout--width-fractions: 6 !default;
+
+// TYPOGRAHPY
+$typography--sizes: (
+  'sm': 0.8rem,
+  'base': 1rem,
+  'md': 1.25rem,
+  'lg': 1.6rem,
+  'xl': 2rem,
+  'xxl': 3rem,
+) !default;
+
+$typography--leading: (
+  'none': 1,
+  'tight': 1.35,
+  'normal': 1.5,
+  'loose': 1.7,
+) !default;
+
+$typography--tracking: (
+  'tight': -0.01em,
+  'normal': 0,
+  'wide': 0.01em,
+  'extra-wide': 0.075em,
+) !default;
+
+$typography--default-font: "Helvetica Neue, Helvetica, Arial, sans-serif" !default;
+
+$typography--fonts: (
+  'sans': $typography--default-font,
+) !default;
+
+$typography--weights: (
+  'light': '300',
+  'regular': '400',
+  'bold': '700'
+) !default;
+
+$typography--measures: (
+  narrow: 10ch,
+  wide: 60ch,
+) !default;
+

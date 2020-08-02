@@ -1,0 +1,11 @@
+.o-box {
+  --o-box--spacing: var(--layout-spacing--default);
+  display: block;
+  padding: var(--o-box--spacing);
+}
+
+@each $spacing-name, $spacing-value in $layout-spacing--variants {
+  .o-box--#{$spacing-name} {
+    --o-box--spacing: var(--layout-spacing--#{$spacing-name});
+  }
+}

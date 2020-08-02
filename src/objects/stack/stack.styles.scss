@@ -1,0 +1,32 @@
+.o-stack {
+  --o-stack--spacing: var(--layout-spacing--default);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & > * + * {
+    margin-top: var(--o-stack--spacing);
+  }
+}
+
+.o-stack--recursive {
+  & * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & * + * {
+    margin-top: var(--o-stack--spacing);
+  }
+}
+
+@each $spacing-name, $spacing-value in $layout-spacing--variants {
+  .o-stack--#{$spacing-name} {
+    --o-stack--spacing: var(--layout-spacing--#{$spacing-name});
+  }
+}

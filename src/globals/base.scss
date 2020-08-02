@@ -1,0 +1,17 @@
+html {
+  overflow-y: 100%;
+  // Ensure 1rem always refers to 16px
+  font-size: 16px;
+  font-family: var(--typography--default-font);
+  text-size-adjust: 100%;
+}
+
+body {
+  color: var(--colors--default-text);
+  background: var(--colors--default-background);
+}
+
+img {
+  // Distinguish Alt-Texts from surrounding text if image cannot be loaded
+  font-style: italic;
+}

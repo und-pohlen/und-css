@@ -1,0 +1,22 @@
+$visibility--utilities: (
+  hidden: none,
+  show: inherit,
+) !default;
+
+.u-visually-hidden {
+  @include visually-hidden;
+}
+
+@each $visibility-name, $visibility-value in $visibility--utilities {
+  .u-#{$visibility-name} {
+    display: #{$visibility-value};
+  }
+
+  @each $breakpoint, $breakpoint-value in $responsive--breakpoints {
+    @include respond-to($breakpoint) {
+      .u-#{$visibility-name}\@#{$breakpoint} {
+        display: #{$visibility-value};
+      }
+    }
+  }
+}

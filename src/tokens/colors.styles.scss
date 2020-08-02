@@ -1,0 +1,7 @@
+:root {
+  @each $color-name, $color-value in $colors--named-colors {
+    --color--default-background: #{$colors--default-background};
+    --color--default-text: #{$colors--default-text};
+    --color--#{$color-name}: #{$color-value};
+  }
+}

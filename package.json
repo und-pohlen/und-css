@@ -1,0 +1,29 @@
+{
+  "name": "und-css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "start-storybook",
+    "build": "node-sass src/main.scss dist/styles.css",
+    "build:minified": "node-sass src/main.scss dist/styles.min.css --output-style compressed",
+    "lint": "sass-lint -config .sass-lint.yml 'src/**/*.scss' --verbose --no-exit"
+  },
+  "dependencies": {
+    "modern-css-reset": "^1.1.1",
+    "rfs": "^9.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/html": "^5.3.19",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1"
+  }
+}

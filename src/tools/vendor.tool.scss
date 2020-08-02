@@ -1,0 +1,4 @@
+// Set up and import RFS module
+$rfs-breakpoint: $responsive--biggest-screen;
+
+@import "../../node_modules/rfs/scss";

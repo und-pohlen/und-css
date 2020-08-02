@@ -1,0 +1,15 @@
+@each $denominator in $layout--width-fractions {
+  @for $numerator from 1 through $denominator {
+    .u-#{$numerator}\/#{$denominator} {
+      width: $numerator / $denominator * 100%;
+    }
+
+    @each $breakpoint in map-keys($responsive--breakpoints) {
+      .u-#{$numerator}\/#{$denominator}\@#{$breakpoint} {
+        @include respond-to($breakpoint) {
+          width: $numerator / $denominator * 100%;
+        } 
+      }
+    }
+  }
+}
