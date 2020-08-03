@@ -1,0 +1,25 @@
+name: CI
+on: [push]
+
+jobs:
+  yarn-lint:
+    name: yarn lint
+    runs-on: ubuntu-18.04
+    timeout-minutes: 5
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: yarn-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          yarn-${{ runner.os }}-
+    - name: yarn
+      run: yarn install --frozen-lockfile
+    - name: lint
+      run: yarn run lint
