@@ -1,9 +1,0 @@
-@each $color-name, $color-value in $colors--named-colors {
-  .u-bg-#{$color-name} {
-    background: var(--color--#{$color-name});
-  }
-  
-  .u-c-#{$color-name} {
-    color: var(--color--#{$color-name});
-  }
-}
