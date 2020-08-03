@@ -6,6 +6,7 @@
 
 // IMPORT TOOLS
 @import "tools/responsive.tool";
+@import "tools/utilities.tool";
 @import "tools/vendor.tool";
 @import "tools/visibility.tool";
 
@@ -26,8 +27,6 @@
 @import "objects/stack/stack.styles";
 
 // UTILITIES
-@import "utilities/colors.utility";
-@import "utilities/typography.utility";
-@import "utilities/spacing.utility";
-@import "utilities/visibility.utility";
-@import "utilities/widths.utility";
+@if $utilities--generate {
+  @include generate-utilities;
+}

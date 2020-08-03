@@ -36,7 +36,9 @@ $layout--spacing-shorthands: (
   y: "-top" "-bottom",
 ) !default;
 
-$layout--width-fractions: 6 !default;
+$layout--widths: (
+  "1\\/2": '50%',
+) !default;
 
 // TYPOGRAHPY
 $typography--sizes: (
@@ -79,3 +81,157 @@ $typography--measures: (
   wide: 60ch,
 ) !default;
 
+// UTILITY GENERATOR
+$utilities--generate: true !default;
+
+$utilities--config: (
+  'bg': (
+    'items': $colors--named-colors,
+    'variable': '--color--',
+    'property': 'background',
+  ),
+  'color': (
+    'items': $colors--named-colors,
+    'variable': '--color--',
+    'property': 'background',
+  ),
+  'box': (
+    'items': (
+      'hide': 'none',
+      'show': 'inherit'
+    ),
+    'responsive': true,
+    'property': 'display'
+  ),
+  'm': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin'
+  ),
+  'mx': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-right' 'margin-left',
+  ),
+  'my': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-top' 'margin-bottom',
+  ),
+  'mt': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-top',
+  ),
+  'mr': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-right',
+  ),
+  'mb': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-bottom',
+  ),
+  'ml': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'margin-left',
+  ),
+  'p': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding'
+  ),
+  'px': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-right' 'padding-left',
+  ),
+  'py': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-top' 'padding-bottom',
+  ),
+  'pt': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-top',
+  ),
+  'pr': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-right',
+  ),
+  'pb': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-bottom',
+  ),
+  'pl': (
+    'items': $layout-spacing--variants,
+    'responsive': true,
+    'variable': '--layout-spacing--',
+    'property': 'padding-left',
+  ),
+  'w': (
+    'items': $layout--widths,
+    'responsive': true,
+    'property': 'width',
+  ),
+  'measure': (
+    'items': $typography--measures,
+    'variable': '--typography-measure--',
+    'property': 'max-width',
+  ),
+  'text': (
+    'items': $typography--sizes,
+    'variable': '--typography-size--',
+    'responsive': true,
+    'property': 'font-size',
+  ),
+  'leading': (
+    'items': $typography--leading,
+    'variable': '--typography-leading--',
+    'property': 'line-height',
+  ),
+  'tracking': (
+    'items': $typography--tracking,
+    'variable': '--typography-tracking--',
+    'property': 'letter-spacing',
+  ),
+  'font': (
+    'items': $typography--fonts,
+    'variable': '--typography-font--',
+    'property': 'font-family', 
+  ),
+  'weight': (
+    'items': $typography--weights,
+    'property': 'font-weight',
+  ),
+  'z': (
+    'items': (
+      '0':    0,
+      '10':   10,
+      '20':   20,
+      '30':   30,
+      '40':   40,
+      '50':   50,
+      'auto': auto,
+    ),
+    'property': 'z-index'
+  ),
+) !default;

@@ -1,0 +1,38 @@
+@function utility-class-name($utility-class, $utility-item-name) {
+  @return ".u-#{$utility-class}-#{$utility-item-name}";
+}
+
+@mixin utility-styles($properties, $name, $value, $variable: null) {
+  @each $property in $properties {
+    @if $variable != null {
+      #{$property}: var(#{$variable}#{$name});
+    } @else {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+@mixin generate-utilities {
+  @each $utility-class, $utility-class-data in $utilities--config {
+    $items:         map-get($utility-class-data, 'items');
+    $props:         map-get($utility-class-data, 'property');
+    $responsive:    map-get($utility-class-data, 'responsive');
+    $variable:      map-get($utility-class-data, 'variable');
+
+    @each $utility-item-name, $utility-item-value in $items {
+      #{utility-class-name($utility-class, $utility-item-name)} {
+        @include utility-styles($props, $utility-item-name, $utility-item-value, $variable);
+      }
+
+      @if $responsive == true {
+        @each $breakpoint, $breakpoint-value in $responsive--breakpoints {
+          #{utility-class-name($utility-class, $utility-item-name)}\@#{$breakpoint} {
+            @include respond-to($breakpoint) {
+              @include utility-styles($props, $utility-item-name, $utility-item-value, $variable);
+            }
+          }
+        }
+      }
+    }
+  }
+}
