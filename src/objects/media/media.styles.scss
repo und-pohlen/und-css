@@ -13,12 +13,6 @@
     margin: 0 calc(var(--o-media--spacing) / 2);
     flex-grow: 1;
   }
-
-  &:not(.o-media--reversed) > * > :last-child {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
-  }
 }
 
 @each $spacing-name, $spacing-value in $layout-spacing--variants {
@@ -33,6 +27,12 @@
     flex-grow: 999;
     min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
   }
+}
+
+.o-media:not(.o-media--reversed) > * > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
 }
 
 .o-media--center {
