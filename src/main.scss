@@ -10,12 +10,12 @@
 @import "tools/visibility.tool";
 
 // SET UP DESIGN TOKENS AS CSS VARIABLES
-@import "tokens/colors.styles";
-@import "tokens/spacing.styles";
-@import "tokens/typography.styles";
+@import "tokens/color.tokens";
+@import "tokens/spacing.tokens";
+@import "tokens/typography.tokens";
 
 // BASE STYLES
-@import "globals/base";
+@import "globals/base.styles";
 
 // OBJECTS
 @import "objects/box/box.styles";
