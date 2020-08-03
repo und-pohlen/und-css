@@ -1,0 +1,39 @@
+.o-pack {
+  --o-pack--spacing: var(--layout-spacing--default);
+  --o-pack--alignment: top;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: var(--o-pack--spacing);
+
+  & > * {
+    display: table-cell;
+    vertical-align: var(--o-pack--alignment);
+  }
+}
+
+@each $spacing-name, $spacing-value in $layout-spacing--variants {
+  .o-pack--#{$spacing-name} {
+    --o-pack--spacing: var(--layout-spacing--#{$spacing-name});
+  }
+}
+
+.o-pack--auto {
+  table-layout: auto;
+}
+
+.o-pack--middle  {
+  --o-pack--alignment: middle;
+}
+
+.o-pack--bottom > & {
+  --o-pack--alignment: bottom;
+}
+
+.o-pack--reversed {
+  direction: rtl;
+
+  & > * {
+    direction: ltr;
+  }
+}
