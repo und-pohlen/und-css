@@ -1,7 +1,7 @@
 export default { title: 'Media Object' };
 
 export const normal = () => `
-  <div class="o-media o-media--huge">
+  <div class="o-media o-media--wide">
     <div> <!-- intermediary wrapper -->
       <div>
         <img src="http://placekitten.com/240/240" alt="Some kittens!" />

@@ -21,6 +21,12 @@
   }
 }
 
+@each $measure-name, $measure-value in $typography--measures {
+  .o-media--#{$measure-name} {
+    --o-media--content-width: var(--typography-measure--#{$measure-name});
+  }
+}
+
 .o-media--reversed {
   & > * > :first-child {
     flex-basis: 0;
