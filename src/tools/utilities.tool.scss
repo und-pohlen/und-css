@@ -1,0 +1,20 @@
+@mixin generate-utilities {
+  @each $utility-class, $utility-class-data in $utilities--config {
+    $items:     map-get($utility-class-data, 'items');
+    $props:     map-get($utility-class-data, 'property');
+    $output:    map-get($utility-class-data, 'output');
+    $variable:  map-get($utility-class-data, 'variable');
+
+    @each $utility-item-name, $utility-item-value in $items {
+      .u-#{$utility-class}-#{$utility-item-name} {
+        @each $property in $props {
+          @if $variable != null {
+            #{$property}: var(#{$variable}#{$utility-item-name});
+          } @else {
+            #{$property}: #{$utility-item-value};
+          }
+        }
+      }
+    }
+  }
+}

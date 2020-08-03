@@ -79,3 +79,89 @@ $typography--measures: (
   wide: 60ch,
 ) !default;
 
+// UTILITY GENERATOR
+$utilities--generate: true !default;
+
+$utilities--config: (
+  'bg': (
+    'items': $colors--named-colors,
+    'output': 'default',
+    'variable': '--color--',
+    'property': 'background',
+  ),
+  'color': (
+    'items': $colors--named-colors,
+    'output': 'default',
+    'variable': '--color--',
+    'property': 'background',
+  ),
+  'box': (
+    'items': (
+      'hide': 'none',
+      'show': 'inherit'
+    ),
+    'output': 'responsive',
+    'property': 'display'
+  ),
+  'p': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding'
+  ),
+  'px': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-right' 'padding-left',
+  ),
+  'py': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-top' 'padding-bottom',
+  ),
+  'pt': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-top',
+  ),
+  'pr': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-right',
+  ),
+  'pb': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-bottom',
+  ),
+  'pl': (
+    'items': $layout-spacing--variants,
+    'output': 'responsive',
+    'variable': '--layout-spacing--',
+    'property': 'padding-left',
+  ),
+  'measure': (
+    'items': $typography--measures,
+    'output': 'responsive',
+    'variable': '--typography-measure--',
+    'property': 'max-width',
+  ),
+  'z': (
+    'items': (
+      '0':    0,
+      '10':   10,
+      '20':   20,
+      '30':   30,
+      '40':   40,
+      '50':   50,
+      'auto': auto,
+    ),
+    'output': 'standard',
+    'property': 'z-index'
+  ),
+) !default;
