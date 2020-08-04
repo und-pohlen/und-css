@@ -20,12 +20,13 @@
 @import "globals/print.globals";
 
 // OBJECTS
-@import "objects/box/box.styles";
-@import "objects/frame/frame.styles";
-@import "objects/grid/grid.styles";
-@import "objects/layout/layout.styles";
-@import "objects/media/media.styles";
-@import "objects/stack/stack.styles";
+@import "objects/box.object";
+@import "objects/frame.object";
+@import "objects/grid.object";
+@import "objects/layout.object";
+@import "objects/media.object";
+@import "objects/pack.object";
+@import "objects/stack.object";
 
 // UTILITIES
 @if $utilities--generate {
