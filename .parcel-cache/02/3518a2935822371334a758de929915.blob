@@ -1,0 +1,9 @@
+'use strict';
+
+var __dirname = "/Users/lucas.nolte/zwtg-Work/__dev/und-css";
+
+const fractal = module.exports = require('@frctl/fractal').create();
+
+fractal.set('project.title', 'und CSS');
+fractal.components.set('path', __dirname + '/src');
+fractal.docs.set('path', __dirname + '/docs');

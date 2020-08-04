@@ -1,0 +1,14 @@
+"use strict";
+
+var _fractalConfig = _interopRequireDefault(require("./fractal.config.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const server = _fractalConfig.default.web.server({
+  sync: true
+});
+
+server.on('error', err => logger.error(err.message));
+server.start().then(() => {
+  console.log(`Fractal server is now running at ${server.urls.sync.local}`);
+});

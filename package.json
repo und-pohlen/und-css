@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "start-storybook",
-    "build": "node-sass src/main.scss dist/styles.css",
-    "build:minified": "node-sass src/main.scss dist/styles.min.css --output-style compressed",
+    "dev": "yarn run styles:build && npm-run-all --parallel fractal:server styles:watch",
+    "build": "npm-run-all --parallel styles:minified fractal:build",
+    "fractal:server": "fractal start --sync",
+    "fractal:build": "fractal build",
+    "styles:build": "node-sass src/styles.scss dist/css/styles.css",
+    "styles:minified": "node-sass src/styles.scss dist/css/styles.min.css --output-style compressed",
+    "styles:watch": "node-sass -w src/ -o dist/css/",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache"
   },
   "dependencies": {
@@ -14,13 +18,11 @@
     "rfs": "^9.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
-    "@storybook/addon-info": "^5.3.19",
-    "@storybook/html": "^5.3.19",
+    "@frctl/fractal": "^1.3.0",
     "autoprefixer": "^9.8.6",
-    "babel-loader": "^8.1.0",
     "css-loader": "^4.2.0",
     "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
