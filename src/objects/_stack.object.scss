@@ -12,21 +12,21 @@
   & > * + * {
     margin-top: var(--o-stack--spacing);
   }
-}
 
-.o-stack--recursive {
-  & * {
-    margin-top: 0;
-    margin-bottom: 0;
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-stack--spacing: var(--layout-spacing--#{$spacing-name});
+    }
   }
 
-  & * + * {
-    margin-top: var(--o-stack--spacing);
-  }
-}
+  &[data-recursive='true'] {
+    & * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
-@each $spacing-name, $spacing-value in $layout-spacing--variants {
-  .o-stack--#{$spacing-name} {
-    --o-stack--spacing: var(--layout-spacing--#{$spacing-name});
+    & * + * {
+      margin-top: var(--o-stack--spacing);
+    }
   }
 }

@@ -15,7 +15,7 @@ $o-frame--ratios: (
       @error '`#{$consequent}` needs to be a number.';
     }
     @return ($consequent / $antecedent);
-  }  
+  }
 }
 
 .o-frame {
@@ -42,10 +42,10 @@ $o-frame--ratios: (
     height: 100%;
     object-fit: cover;
   }
-}
-
-@each $frame-name, $frame-value in $o-frame--ratios {
-  .o-frame--#{$frame-name} {
-    --o-frame--ratio: #{calculate-ratio($frame-value)};
+  @each $frame-name, $frame-value in $o-frame--ratios {
+    &[data-ratio='#{$frame-name}'] {
+      --o-frame--ratio: #{calculate-ratio($frame-value)};
+    }
   }
 }
+

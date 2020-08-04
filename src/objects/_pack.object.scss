@@ -10,30 +10,30 @@
     display: table-cell;
     vertical-align: var(--o-pack--alignment);
   }
-}
 
-@each $spacing-name, $spacing-value in $layout-spacing--variants {
-  .o-pack--#{$spacing-name} {
-    --o-pack--spacing: var(--layout-spacing--#{$spacing-name});
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-pack--spacing: var(--layout-spacing--#{$spacing-name});
+    }
   }
-}
 
-.o-pack--auto {
-  table-layout: auto;
-}
+  &[data-layout='auto'] {
+    table-layout: auto;
+  }
 
-.o-pack--middle  {
-  --o-pack--alignment: middle;
-}
+  &[data-align='middle'] {
+    --o-pack--alignment: middle;
+  }
 
-.o-pack--bottom {
-  --o-pack--alignment: bottom;
-}
+  &[data-align='bottom'] {
+    --o-pack--alignment: bottom;
+  }
 
-.o-pack--reversed {
-  direction: rtl;
+  &[data-direction='reversed'] {
+    direction: rtl;
 
-  & > * {
-    direction: ltr;
+    & > * {
+      direction: ltr;
+    }
   }
 }

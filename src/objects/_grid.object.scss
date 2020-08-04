@@ -5,4 +5,16 @@
   align-content: start;
   grid-gap: var(--o-grid--spacing);
   grid-template-columns: repeat(auto-fill, minmax(var(--o-grid--min-width), 1fr));
+
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-grid--spacing: var(--layout-spacing--#{$spacing-name});
+    }
+  }
+
+  @each $measure-name, $measure-value in $typography--measures {
+    &[data-measure='#{$measure-name}'] {
+      --o-grid--min-width: var(--typography-measure--#{$measure-name});
+    }
+  }
 }
