@@ -36,9 +36,12 @@ $layout--spacing-shorthands: (
   y: "-top" "-bottom",
 ) !default;
 
+$layout--widths-max-width: 1400px !default;
+
 $layout--widths: (
   "1\\/2": '50%',
 ) !default;
+
 
 // TYPOGRAHPY
 $typography--sizes: (
@@ -93,15 +96,59 @@ $utilities--config: (
   'color': (
     'items': $colors--named-colors,
     'variable': '--color--',
-    'property': 'background',
+    'property': 'color',
   ),
   'box': (
     'items': (
+      'flex': 'flex',
+      'block': 'block',
       'hide': 'none',
       'show': 'inherit'
     ),
     'responsive': true,
     'property': 'display'
+  ),
+  'opacity': (
+    'items': (
+      '0': 0,
+      '50': 0.5,
+      '100': 1,
+    ),
+    'property': 'opacity',
+  ),
+  'flex': (
+    'items': (
+      'center': 'center',
+      'top': 'flex-start',
+      'bottom': 'flex-end',
+    ),
+    'responsive': true,
+    'property': 'align-items',
+  ),
+  'justify': (
+    'items': (
+      'center': 'center',
+      'around': 'space-around',
+      'between': 'space-between',
+    ),
+    'responsive': true,
+    'property': 'justify-content',
+  ),
+  'align': (
+    'items': (
+      'left': 'left',
+      'center': 'center',
+      'right': 'right',
+    ),
+    'property': 'text-align',
+  ),
+  'transform': (
+    'items': (
+      'uppercase': 'uppercase',
+      'lowercase': 'lowercase',
+      'capitalize': 'capitalize',
+    ),
+    'property': 'text-transform',
   ),
   'm': (
     'items': $layout-spacing--variants,
@@ -216,11 +263,46 @@ $utilities--config: (
   'font': (
     'items': $typography--fonts,
     'variable': '--typography-font--',
-    'property': 'font-family', 
+    'property': 'font-family',
   ),
   'weight': (
     'items': $typography--weights,
     'property': 'font-weight',
+  ),
+  'order': (
+    'items': (
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+      '5': 5,
+    ),
+    'responsive': true,
+    'property': 'order',
+  ),
+  'col-span': (
+    'items': (
+      '1': 'span 1 / span 1',
+      '2': 'span 2 / span 2',
+      '3': 'span 3 / span 3',
+      '4': 'span 4 / span 4',
+      '5': 'span 5 / span 5',
+      '6': 'span 6 / span 6',
+    ),
+    'responsive': true,
+    'property': 'grid-column',
+  ),
+  'col-start': (
+    'items': (
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+      '5': 5,
+      '6': 6,
+    ),
+    'responsive': true,
+    'property': 'grid-column-start',
   ),
   'z': (
     'items': (

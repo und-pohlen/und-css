@@ -1,0 +1,34 @@
+.o-cover {
+  --o-cover--height: 100vh;
+  --o-cover--spacing: var(--layout-spacing--default);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: var(--o-cover--height);
+  padding-top: var(--o-cover--spacing);
+  padding-bottom: var(--o-cover--spacing);
+
+  & > * {
+    margin-top: var(--o-cover--spacing);
+    margin-bottom: var(--o-cover--spacing);
+  }
+
+  & > :first-child:not(.o-cover__main) {
+    margin-top: 0;
+  }
+
+  & > :last-child:not(.o-cover__main) {
+    margin-bottom: 0;
+  }
+
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-cover--spacing: var(--layout-spacing--#{$spacing-name});
+    }
+  }
+}
+
+.o-cover__main {
+  margin-top: auto;
+  margin-bottom: auto;
+}

@@ -1,0 +1,38 @@
+.o-wrapper {
+  --o-wrapper--width: var(--layout-widths--max-width);
+  --o-wrapper--spacing: var(--layout-spacing--default);
+  width: 100%;
+  max-width: var(--o-wrapper--width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--o-wrapper--spacing);
+  padding-left: var(--o-wrapper--spacing);
+
+  &[data-align='left'] {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  &[data-align='right'] {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-wrapper--spacing: var(--layout-spacing--#{$spacing-name});
+    }
+  }
+
+  @each $width-name, $width-value in $layout--widths {
+    &[data-width='#{$width-name}'] {
+      --o-wrapper--width: #{$width-value};
+    }
+  }
+}
+
+.o-wrapper--intrinsic {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,7 +1,9 @@
 :root {
   @include rfs($layout-spacing--default, --layout-spacing--default);
+  --layout-widths--max-width: #{$layout--widths-max-width};
 
   @each $spacing-name, $spacing-value in $layout-spacing--variants {
     @include rfs($spacing-value, "--layout-spacing--#{$spacing-name}");
   }
+
 }

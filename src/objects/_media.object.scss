@@ -1,17 +1,18 @@
 .o-media {
   --o-media--spacing: var(--layout-spacing--default);
-  --o-media--content-width: 50%;
+  --o-media--content-width: 80ch;
+  --o-media--sidebar-width: auto;
   overflow: hidden;
 
   & > * {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 calc(var(--o-media--spacing) / 2 * -1);
+    align-items: flex-start;
+    margin: calc(var(--o-media--spacing) / 2 * -1);
   }
 
   & > * > * {
-    margin: 0 calc(var(--o-media--spacing) / 2);
-    flex-grow: 1;
+    margin: calc(var(--o-media--spacing) / 2);
   }
 
   @each $spacing-name, $spacing-value in $layout-spacing--variants {
@@ -21,23 +22,41 @@
   }
 
   @each $measure-name, $measure-value in $typography--measures {
-    &[data-measure='#{$measure-name}'] {
+    &[data-content-width='#{$measure-name}'] {
       --o-media--content-width: var(--typography-measure--#{$measure-name});
     }
   }
 
+  @each $width-name, $width-value in $layout--widths {
+    &[data-sidebar-width='#{$width-name}'] {
+      --o-media--sidebar-width: #{$width-value};
+    }
+  }
+
+  &:not([data-direction='reversed']) {
+    & > * > :first-child {
+      flex-basis: var(--o-media--sidebar-width);
+      flex-grow: 1;
+    }
+
+    & > * > :last-child {
+      flex-basis: 0;
+      flex-grow: 999;
+      min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
+    }
+  }
+
   &[data-direction='reversed'] {
+    & > * > :last-child {
+      flex-basis: var(--o-media--sidebar-width);
+      flex-grow: 1;
+    }
+
     & > * > :first-child {
       flex-basis: 0;
       flex-grow: 999;
       min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
     }
-  }
-
-  &:not([data-direction='reversed']) > * > :last-child {
-      flex-basis: 0;
-      flex-grow: 999;
-      min-width: calc(var(--o-media--content-width) - var(--o-media--spacing));
   }
 
   &[data-align='center'] > * {
@@ -46,5 +65,9 @@
 
   &[data-align='bottom'] > * {
     align-items: flex-end;
+  }
+
+  &[data-align='stretch'] > * {
+    align-items: stretch;
   }
 }

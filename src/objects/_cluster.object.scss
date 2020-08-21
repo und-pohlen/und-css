@@ -1,0 +1,39 @@
+.o-cluster {
+  --o-cluster--spacing: var(--layout-spacing--default);
+  overflow: hidden;
+
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: calc(var(--o-cluster--spacing) / 2 * -1);
+  }
+
+  & > * > * {
+    margin: calc(var(--o-cluster--spacing) / 2);
+  }
+
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-cluster--spacing: var(--layout-spacing--#{$spacing-name});
+    }
+  }
+
+
+  &[data-justify='center'] {
+    justify-content: center;
+  }
+
+  &[data-justify='right'] {
+    justify-content: flex-end;
+  }
+
+  &[data-align='middle'] {
+    align-items: center;
+  }
+
+  &[data-align='bottom'] {
+    align-items: flex-end;
+  }
+}

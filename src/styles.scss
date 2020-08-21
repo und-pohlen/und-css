@@ -20,13 +20,17 @@
 @import "globals/print.globals";
 
 // OBJECTS
+@import "objects/auto-grid.object";
 @import "objects/box.object";
+@import "objects/cluster.object";
+@import "objects/cover.object";
 @import "objects/frame.object";
 @import "objects/grid.object";
-@import "objects/layout.object";
 @import "objects/media.object";
 @import "objects/pack.object";
+@import "objects/reel.object";
 @import "objects/stack.object";
+@import "objects/wrapper.object";
 
 // UTILITIES
 @if $utilities--generate {
