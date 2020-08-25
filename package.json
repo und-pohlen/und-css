@@ -14,7 +14,6 @@
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache"
   },
   "dependencies": {
-    "modern-css-reset": "^1.1.1",
     "rfs": "^9.0.3"
   },
   "devDependencies": {
