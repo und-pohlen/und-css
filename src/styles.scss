@@ -1,10 +1,9 @@
-// VENDOR IMPORTS
-@import "./node_modules/modern-css-reset/dist/reset";
-
+/* purgecss start ignore */
 // SETTINGS
 @import "settings/settings";
 
 // IMPORT TOOLS
+@import "tools/reset.tool";
 @import "tools/responsive.tool";
 @import "tools/utilities.tool";
 @import "tools/vendor.tool";
@@ -31,6 +30,7 @@
 @import "objects/reel.object";
 @import "objects/stack.object";
 @import "objects/wrapper.object";
+/* purgecass end ignore */
 
 // UTILITIES
 @if $utilities--generate {
