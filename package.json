@@ -4,10 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "styles:build": "node-sass src/styles.scss dist/css/styles.css",
-    "styles:minified": "node-sass src/styles.scss dist/css/styles.min.css --output-style compressed",
-    "styles:watch": "node-sass -w src/ -o dist/css/",
-    "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache"
+    "clean": "rm -rf dist",
+    "serve": "browser-sync dist -w --no-notify",
+    "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
+    "build:styles": "node-sass src/styles.scss dist/css/styles.css",
+    "build:styles:minified": "node-sass src/styles.scss dist/css/styles.min.css --output-style compressed",
+    "build:eleventy": "eleventy --quiet",
+    "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
+    "start:styles": "node-sass -w src/ -o dist/css/",
+    "start:eleventy": "eleventy --quiet --watch"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -16,6 +22,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.12",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.2.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
