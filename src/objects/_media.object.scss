@@ -28,7 +28,7 @@
   }
 
   @each $width-name, $width-value in $layout--widths {
-    &[data-sidebar-width='#{$width-name}'] {
+    &[data-media-width='#{$width-name}'] {
       --o-media--sidebar-width: #{$width-value};
     }
   }

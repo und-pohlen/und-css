@@ -1,4 +1,6 @@
 {
     "layout": "main.liquid",
-    "tags": ["introduction"]
+    "tags": ["introduction"],
+    "permalink": false,
+    "date": "2020-08-31"
 }

@@ -8,6 +8,9 @@ $colors--default-text: #000000 !default;
 
 $colors--named-colors: (
   accent: #0000ff,
+  muted: #f1f1f1,
+  black: #000000,
+  white: #ffffff,
 ) !default;
 
 // RESPONSIVE
@@ -43,8 +46,9 @@ $layout--spacing-shorthands: (
 $layout--widths-max-width: 1400px !default;
 
 $layout--widths: (
-  "quarter": '25%',
-  "half": '50%',
+  "1\\/4": '25%',
+  "1\\/2": '50%',
+  "3\\/4": '75%',
   "full": '100%',
   "screen": '100vw',
 ) !default;

@@ -1,0 +1,33 @@
+<div class="o-grid c-page">
+  <aside 
+    role="navigation"
+    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+  >
+    <ul class="c-page__navigation-list o-stack">
+      {% for item in items %}
+        <li>
+          <a
+            href="#{{ item.data.pageTitle | slug }}"
+            class="c-page__navigation-link"
+          >
+            {{ item.data.pageTitle }}
+          </a>
+        </li> 
+      {% endfor %}
+    </ul>
+  </aside>
+  <main
+    class="md:u-w-3/4 o-stack"
+    data-spacing="huge"
+  >
+    {% for item in items %}
+      <section
+        id="{{ item.data.pageTitle | slug }}"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">{{ item.data.pageTitle }}</h1>
+        <main class="c-page__text">{{ item.templateContent }}</main>
+      </section>
+    {% endfor %}
+  </main>
+</div>

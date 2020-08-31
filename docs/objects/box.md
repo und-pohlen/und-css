@@ -7,7 +7,7 @@ The box object is a simple abstraction to box things of. Providing adjustable
 padding.
 
 {% codeSample %}
-<div class="o-box">
+<div class="o-box u-bg-white">
     I am in a box
 </div>
 {% endcodeSample %}
@@ -18,7 +18,7 @@ provided in your `_settings.scss`. Modifiers are passed as the `data-spacing`
 attribute.
 
 {% codeSample %}
-<div class="o-box" data-spacing="large">
+<div class="o-box u-bg-white" data-spacing="large">
     I am in a box
 </div>
 {% endcodeSample %}
@@ -29,10 +29,3 @@ pages. Common use cases include teaser cards or floating info or call-to-action
 boxes. The box object, as all objects, only sets the spacing and does not add
 any cosmetic styling. Combine with utility classes or custom component styles to
 get a fully styled box.
-
-{% codeSample %}
-<div class="o-box u-bg-black u-c-white">
-  <h2 class="u-text-lg">Want to know more?</h2>
-  <p>Sign up to our newsletter an never miss a thing!</p>
-</div>
-{% endcodeSample %}

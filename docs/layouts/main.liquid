@@ -7,25 +7,31 @@
 
     <title>und CSS Framework</title>
 
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/assets/vendor/prism.js"></script>
   </head>
   <body class="o-wrapper u-py-large">
-    <header class="o-grid">
-      <h1 class="u-text-base u-p-flush u-m-flush u-w-quarter">
+    <header class="o-grid u-mb-large">
+      <h1 class="u-text-base u-m-flush u-w-1/4">
         <a href="/">und CSS</a>
       </h1>
-      <nav class="o-cluster u-w-half">
+      <nav class="o-cluster u-w-1/2">
         <ul>
-          <li>Introduction</li>
+          <li>
+            <a href="/">
+              Introduction
+            </a>
+          </li>
           <li>Tokens</li>
-          <li>Objects</li>
+          <li>
+            <a href="/objects">
+              Objects
+            </a>
+          </li>
           <li>Utilities</li>
         </ul>
       </nav>
     </header>
-    <main class="u-push-quarter">
-      <h1>{{ pageTitle }}</h1>
-      {{ content }}
-    </main>
+    {{ content }}
   </body>
 </html>
