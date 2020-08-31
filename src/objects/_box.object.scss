@@ -1,4 +1,4 @@
-.o-box {
+.#{$objects--prefix}box {
   --o-box--spacing: var(--layout-spacing--default);
   display: block;
   padding: var(--o-box--spacing);

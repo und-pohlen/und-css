@@ -1,3 +1,7 @@
+// NAMESPACING
+$objects--prefix: 'o-' !default;
+$utilities--prefix: 'u-' !default;
+
 // COLORS
 $colors--default-background: #ffffff !default;
 $colors--default-text: #000000 !default;
@@ -39,9 +43,11 @@ $layout--spacing-shorthands: (
 $layout--widths-max-width: 1400px !default;
 
 $layout--widths: (
-  "1\\/2": '50%',
+  "quarter": '25%',
+  "half": '50%',
+  "full": '100%',
+  "screen": '100vw',
 ) !default;
-
 
 // TYPOGRAHPY
 $typography--sizes: (
@@ -93,7 +99,7 @@ $utilities--config: (
     'variable': '--color--',
     'property': 'background',
   ),
-  'color': (
+  'c': (
     'items': $colors--named-colors,
     'variable': '--color--',
     'property': 'color',
@@ -238,6 +244,11 @@ $utilities--config: (
     'items': $layout--widths,
     'responsive': true,
     'property': 'width',
+  ),
+  'push': (
+    'items': $layout--widths,
+    'responsive': true,
+    'property': 'margin-left',
   ),
   'measure': (
     'items': $typography--measures,

@@ -1,20 +1,20 @@
-.o-reel {
+.#{$objects--prefix}reel {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   height: auto;
-}
 
-.o-reel > * {
-  flex: 0 0 auto;
-}
+  & > * {
+    flex: 0 0 auto;
+  }
 
-.o-reel > img {
-  flex-basis: auto;
-  width: auto;
-  height: 100%;
-}
+  & > img {
+    flex-basis: auto;
+    width: auto;
+    height: 100%;
+  }
 
-.o-reel > * + * {
-  margin-left: 1rem;
+  & > * + * {
+    margin-left: 1rem;
+  }
 }

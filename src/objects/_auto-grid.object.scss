@@ -1,4 +1,4 @@
-.o-auto-grid {
+.#{$objects--prefix}auto-grid {
   --o-auto-grid--spacing: var(--layout-spacing--default);
   --o-auto-grid--min-width: 20rem;
   display: grid;

@@ -18,7 +18,7 @@ $o-frame--ratios: (
   }
 }
 
-.o-frame {
+.#{$objects--prefix}frame {
   --o-frame--ratio: #{calculate-ratio($o-frame--default-ratio)};
   position: relative;
   padding-bottom: calc(var(--o-frame--ratio) * 100%);
@@ -35,7 +35,6 @@ $o-frame--ratios: (
     align-items: center;
   }
 
-  /* purgecss start ignore */
   & > img,
   & > svg,
   & > video {
@@ -43,7 +42,6 @@ $o-frame--ratios: (
     height: 100%;
     object-fit: cover;
   }
-  /* purgecss end ignore */
 
   @each $frame-name, $frame-value in $o-frame--ratios {
     &[data-ratio='#{$frame-name}'] {

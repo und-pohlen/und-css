@@ -1,5 +1,9 @@
-@function utility-class-name($utility-class, $utility-item-name) {
-  @return ".u-#{$utility-class}-#{$utility-item-name}";
+@function utility-class-name($utility-class, $utility-item-name, $breakpoint: '') {
+  $classname: '#{$utilities--prefix}#{$utility-class}-#{$utility-item-name}';
+  @if $breakpoint != '' {
+    $classname: '#{$breakpoint}\\:#{$classname}';
+  }
+  @return '.#{$classname}';
 }
 
 @mixin utility-styles($properties, $name, $value, $variable: null) {
@@ -26,7 +30,7 @@
 
       @if $responsive == true {
         @each $breakpoint, $breakpoint-value in $responsive--breakpoints {
-          #{utility-class-name($utility-class, $utility-item-name)}\:#{$breakpoint} {
+          #{utility-class-name($utility-class, $utility-item-name, $breakpoint)} {
             @include respond-to($breakpoint) {
               @include utility-styles($props, $utility-item-name, $utility-item-value, $variable);
             }

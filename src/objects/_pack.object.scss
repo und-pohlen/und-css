@@ -1,4 +1,4 @@
-.o-pack {
+.#{$objects--prefix}pack {
   --o-pack--spacing: var(--layout-spacing--default);
   --o-pack--alignment: top;
   display: table;

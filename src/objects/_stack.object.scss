@@ -1,4 +1,4 @@
-.o-stack {
+.#{$objects--prefix}stack {
   --o-stack--spacing: var(--layout-spacing--default);
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-.o-media {
+.#{$objects--prefix}media {
   --o-media--spacing: var(--layout-spacing--default);
   --o-media--content-width: 80ch;
   --o-media--sidebar-width: auto;

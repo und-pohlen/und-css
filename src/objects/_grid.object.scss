@@ -1,4 +1,4 @@
-.o-grid {
+.#{$objects--prefix}grid {
   --o-grid--spacing: var(--layout-spacing--default);
   display: flex;
   flex-wrap: wrap;
