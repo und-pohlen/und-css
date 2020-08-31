@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-tan">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>und CSS Framework</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="o-wrapper u-py-large">
+    <header class="o-grid">
+      <h1 class="u-text-base u-p-flush u-m-flush u-w-1/4">
+        <a href="/">und CSS</a>
+      </h1>
+      <nav class="o-cluster u-w-1/2">
+        <ul>
+          <li>Introduction</li>
+          <li>Tokens</li>
+          <li>Objects</li>
+          <li>Utilities</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="u-push-1/4">
+      <h1>Auto Grid</h1>
+      <!-- Meta Information -->
+      <p>The auto grid provides a simple way of creating a responsive grid without
+writing media queries or relying on breakpoints. This is good if you just have a
+bunch of equally important elements you need to put in a grid.</p>
+<div>
+<div class="o-auto-grid">
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+</div>
+</div><pre>
+&lt;div class=&quot;o-auto-grid&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h2>Spacing Modifier</h2>
+<p>You can set the grid’s gutter by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div>
+<div
+  class="o-auto-grid"
+  data-spacing="large"
+>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+</div>
+</div><pre>
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-spacing=&quot;large&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h2>Measure Modifier</h2>
+<p>The auto grid is sized intrinsically. That means that instead of specifying the
+amount of columns you want to have, you specify the minimum width each column
+should occupy. CSS grid will then calculate the neccessary amount of columns and
+rows to lay out your items.</p>
+<p>The min-width is expressed in measures. You can set the min-width by using one
+of the measure values set in <code>_settings.scss</code>. Measure modifiers are passed as
+the <code>data-measure</code> attribute.</p>
+<div>
+<div
+  class="o-auto-grid"
+  data-measure="narrow"
+>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+</div>
+</div><pre>
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-measure=&quot;narrow&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<div>
+<div
+  class="o-auto-grid"
+  data-measure="wide"
+>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-muted">
+      I am in a box
+    </div>
+</div>
+</div><pre>
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-measure=&quot;wide&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-muted&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h2>Use Cases</h2>
+<p>The auto grid is good when you have a bunch of equally important items that you
+want to place in a responsive grid without worrying about breakpoints.</p>
+<p>A prime example is a collection of cards (e.g. news teaser of team members) that
+need to be layed out automatically.</p>
+<p><strong>Do not use auto-grid</strong> if you need granular control over the grid. In those
+cases you should use the manual <a href="/objects/grid/">grid object</a>.</p>
+
+    </main>
+  </body>
+</html>

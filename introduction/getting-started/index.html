@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-tan">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>und CSS Framework</title>
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="o-wrapper u-py-large">
+    <header class="o-grid">
+      <h1 class="u-text-base u-p-flush u-m-flush u-w-1/4">
+        <a href="/">und CSS</a>
+      </h1>
+      <nav class="o-cluster u-w-1/2">
+        <ul>
+          <li>Introduction</li>
+          <li>Tokens</li>
+          <li>Objects</li>
+          <li>Utilities</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="u-push-1/4">
+      <h1>Getting Started</h1>
+      <!-- Meta Information -->
+      <h2>Quick Start</h2>
+<p>For a quick start you first need to install und-css as a dependency to your
+project.</p>
+<pre><code class="language-bash">yarn add -D und-css # or npm
+</code></pre>
+<p>Presuming you have some kind of SASS transpiler running in your project (e.g.
+via webpack or some other task runner) you then simple required the und-css
+entry file in your SASS stylesheet.</p>
+<pre><code class="language-scss">@import './node_modules/und-css/src/styles';
+</code></pre>
+<h2>Important Globals</h2>
+<p>To make live easier and more predictable und-css makes some assumptions about
+your HTML markup and sets some opionated styling defaults.</p>
+<h3>HTML5 Doctype</h3>
+<p>und-css requires the HTML5 Doctype. Without it you might experience some weird
+rendering issues.</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+<h3>Responsive Meta Tag</h3>
+<p>und-css provides responsive utility classes to make designing for <em>different
+viewports</em> easier. To ensure proper renderung and zooming for all devices, you
+need to <strong>add the responsive view meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+</code></pre>
+<h3>Box-sizing</h3>
+<p>For more logical spacing and size calculations in CSS, und-css switches the
+global <code>box-sizing</code> value from <code>content-box</code> to <code>border-box</code>.</p>
+<p>On rare occasions you therefore might want to reset this in your custom
+component styles building on und-css.</p>
+<pre><code class="language-css">.c-my-component {
+  box-sizing: content-box;
+}
+</code></pre>
+
+    </main>
+  </body>
+</html>
