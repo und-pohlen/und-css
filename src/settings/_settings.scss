@@ -14,12 +14,12 @@ $colors--named-colors: (
 ) !default;
 
 // RESPONSIVE
-$responsive--biggest-screen: 72em !default;
+$responsive--biggest-screen: 1400px !default;
 
 $responsive--breakpoints: (
-  "sm": "36em",
-  "md": "48em",
-  "lg": $responsive--biggest-screen
+  sm: 512px,
+  md: 920px,
+  lg: $responsive--biggest-screen
 ) !default;
 
 // SPACING AND LAYOUT
