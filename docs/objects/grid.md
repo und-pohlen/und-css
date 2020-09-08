@@ -10,14 +10,17 @@ padding. The grid object sets up a manual grid, that needs to be controlled with
 utility styles across breakpoints. By default all direct child elements of the
 grid object are sized to 100% width.
 
+By default und-css is set up to provide a 12 column grid. See [width
+tokens](/tokens/#width-tokens) for configuration options.
+
 {% codeSample %}
 <div class="o-grid">
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>
   </div>
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>

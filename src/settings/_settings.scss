@@ -24,43 +24,64 @@ $responsive--breakpoints: (
 
 // SPACING AND LAYOUT
 $layout-spacing--default: 1rem !default;
+$layout-spacing--ratio: 1.5 !default;
 
 $layout-spacing--variants: (
   flush: 0,
-  tiny: $layout-spacing--default * 0.25,
-  small: $layout-spacing--default * 0.5,
-  large: $layout-spacing--default * 2,
-  huge: $layout-spacing--default * 4,
+  xxxxs: $layout-spacing--default / pow($layout-spacing--ratio, 5),
+  xxxs: $layout-spacing--default / pow($layout-spacing--ratio, 4),
+  xxs: $layout-spacing--default / pow($layout-spacing--ratio, 3),
+  xs: $layout-spacing--default / pow($layout-spacing--ratio, 2),
+  sm: $layout-spacing--default / $layout-spacing--ratio,
+  md: $layout-spacing--default,
+  lg: $layout-spacing--default * $layout-spacing--ratio,
+  xl: $layout-spacing--default * pow($layout-spacing--ratio, 2),
+  xxl: $layout-spacing--default * pow($layout-spacing--ratio, 3),
+  xxxl: $layout-spacing--default * pow($layout-spacing--ratio, 4),
+  xxxxl: $layout-spacing--default * pow($layout-spacing--ratio, 5),
 ) !default;
 
 $layout--spacing-shorthands: (
   null: null,
-  t: "-top",
-  r: "-right",
-  b: "-bottom",
-  l: "-left",
-  x: "-right" "-left",
-  y: "-top" "-bottom",
+  t: '-top',
+  r: '-right',
+  b: '-bottom',
+  l: '-left',
+  x: '-right' '-left',
+  y: '-top' '-bottom',
 ) !default;
 
 $layout--widths-max-width: 1400px !default;
 
 $layout--widths: (
-  "1\\/4": '25%',
-  "1\\/2": '50%',
-  "3\\/4": '75%',
-  "full": '100%',
-  "screen": '100vw',
+  '1\\/12': percentage(1 / 12),
+  '2\\/12': percentage(2 / 12),
+  '3\\/12': percentage(3 / 12),
+  '4\\/12': percentage(4 / 12),
+  '5\\/12': percentage(5 / 12),
+  '6\\/12': percentage(6 / 12),
+  '7\\/12': percentage(7 / 12),
+  '8\\/12': percentage(8 / 12),
+  '9\\/12': percentage(9 / 12),
+  '10\\/12': percentage(10 / 12),
+  '11\\/12': percentage(11 / 12),
+  '12\\/12': percentage(12 / 12),
 ) !default;
 
 // TYPOGRAHPY
+$typography--base-size: 1rem !default;
+
+$typography--ratio: 1.2 !default;
+
 $typography--sizes: (
-  'sm': 0.8rem,
-  'base': 1rem,
-  'md': 1.25rem,
-  'lg': 1.6rem,
-  'xl': 2rem,
-  'xxl': 3rem,
+  xs: $typography--base-size / $typography--ratio / $typography--ratio,
+  sm: $typography--base-size / $typography--ratio,
+  md: $typography--base-size,
+  lg: $typography--base-size * pow($typography--ratio, 2),
+  xl: $typography--base-size * pow($typography--ratio, 3),
+  xxl: $typography--base-size * pow($typography--ratio, 4),
+  xxxl: $typography--base-size * pow($typography--ratio, 5),
+  xxxxl: $typography--base-size * pow($typography--ratio, 6),
 ) !default;
 
 $typography--leading: (
@@ -90,8 +111,9 @@ $typography--weights: (
 ) !default;
 
 $typography--measures: (
-  narrow: 10ch,
-  wide: 60ch,
+  narrow: 30ch,
+  medium: 60ch,
+  wide: 90ch,
 ) !default;
 
 // UTILITY GENERATOR
