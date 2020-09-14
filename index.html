@@ -7,29 +7,246 @@
 
     <title>und CSS Framework</title>
 
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/assets/vendor/prism.js"></script>
   </head>
   <body class="o-wrapper u-py-large">
-    <header class="o-grid">
-      <h1 class="u-text-base u-p-flush u-m-flush u-w-1/4">
+    <header class="o-grid u-mb-large">
+      <h1 class="u-text-base u-m-flush u-w-1/4">
         <a href="/">und CSS</a>
       </h1>
       <nav class="o-cluster u-w-1/2">
         <ul>
-          <li>Introduction</li>
-          <li>Tokens</li>
-          <li>Objects</li>
-          <li>Utilities</li>
+          <li>
+            <a href="/">
+              Introduction
+            </a>
+          </li>
+          <li>
+            <a href="/tokens">
+              Tokens
+            </a>
+          </li>
+          <li>
+            <a href="/objects">
+              Objects
+            </a>
+          </li>
+          <li>
+            <a href="/utilities">
+              Utilities
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
-    <main class="u-push-1/4">
-      <h1></h1>
-      <!-- Meta Information -->
+    
+<div class="o-grid c-page">
+  <aside 
+    role="navigation"
+    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+  >
+    <ul class="c-page__navigation-list o-stack">
       
-<h1>Welcome to the Docs!</h1>
+        <li>
+          <a
+            href="#getting-started"
+            class="c-page__navigation-link"
+          >
+            Getting Started
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#what-is-und-css"
+            class="c-page__navigation-link"
+          >
+            What is und-css
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#namespacing"
+            class="c-page__navigation-link"
+          >
+            Namespacing
+          </a>
+        </li> 
+      
+    </ul>
+  </aside>
+  <main
+    class="md:u-w-3/4 o-stack"
+    data-spacing="huge"
+  >
+    
+      <section
+        id="getting-started"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Getting Started</h1>
+        <main class="c-page__text"><h2>Quick Start</h2>
+<p>For a quick start you first need to install und-css as a dependency to your
+project.</p>
+<pre><code class="language-bash">yarn add -D und-css # or npm
+</code></pre>
+<p>Presuming you have some kind of SASS transpiler running in your project (e.g.
+via webpack or some other task runner) you then simple required the und-css
+entry file in your SASS stylesheet.</p>
+<pre><code class="language-scss">@import './node_modules/und-css/src/styles';
+</code></pre>
+<h2>Important Globals</h2>
+<p>To make live easier and more predictable und-css makes some assumptions about
+your HTML markup and sets some opionated styling defaults.</p>
+<h3>HTML5 Doctype</h3>
+<p>und-css requires the HTML5 Doctype. Without it you might experience some weird
+rendering issues.</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+<h3>Responsive Meta Tag</h3>
+<p>und-css provides responsive utility classes to make designing for <em>different
+viewports</em> easier. To ensure proper renderung and zooming for all devices, you
+need to <strong>add the responsive view meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+</code></pre>
+<h3>Box-sizing</h3>
+<p>For more logical spacing and size calculations in CSS, und-css switches the
+global <code>box-sizing</code> value from <code>content-box</code> to <code>border-box</code>.</p>
+<p>On rare occasions you therefore might want to reset this in your custom
+component styles building on und-css.</p>
+<pre><code class="language-css">.c-my-component {
+  box-sizing: content-box;
+}
+</code></pre>
+</main>
+      </section>
+    
+      <section
+        id="what-is-und-css"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">What is und-css</h1>
+        <main class="c-page__text"><h2>Meta-Framework</h2>
+<p>und-css isn’t a CSS framework in the original definition. That is, it doesn’t
+come with any styling. und-css is meant to provide a solid baseline for your
+custom CSS styles by being almost fully customizable allowing you to freely
+configure design tokens and creating as many (or as little) utility classes as
+you like. und-css is here to speed up your process, not to make all your
+websites look the same.</p>
+<h2>Parts</h2>
+<p>und-css consists of three parts: Tokens, Objects and Utilities. These serve as
+the foundation for further styling that can be built on top of it (by writing
+custom components) or with it (by generating a lot of utility classes).</p>
+<h3>Tokens</h3>
+<p>The formalization of visual language (read »design system«) is at the heart of
+the und-css approach. At its core und-css is a config file (<code>_settings.scss</code>)
+containing all neccessary information about the visual language of the site or
+app you’re building, including:</p>
+<ul>
+<li>Typography
+<ul>
+<li>Sizes</li>
+<li>Font Families</li>
+<li>Leading</li>
+<li>Tracking</li>
+<li>Measures</li>
+</ul>
+</li>
+<li>Colors</li>
+<li>Layout Values
+<ul>
+<li>Spacing</li>
+<li>Widths</li>
+<li>Dimensions</li>
+<li>Breakpoints</li>
+</ul>
+</li>
+</ul>
+<p>und-css takes all the information provided in the config and converts them to
+CSS custom properties, so other parts of the stylesheet can easily access them.</p>
+<p>The tokens generated by und-css are fully customizable in the config file.</p>
+<h3>Objects</h3>
+<p>Objects are meant to be time-savers by providing simple abstractions over common
+layout challenges such as grids, boxes or centering things. Objects help you to
+quickly create macro layouts. Parameters of objects can be altered using
+modifiers, to make adjustments to your micro-layout.</p>
+<h3>Utilities</h3>
+<p>Utility classes, sometimes also called atomic or functional CSS, just do one
+thing like setting a color, font-size or spacing (most of the time they will just set a single CSS property). und-css comes with a simple utility class generator that can be fully configured to suit your needs (and file size). By default only commonly used utility classes are provided.</p>
+<h2>Motivation</h2>
+<p>und-css was created as an internal tool to be used in personal and <a href="https://und-pohlen.de">und Pohlen</a> frontend projects. It is a structured approach to the way I write CSS—that is more from a graphic designer’s perspective and less from a developer’s perspective.</p>
+<p>und-css combines my CSS experiences with the good parts of frameworks I’ve
+worked with over the years. Honorable mentions include: InuitCSS, TailwindCSS
+and Every Layout.</p>
+<h3>Why SASS?</h3>
+<p>The answer is quite pragmatic: Because it’s the Preprocessor I am most familiar
+with. SASS isn’t my dream choice for this project, but given my experience with
+it, it provided a quick and easy way to get a first version of this framework
+done. In the future I plan to move the codebase to a more contemporary tooling like
+PostCSS.</p>
+</main>
+      </section>
+    
+      <section
+        id="namespacing"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Namespacing</h1>
+        <main class="c-page__text"><h2>Why use namespaces</h2>
+<p>When working at scale a lot of our time is spent reading existing code trying to
+understand what it does. Naming conventions such as BEM help to clearly
+distinguish parts of a component in relation to the other parts of a component.</p>
+<p>Namespaces take this a step further by prefixing CSS classes according to their
+function in the global sense. A namespace can help us to quickly understand what
+a certain class does in absolute terms. They help to easily understand what
+existing codes does and how it might be altered to achieve a desired change in
+design. Namespaces greatly reduce the urge to create new selectors.</p>
+<p>If you want to know more about the motivation behind using namespaced CSS check
+out <a href="https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">Harry Roberts’ article on namespaced
+CSS</a>.</p>
+<h2>Default Namespaces</h2>
+<p>By default und-css uses two different namespaces to distinguish the classes it
+provides and generates.</p>
+<ul>
+<li><strong>o-</strong>: Signifies that a class belongs to an object. Objects may be used in
+any number of non related contexts. Objects provide abstractions of common
+layouts. They don’t come with any cosmetic styling.</li>
+<li><strong>u-</strong>: Signifies a utility class. Utility classes have a very specific role
+(mostly just providing one CSS rule). They are commonly used to provide quick
+access to design tokens.</li>
+</ul>
+<p>If you build your own layout objects or utility styles on top of und-css it is
+recommended that you follow the same namespace convention.</p>
+<h2>Recommended Namespaces</h2>
+<p>As und-css only provides layout objects and utility classes it does not cover
+how you handle and name your custom component styles. To distinguish your
+components from objects and utilities it is recommended to introduce a new
+namespace.</p>
+<ul>
+<li><strong>c-</strong>: Should signify a component style in your custom CSS. A component is a
+specific implementation of UI. Changes made to a component style only affect
+instances of this component but nothing else in your design.</li>
+</ul>
+<h2>Changing / Removing Namespaces</h2>
+<p>und-css default namespaces are a suggestion rather than a convention. You can
+ovveride them in your <code>_settings.scss</code>.</p>
+<ul>
+<li><code>$utilities--prefix</code>: Sets the prefix of your utility classes. Defaults to
+<code>u-</code>, set to an empty String if you don’t want a prefix.</li>
+<li><code>$objects--prefix</code>: Sets the prefix of object classes. Default to <code>o-</code>, set to
+an ampty String if you don’t want any prefix.</li>
+</ul>
+</main>
+      </section>
+    
+  </main>
+</div>
 
 
-    </main>
   </body>
 </html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-tan">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>und CSS Framework</title>
+
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/assets/vendor/prism.js"></script>
+  </head>
+  <body class="o-wrapper u-py-large">
+    <header class="o-grid u-mb-large">
+      <h1 class="u-text-base u-m-flush u-w-1/4">
+        <a href="/">und CSS</a>
+      </h1>
+      <nav class="o-cluster u-w-1/2">
+        <ul>
+          <li>
+            <a href="/">
+              Introduction
+            </a>
+          </li>
+          <li>
+            <a href="/tokens">
+              Tokens
+            </a>
+          </li>
+          <li>
+            <a href="/objects">
+              Objects
+            </a>
+          </li>
+          <li>
+            <a href="/utilities">
+              Utilities
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+<div class="o-grid c-page">
+  <aside 
+    role="navigation"
+    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+  >
+    <ul class="c-page__navigation-list o-stack">
+      
+        <li>
+          <a
+            href="#auto-grid"
+            class="c-page__navigation-link"
+          >
+            Auto Grid
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#box-object"
+            class="c-page__navigation-link"
+          >
+            Box Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#cluster-object"
+            class="c-page__navigation-link"
+          >
+            Cluster Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#frame-object"
+            class="c-page__navigation-link"
+          >
+            Frame Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#grid-object"
+            class="c-page__navigation-link"
+          >
+            Grid Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#media-object"
+            class="c-page__navigation-link"
+          >
+            Media Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#site-object"
+            class="c-page__navigation-link"
+          >
+            Site Object
+          </a>
+        </li> 
+      
+        <li>
+          <a
+            href="#stack-object"
+            class="c-page__navigation-link"
+          >
+            Stack Object
+          </a>
+        </li> 
+      
+    </ul>
+  </aside>
+  <main
+    class="md:u-w-3/4 o-stack"
+    data-spacing="huge"
+  >
+    
+      <section
+        id="auto-grid"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Auto Grid</h1>
+        <main class="c-page__text"><p>The auto grid provides a simple way of creating a responsive grid without
+writing media queries or relying on breakpoints. This is good if you just have a
+bunch of equally important elements you need to put in a grid.</p>
+<div class="c-page__preview">
+<div class="o-auto-grid">
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-auto-grid&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Spacing Modifier</h2>
+<p>You can set the grid’s gutter by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div class="c-page__preview">
+<div
+  class="o-auto-grid"
+  data-spacing="large"
+>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-spacing=&quot;large&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Measure Modifier</h2>
+<p>The auto grid is sized intrinsically. That means that instead of specifying the
+amount of columns you want to have, you specify the minimum width each column
+should occupy. CSS grid will then calculate the neccessary amount of columns and
+rows to lay out your items.</p>
+<p>The min-width is expressed in measures. You can set the min-width by using one
+of the measure values set in <code>_settings.scss</code>. Measure modifiers are passed as
+the <code>data-measure</code> attribute.</p>
+<div class="c-page__preview">
+<div
+  class="o-auto-grid"
+  data-measure="narrow"
+>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-measure=&quot;narrow&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="c-page__preview">
+<div
+  class="o-auto-grid"
+  data-measure="wide"
+>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+    <div class="o-box u-bg-white">
+      I am in a box
+    </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-auto-grid&quot;
+  data-measure=&quot;wide&quot;
+&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am in a box
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Use Cases</h2>
+<p>The auto grid is good when you have a bunch of equally important items that you
+want to place in a responsive grid without worrying about breakpoints.</p>
+<p>A prime example is a collection of cards (e.g. news teaser of team members) that
+need to be layed out automatically.</p>
+<p><strong>Do not use auto-grid</strong> if you need granular control over the grid. In those
+cases you should use the manual <a href="/objects/grid/">grid object</a>.</p>
+</main>
+      </section>
+    
+      <section
+        id="box-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Box Object</h1>
+        <main class="c-page__text"><p>The box object is a simple abstraction to box things of. Providing adjustable
+padding.</p>
+<div class="c-page__preview">
+<div class="o-box u-bg-white">
+    I am in a box
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+&lt;/div&gt;
+</code></pre>
+<h2>Spacing Modifier</h2>
+<p>The box object’s spacing can be modified by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div class="c-page__preview">
+<div class="o-box u-bg-white" data-spacing="large">
+    I am in a box
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-box u-bg-white&quot; data-spacing=&quot;large&quot;&gt;
+    I am in a box
+&lt;/div&gt;
+</code></pre>
+<h2>Use Cases</h2>
+<p>Use the box object whenever you need to box off content from the rest of the
+pages. Common use cases include teaser cards or floating info or call-to-action
+boxes. The box object, as all objects, only sets the spacing and does not add
+any cosmetic styling. Combine with utility classes or custom component styles to
+get a fully styled box.</p>
+</main>
+      </section>
+    
+      <section
+        id="cluster-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Cluster Object</h1>
+        <main class="c-page__text"><p>The cluster provides a simple responsive way of putting items next to each other
+without using a grid. So instead of giving each item the same width, the item’s
+size is deciding how much space there is for each item. On smaller viewports the
+cluster item’s will get wrapped into multiple lines.</p>
+<div class="c-page__preview">
+<nav class="o-cluster">
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+</nav>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;nav class=&quot;o-cluster&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre>
+<h3>Markup</h3>
+<p>Please note, how in the above example the cluster is set on the parent element
+of the element holding the cluster items (nav). The cluster always expects
+exactly one children element that hosts all the cluster items. This is
+necessary, so the cluster itself can handle overflow issues.</p>
+<h2>Spacing Modifier</h2>
+<p>You can set the spacing between your cluster items by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div class="c-page__preview">
+<nav class="o-cluster" data-spacing="large">
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+</nav>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;nav class=&quot;o-cluster&quot; data-spacing=&quot;large&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre>
+<h2>Alignment Modifier</h2>
+<p>You can set the prefered vertical alignment of your items using the
+<code>data-align</code> attribute. Available alignments are <code>middle</code> and <code>bottom</code>, if no
+modifier is set, the items will be aligned at the top.</p>
+<h2>Justification Modifier</h2>
+<p>You can set the prefered horizontal alignements using the <code>data-justify</code>
+attribute. Available values are <code>center</code> and <code>right</code>, if no modifier is set, the
+items will be justified to the left.</p>
+<div class="c-page__preview">
+<nav class="o-cluster" data-spacing="large" data-justify="right">
+  <ol>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ol>
+</nav>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;nav class=&quot;o-cluster&quot; data-spacing=&quot;large&quot; data-justify=&quot;right&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre>
+<h2>Use Cases</h2>
+<p>Typical use cases of the cluster object include navigation patterns, tag lists
+or logo walls.</p>
+</main>
+      </section>
+    
+      <section
+        id="frame-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Frame Object</h1>
+        <main class="c-page__text"><p>The frame object can be used to wrap images or videos to maintain or force their
+aspect ratio. This is especially useful if you can’t control the aspect ratio of
+some image data coming from a CMS or you don’t want your layout to horizontally
+jump when using lazy loading for images.</p>
+<div class="c-page__preview">
+<div class="o-frame">
+  <img src="https://source.unsplash.com/random/1600x900" alt="Some Image" />
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-frame&quot;&gt;
+  &lt;img src=&quot;https://source.unsplash.com/random/1600x900&quot; alt=&quot;Some Image&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Ratios</h2>
+<p>The frame object can be configured to use different ratios. You can set the
+available ratios in your <code>_settings.scss</code>. The ratio can be passed to the
+<code>data-ratio</code> attribute.</p>
+<div class="c-page__preview">
+<div class="o-frame" data-ratio="1:1">
+  <img src="https://source.unsplash.com/random/1600x900" alt="Some Image" />
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-frame&quot; data-ratio=&quot;1:1&quot;&gt;
+  &lt;img src=&quot;https://source.unsplash.com/random/1600x900&quot; alt=&quot;Some Image&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Image Scaling</h2>
+<p>Images will be centered within the provided ratio and will be scaled so they
+fully fit within given ratio. This can cause some unwanted crops with some
+images, so be sure to double check if the selected ratio is the correct one for
+the images you’re working with.</p>
+</main>
+      </section>
+    
+      <section
+        id="grid-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Grid Object</h1>
+        <main class="c-page__text"><p>The grid object is a flex box based layout grid, providing adjustable
+padding. The grid object sets up a manual grid, that needs to be controlled with
+utility styles across breakpoints. By default all direct child elements of the
+grid object are sized to 100% width.</p>
+<div class="c-page__preview">
+<div class="o-grid">
+  <div class="u-w-1/2">
+    <div class="o-box u-bg-white">
+        I am in a box
+    </div>
+  </div>
+  <div class="u-w-1/2">
+    <div class="o-box u-bg-white">
+        I am in a box
+    </div>
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-grid&quot;&gt;
+  &lt;div class=&quot;u-w-1/2&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+        I am in a box
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;u-w-1/2&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+        I am in a box
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Spacing Modifier</h2>
+<p>The grid object’s spacing can be modified by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div class="c-page__preview">
+<div class="o-grid" data-spacing="large">
+  <div class="u-w-1/2">
+    <div class="o-box u-bg-white">
+        I am in a box
+    </div>
+  </div>
+  <div class="u-w-1/2">
+    <div class="o-box u-bg-white">
+        I am in a box
+    </div>
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-grid&quot; data-spacing=&quot;large&quot;&gt;
+  &lt;div class=&quot;u-w-1/2&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+        I am in a box
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;u-w-1/2&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+        I am in a box
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Alignment Modifier</h2>
+<p>You can set the prefered vertical alignment of your items using the
+<code>data-align</code> attribute. Available alignments are <code>middle</code> and <code>bottom</code>, if no
+modifier is set, the items will be aligned at the top.</p>
+<h2>Justification Modifier</h2>
+<p>You can set the prefered horizontal alignements using the <code>data-justify</code>
+attribute. Available values are <code>center</code> and <code>right</code>, if no modifier is set, the
+items will be justified to the left.</p>
+<h2>Responsive Grids</h2>
+<p>By default all grid items are set to 100% in width. As you’ve seen you can use
+utility classes to set the width of single grid items. To achieve a responsive
+grid, you can use the responsive modifiers of utility classes.</p>
+<div class="c-page__preview">
+<div class="o-grid">
+  <div class="lg:u-w-1/2">
+    <div class="o-box u-bg-white">
+      I am 50% wide on big screens
+    </div>
+  </div>
+  <div class="lg:u-w-1/4">
+    <div class="o-box u-bg-white">
+      I am 25% wide on big screens
+    </div>
+  </div>
+  <div class="lg:u-w-1/4">
+    <div class="o-box u-bg-white">
+      I am 25% wide on big screens
+    </div>
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-grid&quot;&gt;
+  &lt;div class=&quot;lg:u-w-1/2&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am 50% wide on big screens
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;lg:u-w-1/4&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am 25% wide on big screens
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;lg:u-w-1/4&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+      I am 25% wide on big screens
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Use Cases</h2>
+<p>The grid object is used for manual grid, where you need full control over their
+responsive behaviour to account for differences in visual hierarchy. The manual
+grid is usually used to create the macro layout of a site.</p>
+</main>
+      </section>
+    
+      <section
+        id="media-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Media Object</h1>
+        <main class="c-page__text"><p>The media object is a simple abstraction over the – well – media objects. It
+allows you to put media and text next to each other in a responsive way, without
+using a breakpoint.</p>
+<p>The media object is sized intrinsically and will collapse to a one column layout
+if the min-widths of it’s children can not be met anymore.</p>
+<p>If no widths are provided, the media object will use the natural sizes of its
+elements.</p>
+<div class="c-page__preview">
+<div
+  class="o-media"
+  data-media-width="1/4"
+  data-content-width="wide"
+>
+  <figure> <!-- Required Block Level Wrapper Element -->
+    <div><!-- First child of wrapper will be the media -->
+      <div class="o-frame">
+        <img src="https://source.unsplash.com/random/1600x900" alt="Some Image" />
+      </div>
+    </div>
+    <figcaption class="o-box u-bg-white"><!-- Second child is text component -->
+      I am the text component of the media object
+    </figcaption>
+  </figure>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-media&quot;
+  data-media-width=&quot;1/4&quot;
+  data-content-width=&quot;wide&quot;
+&gt;
+  &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
+    &lt;div&gt;&lt;!-- First child of wrapper will be the media --&gt;
+      &lt;div class=&quot;o-frame&quot;&gt;
+        &lt;img src=&quot;https://source.unsplash.com/random/1600x900&quot; alt=&quot;Some Image&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;figcaption class=&quot;o-box u-bg-white&quot;&gt;&lt;!-- Second child is text component --&gt;
+      I am the text component of the media object
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Markup</h2>
+<p>The media object – like the cluster object – depends on a single child element,
+that then wraps the media and text children. The somewhat unsemantic wrapper
+element is needed to handle overflow management.</p>
+<h2>Spacing Modifier</h2>
+<p>The media object’s spacing can be modified by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code></p>
+<div class="c-page__preview">
+<div
+  class="o-media"
+  data-media-width="1/4"
+  data-content-width="wide"
+  data-spacing="large"
+>
+  <figure> <!-- Required Block Level Wrapper Element -->
+    <div><!-- First child of wrapper will be the media -->
+      <div class="o-frame">
+        <img src="https://source.unsplash.com/random/1600x900" alt="Some Image" />
+      </div>
+    </div>
+    <figcaption class="o-box u-bg-white"><!-- Second child is text component -->
+      I am the text component of the media object
+    </figcaption>
+  </figure>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-media&quot;
+  data-media-width=&quot;1/4&quot;
+  data-content-width=&quot;wide&quot;
+  data-spacing=&quot;large&quot;
+&gt;
+  &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
+    &lt;div&gt;&lt;!-- First child of wrapper will be the media --&gt;
+      &lt;div class=&quot;o-frame&quot;&gt;
+        &lt;img src=&quot;https://source.unsplash.com/random/1600x900&quot; alt=&quot;Some Image&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;figcaption class=&quot;o-box u-bg-white&quot;&gt;&lt;!-- Second child is text component --&gt;
+      I am the text component of the media object
+    &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Direction Modifier</h2>
+<p>By default the first element will be the media container. If you want to reverse
+the media object (making the second element the media container) you can add
+<code>reversed</code> as the <code>data-direction</code> attribute.</p>
+<div class="c-page__preview">
+<div
+  class="o-media"
+  data-media-width="1/4"
+  data-content-width="wide"
+  data-direction="reversed"
+>
+  <figure> <!-- Required Block Level Wrapper Element -->
+    <figcaption class="o-box u-bg-white"><!-- First child is now text component -->
+      I am the text component of the media object
+    </figcaption>
+    <div><!-- Second child of wrapper will now be the media -->
+      <div class="o-frame">
+        <img src="https://source.unsplash.com/random/1600x900" alt="Some Image" />
+      </div>
+    </div>
+  </figure>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div
+  class=&quot;o-media&quot;
+  data-media-width=&quot;1/4&quot;
+  data-content-width=&quot;wide&quot;
+  data-direction=&quot;reversed&quot;
+&gt;
+  &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
+    &lt;figcaption class=&quot;o-box u-bg-white&quot;&gt;&lt;!-- First child is now text component --&gt;
+      I am the text component of the media object
+    &lt;/figcaption&gt;
+    &lt;div&gt;&lt;!-- Second child of wrapper will now be the media --&gt;
+      &lt;div class=&quot;o-frame&quot;&gt;
+        &lt;img src=&quot;https://source.unsplash.com/random/1600x900&quot; alt=&quot;Some Image&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Size Modifiers</h2>
+<p>To handle the intrinsic sizing of the media object you can provide values for
+<code>data-content-width</code> and <code>data-media-width</code>. You can pass named widths from your
+<code>_settings.scss</code>. It is best practice to use an absolute value for one of the
+values and provide a relative value for the other. See the above examples, where
+the media’s width was set to <code>1/4</code> while the content’s width used a measure
+value to set its width.</p>
+<h2>Use Cases</h2>
+<p>This component can be used everytime you need to solve the common layout problem
+of putting image and text next to each other in a responsive way. This might be
+teaser cards, landing page sections or comment entries.</p>
+<p>Please note, even though it’s called <strong>media object</strong> you are by no means
+required to place images or videos in the media slot of the object. The media
+object can also be used to create a sidebar-layout or put input-fields and
+labels on the same row. The component was simply named after its most probable
+use case.</p>
+</main>
+      </section>
+    
+      <section
+        id="site-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Site Object</h1>
+        <main class="c-page__text"><p>The site object is a simple helper object that helps you to to ensure an element
+always has a min-height. The most common use case is to apply this to the <code>main</code>
+section of your web page, to ensure your footer is always pushed to the bottom
+of the screen.</p>
+<div class="c-page__preview">
+<div class="o-site">
+  I am 100vh tall.
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-site&quot;&gt;
+  I am 100vh tall.
+&lt;/div&gt;
+</code></pre>
+<h2>Overriding Size</h2>
+<p>By default the side object sets its min-height to <code>100vh</code>. To override this
+value, you can override the <code>--o-site--height</code> custom property in an inline
+style.</p>
+<div class="c-page__preview">
+<div class="o-site" style="--o-site--height: 50vh">
+  I am 50vh tall.
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-site&quot; style=&quot;--o-site--height: 50vh&quot;&gt;
+  I am 50vh tall.
+&lt;/div&gt;
+</code></pre>
+<h2>Use cases</h2>
+<p>The most common use case is to apply <code>o-site</code> to your layout’s <code>main</code> to ensure
+the page’s footer is always pushed to the bottom of the page.</p>
+</main>
+      </section>
+    
+      <section
+        id="stack-object"
+        class="c-page__section"
+      >
+        <h1 class="u-text-lg u-mb-large">Stack Object</h1>
+        <main class="c-page__text"><p>The stack object provides a simple way of creating vertical rhythm. The stack
+will put even spacing between all its direct child elements by setting their
+<code>margin-top</code> value (except of course, for the first child).</p>
+<div class="c-page__preview">
+<div class="o-stack">
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-stack&quot;&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Spacing Modifier</h2>
+<p>The stack object’s spacing can be modified by using one of the spacing modifiers
+provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>data-spacing</code>
+attribute.</p>
+<div class="c-page__preview">
+<div class="o-stack" data-spacing="large">
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-stack&quot; data-spacing=&quot;large&quot;&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Recursive Stack</h2>
+<p>By default the stack only spaces its direct children elements. In some cases you
+might want to put a space between all children element. In this case, you can
+simply add the <code>data-recursive</code> attribute to your stack.</p>
+<div class="c-page__preview">
+<div class="o-stack" data-spacing="large" data-recursive>
+  <div class="o-box u-bg-white">
+    <div>I am in a box</div>
+    <div>I am a spaced div in a box</div>
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+  <div class="o-box u-bg-white">
+    I am in a box
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-stack&quot; data-spacing=&quot;large&quot; data-recursive&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    &lt;div&gt;I am in a box&lt;/div&gt;
+    &lt;div&gt;I am a spaced div in a box&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+  &lt;div class=&quot;o-box u-bg-white&quot;&gt;
+    I am in a box
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Use Cases</h2>
+<p>The stack object is a handy utility object that can be used in every situation
+you need to establish a consistent vertical rhythm, without relying on adding
+margins to every single component. In the past I've used the stack object for
+spacing the macro layout of an entire site but also to create a basic vertical
+rhythm for text-blocks coming from rich text editors.</p>
+<p>In essence the stack object enables you to add spacing to your components
+without adding it to the component styles, which allows you to write more
+self-contained code, where every part just knows how to style itself but has no
+interdependence on how other parts are styled and spaced. If you use this object
+often enough you will fall in love with it.</p>
+</main>
+      </section>
+    
+  </main>
+</div>
+
+
+  </body>
+</html>
