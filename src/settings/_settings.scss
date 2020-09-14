@@ -97,6 +97,8 @@ $typography--measures: (
 // UTILITY GENERATOR
 $utilities--generate: true !default;
 
+$utilities--important: true !default;
+
 $utilities--config: (
   'bg': (
     'items': $colors--named-colors,

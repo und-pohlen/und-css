@@ -8,11 +8,18 @@
 
 @mixin utility-styles($properties, $name, $value, $variable: null) {
   @each $property in $properties {
+    $attributeString: "";
     @if $variable != null {
-      #{$property}: var(#{$variable}#{$name});
+      $attributeString: "var(#{$variable}#{$name})";
     } @else {
-      #{$property}: #{$value};
+      $attributeString: $value;
     }
+
+    @if $utilities--important == true {
+      $attributeString: "#{$attributeString} !important";
+    }
+
+    #{$property}: #{$attributeString};
   }
 }
 
