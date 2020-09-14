@@ -1,5 +1,5 @@
 @function utility-class-name($utility-class, $utility-item-name, $breakpoint: '') {
-  $classname: '#{$utilities--prefix}#{$utility-class}-#{$utility-item-name}';
+  $classname: '#{$utilities--prefix}#{$utility-class}#{$utility-item-name}';
   @if $breakpoint != '' {
     $classname: '#{$breakpoint}\\:#{$classname}';
   }
@@ -25,11 +25,19 @@
 
 @mixin generate-utilities {
   @each $utility-class, $utility-class-data in $utilities--config {
+    $name:          map-get($utility-class-data, 'name');
     $items:         map-get($utility-class-data, 'items');
     $props:         map-get($utility-class-data, 'property');
     $responsive:    map-get($utility-class-data, 'responsive');
     $variable:      map-get($utility-class-data, 'variable');
 
+    /*====================================
+     @name: #{$name}
+     @classname: #{utility-class-name($utility-class, null)}
+     @properties: #{$props}
+     @values: #{$items}
+     @responsive: #{$responsive}
+     */
     @each $utility-item-name, $utility-item-value in $items {
       #{utility-class-name($utility-class, $utility-item-name)} {
         @include utility-styles($props, $utility-item-name, $utility-item-value, $variable);

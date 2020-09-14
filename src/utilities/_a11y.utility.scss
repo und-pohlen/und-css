@@ -1,0 +1,14 @@
+$attributeAddon: '';
+
+@if $utilities--important == true {
+  $attributeAddon: ' !important';
+}
+
+.#{$utilities--prefix}visually-hidden {
+  position: absolute#{$attributeAddon};
+  overflow: hidden#{$attributeAddon};
+  width: 1px#{$attributeAddon};
+  height: 1px#{$attributeAddon};
+  clip: rect(1px, 1px, 1px, 1px)#{$attributeAddon};
+  white-space: no-wrap#{$attributeAddon};
+}

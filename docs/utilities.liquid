@@ -1,0 +1,71 @@
+---
+layout: main.liquid
+---
+
+<div class="o-grid c-page">
+  <aside 
+    role="navigation"
+    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+  >
+    <ul class="c-page__navigation-list o-stack">
+      {% for utility in utilities %}
+        <li>
+          <a
+            href="#{{ utility.name | slug }}"
+            class="c-page__navigation-link"
+          >
+            {{ utility.name }}
+          </a>
+        </li> 
+      {% endfor %}
+    </ul>
+  </aside>
+  <main
+    class="md:u-w-3/4 o-stack"
+    data-spacing="huge"
+  >
+    {% for utility in utilities %}
+      <section
+        id="{{ utility.name | slug }}"
+        class="c-page__section"
+      >
+        <h1
+          class="u-text-lg u-mb-large"
+        >
+          {{ utility.name }}
+        </h1>
+        <ol class="o-grid u-mb-small">
+          <li class="u-w-1/4">
+            <div>
+              {{ utility.classname }}
+            </div>
+            <div class="u-o50 u-text-sm">
+              Classname
+            </div>
+          </li>
+          <li class="u-w-1/4">
+            <div>
+              {{ utility.properties | join: ', ' }}
+            </div>
+            <div class="u-o50 u-text-sm">
+              Properties
+            </div>
+          </li>
+          <li class="u-w-1/4">
+            <div>
+              {{ utility.responsive }}
+            </div>
+            <div class="u-o50 u-text-sm">
+              Responsive
+            </div>
+        </ol>
+        <pre>
+          <code class="language-html">
+{% for utilityHash in utility.values %}{% for utilityObject in utilityHash %}{{ utilityObject[0] }} // {{ utilityObject[1] }}{% endfor %}
+{% endfor %}
+          </code>
+        </pre>
+      </section>
+    {% endfor %}
+  </main>
+</div>
