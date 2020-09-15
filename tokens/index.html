@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="/css/index.css" />
     <script src="/assets/vendor/prism.js"></script>
   </head>
-  <body class="o-wrapper u-py-large">
-    <header class="o-grid u-mb-large">
-      <h1 class="u-text-base u-m-flush u-w-1/4">
+  <body class="o-wrapper u-py-lg">
+    <header class="o-grid u-mb-lg">
+      <h1 class="u-text-base u-m-flush u-w-3/12">
         <a href="/">und CSS</a>
       </h1>
-      <nav class="o-cluster u-w-1/2">
+      <nav class="o-cluster u-w-9/12">
         <ul>
           <li>
             <a href="/">
@@ -42,9 +42,9 @@
     </header>
     
 <div class="o-grid c-page">
-  <aside 
+  <aside
     role="navigation"
-    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+    class="c-page__navigation md:u-w-3/12 u-box-hide md:u-box-show"
   >
     <ul class="c-page__navigation-list o-stack">
       
@@ -55,7 +55,7 @@
           >
             Token Management
           </a>
-        </li> 
+        </li>
       
         <li>
           <a
@@ -64,7 +64,7 @@
           >
             Color Tokens
           </a>
-        </li> 
+        </li>
       
         <li>
           <a
@@ -73,21 +73,52 @@
           >
             Responsive Tokens
           </a>
-        </li> 
+        </li>
+      
+        <li>
+          <a
+            href="#spacing-tokens"
+            class="c-page__navigation-link"
+          >
+            Spacing Tokens
+          </a>
+        </li>
+      
+        <li>
+          <a
+            href="#width-tokens"
+            class="c-page__navigation-link"
+          >
+            Width Tokens
+          </a>
+        </li>
+      
+        <li>
+          <a
+            href="#utility-tokens"
+            class="c-page__navigation-link"
+          >
+            Utility Tokens
+          </a>
+        </li>
       
     </ul>
   </aside>
   <main
-    class="md:u-w-3/4 o-stack"
-    data-spacing="huge"
+    class="md:u-w-9/12 o-stack"
+    data-spacing="xxxl"
   >
     
       <section
         id="token-management"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">Token Management</h1>
-        <main class="c-page__text"><p>Tokens are at the core of your visual language. They define the colors, type
+        <h1 class="u-text-xxl u-mb-lg">Token Management</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <p>Tokens are at the core of your visual language. They define the colors, type
 sizes, spacing and overall layout parameters of your design.</p>
 <p>und-css let’s you configure your visual language using SASS variables and
 transforms your tokens into CSS custom properties, you can access them in your
@@ -97,15 +128,20 @@ own stylesheets without depending on a preprocessor.</p>
 over the configuration, with as little conventions imposed as possible.
 Just need one color? No problem! Have 1.000 of spacing modifier – sure, whatever makes you happy.</p>
 <p>The following documents how you can set your tokens.</p>
-</main>
+
+        </main>
       </section>
     
       <section
         id="color-tokens"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">Color Tokens</h1>
-        <main class="c-page__text"><h2>Default Colors</h2>
+        <h1 class="u-text-xxl u-mb-lg">Color Tokens</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <h2>Default Colors</h2>
 <p>To get started quickly, und-css will set your background-color to white and your
 text color to black. If you want to change this, you can do so via the two
 default-color variables.</p>
@@ -128,15 +164,20 @@ what we call <strong>named colors</strong>.</p>
 </code></pre>
 <p>Named colors are exposed globally as <code>var(--color--)</code>, as shown in the
 comments above.</p>
-</main>
+
+        </main>
       </section>
     
       <section
         id="responsive-tokens"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">Responsive Tokens</h1>
-        <main class="c-page__text"><p>To make your live with various breakpoints easier und-css allows you to keep
+        <h1 class="u-text-xxl u-mb-lg">Responsive Tokens</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <p>To make your live with various breakpoints easier und-css allows you to keep
 track of your breakpoints. The settings offer you two variables to set.</p>
 <h2>Biggest Screen</h2>
 <p>Typically this will be the width of your biggest breakpoint. Und-css needs this
@@ -168,7 +209,274 @@ utilities.</p>
 <pre><code class="language-html">&lt;aside class=&quot;md:u-w-8/12&quot;&gt;
   &lt;!-- this will 66.6666% wide on viewports bigger than 920px --&gt;
 </code></pre>
-</main>
+
+        </main>
+      </section>
+    
+      <section
+        id="spacing-tokens"
+        class="c-page__section"
+      >
+        <h1 class="u-text-xxl u-mb-lg">Spacing Tokens</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <p>On of the most common headaches of writing CSS scale is to keep consistent
+spacing across all your components.</p>
+<p>und-css let’s you manage your spacing sizes as – you guessed it by now – named
+spacing sizes.</p>
+<h2>Base spacing size</h2>
+<p>By default the base spacing size is set to <code>1rem</code>. You will probably want to
+keep this value as it’s a good idea to relate your spacing to your main copy
+font size.</p>
+<pre><code class="language-scss">$layout-spacing--default: 1rem; // Available as var(--layout-spacing--default)
+</code></pre>
+<h2>Spacing Ratio</h2>
+<p>By default und-css uses a ratio of 1.5 to calculate spacing sizes based on the
+base spacing size. The ratio is used in a fibonacci fashion to calculate each
+spacing value by mulitplying (or dividing) its adjacent value with the ratio.</p>
+<p>The easiest way to change your spacing, is to change the spacing ratio. und-css
+will then auto generate new named spacing from xxxxs to xxxxl for your.</p>
+<pre><code>$layout-spacing--ratio: 1.5;
+</code></pre>
+<h2>Default Spacings</h2>
+<p>By default und-css is set up to generate spacing-tokens ranging from xxxxs to
+xxxxl based on the ratio and the base spacing size. Available default values
+are:</p>
+<table>
+<thead>
+<tr>
+<th>Spacing Name</th>
+<th>Custom Property</th>
+<th>Spacing Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xxxxs</td>
+<td><code>--layout-spacing--xxxxs</code></td>
+<td><code>$layout-spacing--default / pow($layout-spacing--ratio, 5)</code></td>
+<td><div class="u-bg-muted u-p-xxxxs"></div></td>
+</tr>
+<tr>
+<td>xxxs</td>
+<td><code>--layout-spacing--xxxs</code></td>
+<td><code>$layout-spacing--default / pow($layout-spacing--ratio, 4)</code></td>
+<td><div class="u-bg-muted u-p-xxxs"></div></td>
+</tr>
+<tr>
+<td>xxs</td>
+<td><code>--layout-spacing--xxs</code></td>
+<td><code>$layout-spacing--default / pow($layout-spacing--ratio, 3)</code></td>
+<td><div class="u-bg-muted u-p-xxs"></div></td>
+</tr>
+<tr>
+<td>xs</td>
+<td><code>--layout-spacing--xxs</code></td>
+<td><code>$layout-spacing--default / pow($layout-spacing--ratio, 2)</code></td>
+<td><div class="u-bg-muted u-p-xs"></div></td>
+</tr>
+<tr>
+<td>sm</td>
+<td><code>--layout-spacing--sm</code></td>
+<td><code>$layout-spacing--default / $layout-spacing--ratio</code></td>
+<td><div class="u-bg-muted u-p-sm"></div></td>
+</tr>
+<tr>
+<td>md</td>
+<td><code>--layout-spacing--md</code></td>
+<td><code>$layout-spacing--default</code></td>
+<td><div class="u-bg-muted u-p-md"></div></td>
+</tr>
+<tr>
+<td>lg</td>
+<td><code>--layout-spacing--lg</code></td>
+<td><code>$layout-spacing--default * $layout-spacing--ratio</code></td>
+<td><div class="u-bg-muted u-p-lg"></div></td>
+</tr>
+<tr>
+<td>xl</td>
+<td><code>--layout-spacing--xl</code></td>
+<td><code>$layout-spacing--default * pow($layout-spacing--ratio, 2)</code></td>
+<td><div class="u-bg-muted u-p-xl"></div></td>
+</tr>
+<tr>
+<td>xxl</td>
+<td><code>--layout-spacing--xxl</code></td>
+<td><code>$layout-spacing--default * pow($layout-spacing--ratio, 3)</code></td>
+<td><div class="u-bg-muted u-p-xxl"></div></td>
+</tr>
+<tr>
+<td>xxxl</td>
+<td><code>--layout-spacing--xxxl</code></td>
+<td><code>$layout-spacing--default * pow($layout-spacing--ratio, 4)</code></td>
+<td><div class="u-bg-muted u-p-xxxl"></div></td>
+</tr>
+<tr>
+<td>xxxxl</td>
+<td><code>--layout-spacing--xxxxl</code></td>
+<td><code>$layout-spacing--default * pow($layout-spacing--ratio, 5)</code></td>
+<td><div class="u-bg-muted u-p-xxxxl"></div></td>
+</tr>
+</tbody>
+</table>
+<h2>Custom named spacings</h2>
+<p>If you want to create your custom spacing you can also defined the named spaces
+yourself. As with colors, these are provided as a map of names and values.</p>
+<pre><code class="language-scss">$layout-spacing--variants: (
+  flush: 0,                               // var(--layout-spacing--flush)
+  tiny: $layout-spacing--default * 0.25,  // var(--layout-spacing--tiny)
+  small: $layout-spacing--default * 0.5,  // var(--layout-spacing--small)
+  medium: $layout-spacing--default,       // var(--layout-spacing--medium)
+  …
+);
+</code></pre>
+<p>Named spaces are exposed globally as <code>var(--layout-spacing--name)</code>, as shown in the
+comments above.</p>
+
+        </main>
+      </section>
+    
+      <section
+        id="width-tokens"
+        class="c-page__section"
+      >
+        <h1 class="u-text-xxl u-mb-lg">Width Tokens</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <p>und-css provides to approaches to widht: Measure and Grid-widths. Both can be
+set as custom variables in your settings.</p>
+<h2>Measures</h2>
+<p>A measure is the maximum line of a length of text (typically expressed in
+characters). und-css allows you to set named measures, that can act as
+<code>max-width</code> of your container elements.</p>
+<p>Ideally you would set your measures in font-relative units like <code>em</code> (not rem)
+or <code>ch</code>, so it adapts to the font-size of its content.</p>
+<p>As they are linked closely to typography measures can be defined under the
+<code>$typography</code> namespace.</p>
+<pre><code class="language-scss">$typography--measures: (
+  narrow: 30ch,
+  medium: 60ch,
+  wide: 90ch,
+);
+</code></pre>
+<div class="c-page__preview">
+<div class="o-stack">
+  <div class="u-measure-narrow">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div class="u-measure-medium">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div class="u-measure-wide">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </div>
+</div>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;div class=&quot;o-stack&quot;&gt;
+  &lt;div class=&quot;u-measure-narrow&quot;&gt;
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  &lt;/div&gt;
+  &lt;div class=&quot;u-measure-medium&quot;&gt;
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  &lt;/div&gt;
+  &lt;div class=&quot;u-measure-wide&quot;&gt;
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Measures are used in the <a href="/objects/#media-object">media object</a> and can be
+accessed using custom properties or utility styles.</p>
+<h2>Grid Widths</h2>
+<p>und-css gives you access to a simple 12 column grid using – you
+guessed it – named grid widths. By default the widths are named like fractions,
+so you can easily access them in modifiers and utility classes.</p>
+<pre><code class="language-scss">$layout--widths: (
+  '1\\/12': percentage(1 / 12),
+  '2\\/12': percentage(2 / 12),
+  '3\\/12': percentage(3 / 12),
+  '4\\/12': percentage(4 / 12),
+  '5\\/12': percentage(5 / 12),
+  '6\\/12': percentage(6 / 12),
+  '7\\/12': percentage(7 / 12),
+  '8\\/12': percentage(8 / 12),
+  '9\\/12': percentage(9 / 12),
+  '10\\/12': percentage(10 / 12),
+  '11\\/12': percentage(11 / 12),
+  '12\\/12': percentage(12 / 12),
+);
+</code></pre>
+<p>Grid widths are used in the <a href="/objects#media-object">media object</a> and can be
+accessed in utility. We currently do not generate custom attributes for grid
+widths.</p>
+<div class="c-page__preview">
+<ol class="o-grid">
+  <li class="u-w-4/12">
+    <div class="o-box u-bg-white">4 / 12</div>
+  </li> 
+  <li class="u-w-4/12">
+    <div class="o-box u-bg-white">4 /12 </div>
+  </li> 
+  <li class="u-w-4/12">
+    <div class="o-box u-bg-white">4 / 12</div>
+  </li> 
+</ol>
+</div><pre class="c-page__code"><code class="language-html">
+&lt;ol class=&quot;o-grid&quot;&gt;
+  &lt;li class=&quot;u-w-4/12&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;4 / 12&lt;/div&gt;
+  &lt;/li&gt; 
+  &lt;li class=&quot;u-w-4/12&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;4 /12 &lt;/div&gt;
+  &lt;/li&gt; 
+  &lt;li class=&quot;u-w-4/12&quot;&gt;
+    &lt;div class=&quot;o-box u-bg-white&quot;&gt;4 / 12&lt;/div&gt;
+  &lt;/li&gt; 
+&lt;/ol&gt;
+</code></pre>
+<p>Also see the <a href="/objects/#grid-object">Grid Object</a> for more information on how to
+work with grids.</p>
+
+        </main>
+      </section>
+    
+      <section
+        id="utility-tokens"
+        class="c-page__section"
+      >
+        <h1 class="u-text-xxl u-mb-lg">Utility Tokens</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <pre><code class="language-scss">'align': (
+  'items': (
+    'left': 'left',
+    'center': 'center',
+    'right': 'right',
+  ),
+  'property': 'text-align',
+),
+</code></pre>
+<p>Will generate the following css</p>
+<pre><code class="language-css">.u-align-left {
+  text-align: left;
+}
+
+.u-align-center {
+  text-align: center;
+}
+
+.u-align-right {
+  text-align: right;
+}
+</code></pre>
+
+        </main>
       </section>
     
   </main>

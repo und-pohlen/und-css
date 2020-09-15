@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="/css/index.css" />
     <script src="/assets/vendor/prism.js"></script>
   </head>
-  <body class="o-wrapper u-py-large">
-    <header class="o-grid u-mb-large">
-      <h1 class="u-text-base u-m-flush u-w-1/4">
+  <body class="o-wrapper u-py-lg">
+    <header class="o-grid u-mb-lg">
+      <h1 class="u-text-base u-m-flush u-w-3/12">
         <a href="/">und CSS</a>
       </h1>
-      <nav class="o-cluster u-w-1/2">
+      <nav class="o-cluster u-w-9/12">
         <ul>
           <li>
             <a href="/">
@@ -42,9 +42,9 @@
     </header>
     
 <div class="o-grid c-page">
-  <aside 
+  <aside
     role="navigation"
-    class="c-page__navigation md:u-w-1/4 u-box-hide md:u-box-show"
+    class="c-page__navigation md:u-w-3/12 u-box-hide md:u-box-show"
   >
     <ul class="c-page__navigation-list o-stack">
       
@@ -55,7 +55,7 @@
           >
             Getting Started
           </a>
-        </li> 
+        </li>
       
         <li>
           <a
@@ -64,7 +64,7 @@
           >
             What is und-css
           </a>
-        </li> 
+        </li>
       
         <li>
           <a
@@ -73,21 +73,25 @@
           >
             Namespacing
           </a>
-        </li> 
+        </li>
       
     </ul>
   </aside>
   <main
-    class="md:u-w-3/4 o-stack"
-    data-spacing="huge"
+    class="md:u-w-9/12 o-stack"
+    data-spacing="xxxl"
   >
     
       <section
         id="getting-started"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">Getting Started</h1>
-        <main class="c-page__text"><h2>Quick Start</h2>
+        <h1 class="u-text-xxl u-mb-lg">Getting Started</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <h2>Quick Start</h2>
 <p>For a quick start you first need to install und-css as a dependency to your
 project.</p>
 <pre><code class="language-bash">yarn add -D und-css # or npm
@@ -123,15 +127,20 @@ component styles building on und-css.</p>
   box-sizing: content-box;
 }
 </code></pre>
-</main>
+
+        </main>
       </section>
     
       <section
         id="what-is-und-css"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">What is und-css</h1>
-        <main class="c-page__text"><h2>Meta-Framework</h2>
+        <h1 class="u-text-xxl u-mb-lg">What is und-css</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <h2>Meta-Framework</h2>
 <p>und-css isn’t a CSS framework in the original definition. That is, it doesn’t
 come with any styling. und-css is meant to provide a solid baseline for your
 custom CSS styles by being almost fully customizable allowing you to freely
@@ -189,15 +198,20 @@ with. SASS isn’t my dream choice for this project, but given my experience wit
 it, it provided a quick and easy way to get a first version of this framework
 done. In the future I plan to move the codebase to a more contemporary tooling like
 PostCSS.</p>
-</main>
+
+        </main>
       </section>
     
       <section
         id="namespacing"
         class="c-page__section"
       >
-        <h1 class="u-text-lg u-mb-large">Namespacing</h1>
-        <main class="c-page__text"><h2>Why use namespaces</h2>
+        <h1 class="u-text-xxl u-mb-lg">Namespacing</h1>
+        <main
+          class="c-page__text o-stack"
+          data-spacing="lg"
+        >
+          <h2>Why use namespaces</h2>
 <p>When working at scale a lot of our time is spent reading existing code trying to
 understand what it does. Naming conventions such as BEM help to clearly
 distinguish parts of a component in relation to the other parts of a component.</p>
@@ -241,7 +255,8 @@ ovveride them in your <code>_settings.scss</code>.</p>
 <li><code>$objects--prefix</code>: Sets the prefix of object classes. Default to <code>o-</code>, set to
 an ampty String if you don’t want any prefix.</li>
 </ul>
-</main>
+
+        </main>
       </section>
     
   </main>
