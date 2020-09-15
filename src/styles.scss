@@ -38,6 +38,8 @@
 
 /* purgecss end ignore */
 // UTILITIES
+@import "utilities/a11y.utility";
+
 @if $utilities--generate {
   @include generate-utilities;
 }

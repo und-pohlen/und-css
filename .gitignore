@@ -1,4 +1,6 @@
 .cache
+.env
 node_modules
 dist/*
 tmp/*
+src/styles.css

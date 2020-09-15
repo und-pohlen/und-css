@@ -119,46 +119,61 @@ $typography--measures: (
 // UTILITY GENERATOR
 $utilities--generate: true !default;
 
+$utilities--important: true !default;
+
 $utilities--config: (
-  'bg': (
+  'bg-': (
+    'name': 'Background',
     'items': $colors--named-colors,
     'variable': '--color--',
     'property': 'background',
   ),
-  'c': (
+  'c-': (
+    'name': 'Color',
     'items': $colors--named-colors,
     'variable': '--color--',
     'property': 'color',
   ),
-  'box': (
+  'd': (
+    'name': 'Display',
     'items': (
-      'flex': 'flex',
-      'block': 'block',
-      'hide': 'none',
-      'show': 'inherit'
+      'f': 'flex',
+      'b': 'block',
+      'n': 'none',
+      'i': 'inline',
+      'ib': 'inline-block',
     ),
     'responsive': true,
     'property': 'display'
   ),
-  'opacity': (
+  'o': (
+    'name': 'Opacity',
     'items': (
       '0': 0,
+      '25': 0.25,
       '50': 0.5,
+      '75': 0.75,
       '100': 1,
     ),
     'property': 'opacity',
   ),
-  'flex': (
+  'ai-': (
+    'name': 'Flex Align',
     'items': (
       'center': 'center',
       'top': 'flex-start',
       'bottom': 'flex-end',
+      'baseline': 'baseline',
+      'stretch': 'stretch',
     ),
     'responsive': true,
     'property': 'align-items',
   ),
-  'justify': (
+  'j-': (
+    'name': 'Flex Justify',
     'items': (
+      'left': 'flex-start',
+      'right': 'flex-end',
       'center': 'center',
       'around': 'space-around',
       'between': 'space-between',
@@ -166,7 +181,8 @@ $utilities--config: (
     'responsive': true,
     'property': 'justify-content',
   ),
-  'align': (
+  'ta-': (
+    'name': 'Text Align',
     'items': (
       'left': 'left',
       'center': 'center',
@@ -174,7 +190,8 @@ $utilities--config: (
     ),
     'property': 'text-align',
   ),
-  'transform': (
+  'tt-': (
+    'name': 'Text Transform',
     'items': (
       'uppercase': 'uppercase',
       'lowercase': 'lowercase',
@@ -182,132 +199,172 @@ $utilities--config: (
     ),
     'property': 'text-transform',
   ),
-  'm': (
+  'td-': (
+    'name': 'Text Decoration',
+    'items': (
+      'underline': 'underline',
+      'none': 'none',
+    ),
+    'property': 'text-decoration',
+  ),
+  'ws-': (
+    'name': 'Text Wrapping',
+    'items': (
+      'wrap': 'normal',
+      'nowrap': 'nowrap',
+    ),
+    'property': 'white-space',
+  ),
+  'm-': (
+    'name': 'Margin all sides',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin'
   ),
-  'mx': (
+  'mx-': (
+    'name': 'Margin horizontal',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-right' 'margin-left',
   ),
-  'my': (
+  'my-': (
+    'name': 'Margin vertical',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-top' 'margin-bottom',
   ),
-  'mt': (
+  'mt-': (
+    'name': 'Margin top',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-top',
   ),
-  'mr': (
+  'mr-': (
+    'name': 'Margin right',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-right',
   ),
-  'mb': (
+  'mb-': (
+    'name': 'Margin bottom',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-bottom',
   ),
-  'ml': (
+  'ml-': (
+    'name': 'Margin left',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-left',
   ),
-  'p': (
+  'p-': (
+    'name': 'Padding all sides',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding'
   ),
-  'px': (
+  'px-': (
+    'name': 'Padding horizontal',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-right' 'padding-left',
   ),
-  'py': (
+  'py-': (
+    'name': 'Padding vertical',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-top' 'padding-bottom',
   ),
-  'pt': (
+  'pt-': (
+    'name': 'Padding top',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-top',
   ),
-  'pr': (
+  'pr-': (
+    'name': 'Padding right',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-right',
   ),
-  'pb': (
+  'pb-': (
+    'name': 'Padding bottom',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-bottom',
   ),
-  'pl': (
+  'pl-': (
+    'name': 'Padding left',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-left',
   ),
-  'w': (
+  'w-': (
+    'name': 'Grid widths',
     'items': $layout--widths,
     'responsive': true,
     'property': 'width',
   ),
-  'push': (
+  'push-': (
+    'name': 'Grid offsets',
     'items': $layout--widths,
     'responsive': true,
     'property': 'margin-left',
   ),
-  'measure': (
+  'measure-': (
+    'name': 'Measure',
     'items': $typography--measures,
     'variable': '--typography-measure--',
     'property': 'max-width',
   ),
-  'text': (
+  'text-': (
+    'name': 'Text Size',
     'items': $typography--sizes,
     'variable': '--typography-size--',
     'responsive': true,
     'property': 'font-size',
   ),
-  'leading': (
+  'lh-': (
+    'name': 'Text line-height',
     'items': $typography--leading,
     'variable': '--typography-leading--',
     'property': 'line-height',
   ),
-  'tracking': (
+  'ls-': (
+    'name': 'Text letter spacing',
     'items': $typography--tracking,
     'variable': '--typography-tracking--',
     'property': 'letter-spacing',
   ),
-  'font': (
+  'ff-': (
+    'name': 'Text font family',
     'items': $typography--fonts,
     'variable': '--typography-font--',
     'property': 'font-family',
   ),
-  'weight': (
+  'fw-': (
+    'name': 'Text font weight',
     'items': $typography--weights,
     'property': 'font-weight',
   ),
   'order': (
+    'name': 'Flex Order',
     'items': (
+      'n1': -1,
       '1': 1,
       '2': 2,
       '3': 3,
@@ -317,31 +374,8 @@ $utilities--config: (
     'responsive': true,
     'property': 'order',
   ),
-  'col-span': (
-    'items': (
-      '1': 'span 1 / span 1',
-      '2': 'span 2 / span 2',
-      '3': 'span 3 / span 3',
-      '4': 'span 4 / span 4',
-      '5': 'span 5 / span 5',
-      '6': 'span 6 / span 6',
-    ),
-    'responsive': true,
-    'property': 'grid-column',
-  ),
-  'col-start': (
-    'items': (
-      '1': 1,
-      '2': 2,
-      '3': 3,
-      '4': 4,
-      '5': 5,
-      '6': 6,
-    ),
-    'responsive': true,
-    'property': 'grid-column-start',
-  ),
   'z': (
+    'name': 'Z Index',
     'items': (
       '0':    0,
       '10':   10,

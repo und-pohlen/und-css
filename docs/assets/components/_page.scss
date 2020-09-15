@@ -3,8 +3,13 @@
 }
 
 .c-page__navigation {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   position: sticky;
   top: 0;
+  max-height: 100vh;
+  padding-bottom: 10vh;
 }
 
 .c-page__navigation-list {
@@ -14,8 +19,8 @@
 }
 
 .c-page__navigation-link {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 
   &:hover {
     text-decoration: underline;

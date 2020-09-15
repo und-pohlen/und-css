@@ -1,16 +1,18 @@
-@mixin visually-hidden {
-  clip: rect(0 0 0 0) !important;
-  clip-path: inset(50%) !important;
-  overflow: hidden !important;
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
+$attributeAddon: '';
+
+@if $utilities--important == true {
+  $attributeAddon: ' !important';
 }
 
-.#{$utilities--prefix}visually-hidden {
-  @include visually-hidden;
+@mixin visually-hidden {
+  clip: rect(0 0 0 0)#{$attributeAddon};
+  clip-path: inset(50%)#{$attributeAddon};
+  overflow: hidden#{$attributeAddon};
+  position: absolute#{$attributeAddon};
+  width: 1px#{$attributeAddon};
+  height: 1px#{$attributeAddon};
+  margin: -1px#{$attributeAddon};
+  border: 0#{$attributeAddon};
+  padding: 0#{$attributeAddon};
+  white-space: nowrap#{$attributeAddon};
 }
