@@ -1,8 +1,9 @@
 {
-  "name": "und-css",
+  "name": "@lnolte/und-css",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
+  "repository": "git://github.com/lnolte/und-css.git",
   "scripts": {
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
