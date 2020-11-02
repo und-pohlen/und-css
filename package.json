@@ -15,6 +15,9 @@
     "start:eleventy": "eleventy --quiet --watch",
     "deploy": "yarn run build && gh-pages -d dist"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "minireset.css": "^0.0.6",
     "rfs": "^9.0.3"
