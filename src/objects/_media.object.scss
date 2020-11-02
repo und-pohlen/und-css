@@ -1,4 +1,4 @@
-.o-media {
+.#{$objects--prefix}media {
   --o-media--spacing: var(--layout-spacing--default);
   --o-media--content-width: 80ch;
   --o-media--sidebar-width: auto;
@@ -28,7 +28,7 @@
   }
 
   @each $width-name, $width-value in $layout--widths {
-    &[data-sidebar-width='#{$width-name}'] {
+    &[data-media-width='#{$width-name}'] {
       --o-media--sidebar-width: #{$width-value};
     }
   }

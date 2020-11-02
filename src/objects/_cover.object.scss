@@ -1,4 +1,4 @@
-.o-cover {
+.#{$objects--prefix}cover {
   --o-cover--height: 100vh;
   --o-cover--spacing: var(--layout-spacing--default);
   box-sizing: border-box;
@@ -13,11 +13,11 @@
     margin-bottom: var(--o-cover--spacing);
   }
 
-  & > :first-child:not(.o-cover__main) {
+  & > :first-child:not(.#{$objects--prefix}cover__main) {
     margin-top: 0;
   }
 
-  & > :last-child:not(.o-cover__main) {
+  & > :last-child:not(.#{$objects--prefix}cover__main) {
     margin-bottom: 0;
   }
 
@@ -28,7 +28,7 @@
   }
 }
 
-.o-cover__main {
+.#{$objects--prefix}cover__main {
   margin-top: auto;
   margin-bottom: auto;
 }

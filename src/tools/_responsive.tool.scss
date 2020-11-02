@@ -24,7 +24,7 @@ $responsive--breakpoints: (
     $max: map-get($responsive--breakpoints, $max);
   }
 
-  @media only screen and (min-width: $min) and (max-width: $max - 1) {
+  @media only screen and (min-width: #{$min}) and (max-width: #{$max}) {
     @content;
   }
 }

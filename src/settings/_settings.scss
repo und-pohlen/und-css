@@ -1,56 +1,87 @@
+// NAMESPACING
+$objects--prefix: 'o-' !default;
+$utilities--prefix: 'u-' !default;
+
 // COLORS
 $colors--default-background: #ffffff !default;
 $colors--default-text: #000000 !default;
 
 $colors--named-colors: (
   accent: #0000ff,
+  muted: #f1f1f1,
+  black: #000000,
+  white: #ffffff,
 ) !default;
 
 // RESPONSIVE
-$responsive--biggest-screen: 72em !default;
+$responsive--biggest-screen: 1400px !default;
 
 $responsive--breakpoints: (
-  "sm": "36em",
-  "md": "48em",
-  "lg": $responsive--biggest-screen
+  sm: 512px,
+  md: 920px,
+  lg: $responsive--biggest-screen
 ) !default;
 
 // SPACING AND LAYOUT
 $layout-spacing--default: 1rem !default;
+$layout-spacing--ratio: 1.5 !default;
 
 $layout-spacing--variants: (
   flush: 0,
-  tiny: $layout-spacing--default * 0.25,
-  small: $layout-spacing--default * 0.5,
-  large: $layout-spacing--default * 2,
-  huge: $layout-spacing--default * 4,
+  xxxxs: $layout-spacing--default / pow($layout-spacing--ratio, 5),
+  xxxs: $layout-spacing--default / pow($layout-spacing--ratio, 4),
+  xxs: $layout-spacing--default / pow($layout-spacing--ratio, 3),
+  xs: $layout-spacing--default / pow($layout-spacing--ratio, 2),
+  sm: $layout-spacing--default / $layout-spacing--ratio,
+  md: $layout-spacing--default,
+  lg: $layout-spacing--default * $layout-spacing--ratio,
+  xl: $layout-spacing--default * pow($layout-spacing--ratio, 2),
+  xxl: $layout-spacing--default * pow($layout-spacing--ratio, 3),
+  xxxl: $layout-spacing--default * pow($layout-spacing--ratio, 4),
+  xxxxl: $layout-spacing--default * pow($layout-spacing--ratio, 5),
 ) !default;
 
 $layout--spacing-shorthands: (
   null: null,
-  t: "-top",
-  r: "-right",
-  b: "-bottom",
-  l: "-left",
-  x: "-right" "-left",
-  y: "-top" "-bottom",
+  t: '-top',
+  r: '-right',
+  b: '-bottom',
+  l: '-left',
+  x: '-right' '-left',
+  y: '-top' '-bottom',
 ) !default;
 
 $layout--widths-max-width: 1400px !default;
 
 $layout--widths: (
-  "1\\/2": '50%',
+  '1\\/12': percentage(1 / 12),
+  '2\\/12': percentage(2 / 12),
+  '3\\/12': percentage(3 / 12),
+  '4\\/12': percentage(4 / 12),
+  '5\\/12': percentage(5 / 12),
+  '6\\/12': percentage(6 / 12),
+  '7\\/12': percentage(7 / 12),
+  '8\\/12': percentage(8 / 12),
+  '9\\/12': percentage(9 / 12),
+  '10\\/12': percentage(10 / 12),
+  '11\\/12': percentage(11 / 12),
+  '12\\/12': percentage(12 / 12),
 ) !default;
 
-
 // TYPOGRAHPY
+$typography--base-size: 1rem !default;
+
+$typography--ratio: 1.2 !default;
+
 $typography--sizes: (
-  'sm': 0.8rem,
-  'base': 1rem,
-  'md': 1.25rem,
-  'lg': 1.6rem,
-  'xl': 2rem,
-  'xxl': 3rem,
+  xs: $typography--base-size / $typography--ratio / $typography--ratio,
+  sm: $typography--base-size / $typography--ratio,
+  md: $typography--base-size,
+  lg: $typography--base-size * pow($typography--ratio, 2),
+  xl: $typography--base-size * pow($typography--ratio, 3),
+  xxl: $typography--base-size * pow($typography--ratio, 4),
+  xxxl: $typography--base-size * pow($typography--ratio, 5),
+  xxxxl: $typography--base-size * pow($typography--ratio, 6),
 ) !default;
 
 $typography--leading: (
@@ -80,53 +111,69 @@ $typography--weights: (
 ) !default;
 
 $typography--measures: (
-  narrow: 10ch,
-  wide: 60ch,
+  narrow: 30ch,
+  medium: 60ch,
+  wide: 90ch,
 ) !default;
 
 // UTILITY GENERATOR
 $utilities--generate: true !default;
 
+$utilities--important: true !default;
+
 $utilities--config: (
-  'bg': (
+  'bg-': (
+    'name': 'Background',
     'items': $colors--named-colors,
     'variable': '--color--',
     'property': 'background',
   ),
-  'color': (
+  'c-': (
+    'name': 'Color',
     'items': $colors--named-colors,
     'variable': '--color--',
     'property': 'color',
   ),
-  'box': (
+  'd': (
+    'name': 'Display',
     'items': (
-      'flex': 'flex',
-      'block': 'block',
-      'hide': 'none',
-      'show': 'inherit'
+      'f': 'flex',
+      'b': 'block',
+      'n': 'none',
+      'i': 'inline',
+      'ib': 'inline-block',
     ),
     'responsive': true,
     'property': 'display'
   ),
-  'opacity': (
+  'o': (
+    'name': 'Opacity',
     'items': (
       '0': 0,
+      '25': 0.25,
       '50': 0.5,
+      '75': 0.75,
       '100': 1,
     ),
     'property': 'opacity',
   ),
-  'flex': (
+  'ai-': (
+    'name': 'Flex Align',
     'items': (
       'center': 'center',
       'top': 'flex-start',
       'bottom': 'flex-end',
+      'baseline': 'baseline',
+      'stretch': 'stretch',
     ),
     'responsive': true,
     'property': 'align-items',
   ),
-  'justify': (
+  'j-': (
+    'name': 'Flex Justify',
     'items': (
+      'left': 'flex-start',
+      'right': 'flex-end',
       'center': 'center',
       'around': 'space-around',
       'between': 'space-between',
@@ -134,7 +181,8 @@ $utilities--config: (
     'responsive': true,
     'property': 'justify-content',
   ),
-  'align': (
+  'ta-': (
+    'name': 'Text Align',
     'items': (
       'left': 'left',
       'center': 'center',
@@ -142,7 +190,8 @@ $utilities--config: (
     ),
     'property': 'text-align',
   ),
-  'transform': (
+  'tt-': (
+    'name': 'Text Transform',
     'items': (
       'uppercase': 'uppercase',
       'lowercase': 'lowercase',
@@ -150,127 +199,172 @@ $utilities--config: (
     ),
     'property': 'text-transform',
   ),
-  'm': (
+  'td-': (
+    'name': 'Text Decoration',
+    'items': (
+      'underline': 'underline',
+      'none': 'none',
+    ),
+    'property': 'text-decoration',
+  ),
+  'ws-': (
+    'name': 'Text Wrapping',
+    'items': (
+      'wrap': 'normal',
+      'nowrap': 'nowrap',
+    ),
+    'property': 'white-space',
+  ),
+  'm-': (
+    'name': 'Margin all sides',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin'
   ),
-  'mx': (
+  'mx-': (
+    'name': 'Margin horizontal',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-right' 'margin-left',
   ),
-  'my': (
+  'my-': (
+    'name': 'Margin vertical',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-top' 'margin-bottom',
   ),
-  'mt': (
+  'mt-': (
+    'name': 'Margin top',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-top',
   ),
-  'mr': (
+  'mr-': (
+    'name': 'Margin right',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-right',
   ),
-  'mb': (
+  'mb-': (
+    'name': 'Margin bottom',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-bottom',
   ),
-  'ml': (
+  'ml-': (
+    'name': 'Margin left',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'margin-left',
   ),
-  'p': (
+  'p-': (
+    'name': 'Padding all sides',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding'
   ),
-  'px': (
+  'px-': (
+    'name': 'Padding horizontal',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-right' 'padding-left',
   ),
-  'py': (
+  'py-': (
+    'name': 'Padding vertical',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-top' 'padding-bottom',
   ),
-  'pt': (
+  'pt-': (
+    'name': 'Padding top',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-top',
   ),
-  'pr': (
+  'pr-': (
+    'name': 'Padding right',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-right',
   ),
-  'pb': (
+  'pb-': (
+    'name': 'Padding bottom',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-bottom',
   ),
-  'pl': (
+  'pl-': (
+    'name': 'Padding left',
     'items': $layout-spacing--variants,
     'responsive': true,
     'variable': '--layout-spacing--',
     'property': 'padding-left',
   ),
-  'w': (
+  'w-': (
+    'name': 'Grid widths',
     'items': $layout--widths,
     'responsive': true,
     'property': 'width',
   ),
-  'measure': (
+  'push-': (
+    'name': 'Grid offsets',
+    'items': $layout--widths,
+    'responsive': true,
+    'property': 'margin-left',
+  ),
+  'measure-': (
+    'name': 'Measure',
     'items': $typography--measures,
     'variable': '--typography-measure--',
     'property': 'max-width',
   ),
-  'text': (
+  'text-': (
+    'name': 'Text Size',
     'items': $typography--sizes,
     'variable': '--typography-size--',
     'responsive': true,
     'property': 'font-size',
   ),
-  'leading': (
+  'lh-': (
+    'name': 'Text line-height',
     'items': $typography--leading,
     'variable': '--typography-leading--',
     'property': 'line-height',
   ),
-  'tracking': (
+  'ls-': (
+    'name': 'Text letter spacing',
     'items': $typography--tracking,
     'variable': '--typography-tracking--',
     'property': 'letter-spacing',
   ),
-  'font': (
+  'ff-': (
+    'name': 'Text font family',
     'items': $typography--fonts,
     'variable': '--typography-font--',
     'property': 'font-family',
   ),
-  'weight': (
+  'fw-': (
+    'name': 'Text font weight',
     'items': $typography--weights,
     'property': 'font-weight',
   ),
   'order': (
+    'name': 'Flex Order',
     'items': (
+      'n1': -1,
       '1': 1,
       '2': 2,
       '3': 3,
@@ -280,31 +374,8 @@ $utilities--config: (
     'responsive': true,
     'property': 'order',
   ),
-  'col-span': (
-    'items': (
-      '1': 'span 1 / span 1',
-      '2': 'span 2 / span 2',
-      '3': 'span 3 / span 3',
-      '4': 'span 4 / span 4',
-      '5': 'span 5 / span 5',
-      '6': 'span 6 / span 6',
-    ),
-    'responsive': true,
-    'property': 'grid-column',
-  ),
-  'col-start': (
-    'items': (
-      '1': 1,
-      '2': 2,
-      '3': 3,
-      '4': 4,
-      '5': 5,
-      '6': 6,
-    ),
-    'responsive': true,
-    'property': 'grid-column-start',
-  ),
   'z': (
+    'name': 'Z Index',
     'items': (
       '0':    0,
       '10':   10,

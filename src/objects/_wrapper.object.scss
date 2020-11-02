@@ -1,4 +1,4 @@
-.o-wrapper {
+.#{$objects--prefix}wrapper {
   --o-wrapper--width: var(--layout-widths--max-width);
   --o-wrapper--spacing: var(--layout-spacing--default);
   width: 100%;
@@ -31,7 +31,7 @@
   }
 }
 
-.o-wrapper--intrinsic {
+.#{$objects--prefix}wrapper--intrinsic {
   display:flex;
   flex-direction: column;
   align-items: center;

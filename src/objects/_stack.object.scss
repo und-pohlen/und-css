@@ -1,4 +1,4 @@
-.o-stack {
+.#{$objects--prefix}stack {
   --o-stack--spacing: var(--layout-spacing--default);
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
     }
   }
 
-  &[data-recursive='true'] {
+  &[data-recursive] {
     & * {
       margin-top: 0;
       margin-bottom: 0;

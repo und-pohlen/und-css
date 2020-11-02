@@ -1,4 +1,4 @@
-.o-cluster {
+.#{$objects--prefix}cluster {
   --o-cluster--spacing: var(--layout-spacing--default);
   overflow: hidden;
 
@@ -21,19 +21,19 @@
   }
 
 
-  &[data-justify='center'] {
+  &[data-justify='center'] > * {
     justify-content: center;
   }
 
-  &[data-justify='right'] {
+  &[data-justify='right'] > * {
     justify-content: flex-end;
   }
 
-  &[data-align='middle'] {
+  &[data-align='middle'] > * {
     align-items: center;
   }
 
-  &[data-align='bottom'] {
+  &[data-align='bottom'] > * {
     align-items: flex-end;
   }
 }
