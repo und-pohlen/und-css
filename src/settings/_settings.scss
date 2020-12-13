@@ -14,12 +14,14 @@ $colors--named-colors: (
 ) !default;
 
 // RESPONSIVE
+$responsive--small-screen: 400px !default;
+$responsive--medium-screen: 920px !default;
 $responsive--biggest-screen: 1400px !default;
 
 $responsive--breakpoints: (
-  sm: 512px,
-  md: 920px,
-  lg: $responsive--biggest-screen
+  sm: '(min-width: #{$responsive--small-screen}) and (max-width: #{$responsive--medium-screen - 1px})',
+  md: '(min-width: #{$responsive--medium-screen}) and (max-width: #{$responsive--biggest-screen - 1px})',
+  lg: '(min-width: #{$responsive--biggest-screen})',
 ) !default;
 
 // SPACING AND LAYOUT
