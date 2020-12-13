@@ -35,12 +35,12 @@ attribute.
 
 {% codeSample %}
 <div class="o-grid" data-spacing="large">
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>
   </div>
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>
@@ -65,19 +65,19 @@ grid, you can use the responsive modifiers of utility classes.
 
 {% codeSample %}
 <div class="o-grid">
-  <div class="lg:u-w-1/2">
+  <div class="lg:u-w-6/12">
     <div class="o-box u-bg-white">
       I am 50% wide on big screens
     </div>
   </div>
-  <div class="lg:u-w-1/4">
+  <div class="lg:u-w-3/12">
     <div class="o-box u-bg-white">
       I am 25% wide on big screens
     </div>
   </div>
-  <div class="lg:u-w-1/4">
+  <div class="md:u-w-6/12 lg:u-w-3/12">
     <div class="o-box u-bg-white">
-      I am 25% wide on big screens
+      I am 50% wide on medium screens and 25% wide on big screens
     </div>
   </div>
 </div>

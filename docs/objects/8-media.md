@@ -19,8 +19,8 @@ elements.
 {% codeSample %}
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
     <div><!-- First child of wrapper will be the media -->
@@ -47,8 +47,8 @@ provided in your `_settings.scss`. Modifiers are passed as the `data-spacing`
 {% codeSample %}
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
   data-spacing="large"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
@@ -72,8 +72,8 @@ the media object (making the second element the media container) you can add
 {% codeSample %}
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
   data-direction="reversed"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
@@ -94,7 +94,7 @@ To handle the intrinsic sizing of the media object you can provide values for
 `data-content-width` and `data-media-width`. You can pass named widths from your
 `_settings.scss`. It is best practice to use an absolute value for one of the
 values and provide a relative value for the other. See the above examples, where
-the media’s width was set to `1/4` while the content’s width used a measure
+the media’s width was set to `3/12` while the content’s width used a measure
 value to set its width.
 
 ## Use Cases
