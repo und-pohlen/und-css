@@ -355,12 +355,12 @@ provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>
 attribute.</p>
 <div class="c-page__preview">
 <div class="o-grid" data-spacing="large">
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>
   </div>
-  <div class="u-w-1/2">
+  <div class="u-w-6/12">
     <div class="o-box u-bg-white">
         I am in a box
     </div>
@@ -368,12 +368,12 @@ attribute.</p>
 </div>
 </div><pre class="c-page__code"><code class="language-html">
 &lt;div class=&quot;o-grid&quot; data-spacing=&quot;large&quot;&gt;
-  &lt;div class=&quot;u-w-1/2&quot;&gt;
+  &lt;div class=&quot;u-w-6/12&quot;&gt;
     &lt;div class=&quot;o-box u-bg-white&quot;&gt;
         I am in a box
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;u-w-1/2&quot;&gt;
+  &lt;div class=&quot;u-w-6/12&quot;&gt;
     &lt;div class=&quot;o-box u-bg-white&quot;&gt;
         I am in a box
     &lt;/div&gt;
@@ -394,37 +394,37 @@ utility classes to set the width of single grid items. To achieve a responsive
 grid, you can use the responsive modifiers of utility classes.</p>
 <div class="c-page__preview">
 <div class="o-grid">
-  <div class="lg:u-w-1/2">
+  <div class="lg:u-w-6/12">
     <div class="o-box u-bg-white">
       I am 50% wide on big screens
     </div>
   </div>
-  <div class="lg:u-w-1/4">
+  <div class="lg:u-w-3/12">
     <div class="o-box u-bg-white">
       I am 25% wide on big screens
     </div>
   </div>
-  <div class="lg:u-w-1/4">
+  <div class="md:u-w-6/12 lg:u-w-3/12">
     <div class="o-box u-bg-white">
-      I am 25% wide on big screens
+      I am 50% wide on medium screens and 25% wide on big screens
     </div>
   </div>
 </div>
 </div><pre class="c-page__code"><code class="language-html">
 &lt;div class=&quot;o-grid&quot;&gt;
-  &lt;div class=&quot;lg:u-w-1/2&quot;&gt;
+  &lt;div class=&quot;lg:u-w-6/12&quot;&gt;
     &lt;div class=&quot;o-box u-bg-white&quot;&gt;
       I am 50% wide on big screens
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;lg:u-w-1/4&quot;&gt;
+  &lt;div class=&quot;lg:u-w-3/12&quot;&gt;
     &lt;div class=&quot;o-box u-bg-white&quot;&gt;
       I am 25% wide on big screens
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;lg:u-w-1/4&quot;&gt;
+  &lt;div class=&quot;md:u-w-6/12 lg:u-w-3/12&quot;&gt;
     &lt;div class=&quot;o-box u-bg-white&quot;&gt;
-      I am 25% wide on big screens
+      I am 50% wide on medium screens and 25% wide on big screens
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -741,8 +741,8 @@ elements.</p>
 <div class="c-page__preview">
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
     <div><!-- First child of wrapper will be the media -->
@@ -758,8 +758,8 @@ elements.</p>
 </div><pre class="c-page__code"><code class="language-html">
 &lt;div
   class=&quot;o-media&quot;
-  data-media-width=&quot;1/4&quot;
-  data-content-width=&quot;wide&quot;
+  data-media-width=&quot;3/12&quot;
+  data-content-width=&quot;medium&quot;
 &gt;
   &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
     &lt;div&gt;&lt;!-- First child of wrapper will be the media --&gt;
@@ -783,8 +783,8 @@ provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>
 <div class="c-page__preview">
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
   data-spacing="large"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
@@ -801,8 +801,8 @@ provided in your <code>_settings.scss</code>. Modifiers are passed as the <code>
 </div><pre class="c-page__code"><code class="language-html">
 &lt;div
   class=&quot;o-media&quot;
-  data-media-width=&quot;1/4&quot;
-  data-content-width=&quot;wide&quot;
+  data-media-width=&quot;3/12&quot;
+  data-content-width=&quot;medium&quot;
   data-spacing=&quot;large&quot;
 &gt;
   &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
@@ -824,8 +824,8 @@ the media object (making the second element the media container) you can add
 <div class="c-page__preview">
 <div
   class="o-media"
-  data-media-width="1/4"
-  data-content-width="wide"
+  data-media-width="3/12"
+  data-content-width="medium"
   data-direction="reversed"
 >
   <figure> <!-- Required Block Level Wrapper Element -->
@@ -842,8 +842,8 @@ the media object (making the second element the media container) you can add
 </div><pre class="c-page__code"><code class="language-html">
 &lt;div
   class=&quot;o-media&quot;
-  data-media-width=&quot;1/4&quot;
-  data-content-width=&quot;wide&quot;
+  data-media-width=&quot;3/12&quot;
+  data-content-width=&quot;medium&quot;
   data-direction=&quot;reversed&quot;
 &gt;
   &lt;figure&gt; &lt;!-- Required Block Level Wrapper Element --&gt;
@@ -863,7 +863,7 @@ the media object (making the second element the media container) you can add
 <code>data-content-width</code> and <code>data-media-width</code>. You can pass named widths from your
 <code>_settings.scss</code>. It is best practice to use an absolute value for one of the
 values and provide a relative value for the other. See the above examples, where
-the media’s width was set to <code>1/4</code> while the content’s width used a measure
+the media’s width was set to <code>3/12</code> while the content’s width used a measure
 value to set its width.</p>
 <h2>Use Cases</h2>
 <p>This component can be used everytime you need to solve the common layout problem
