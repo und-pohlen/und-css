@@ -10,7 +10,7 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
-## unreleased
+## 0.2.0
 * [breaking] Responsive Breakpoints are now designed to be mutually exclusive to
   avoid collisions when using responsive utility classes. This means, that
   breakpoints are now specified using the auxiliary setting variables
