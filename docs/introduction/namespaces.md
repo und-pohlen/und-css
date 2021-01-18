@@ -1,6 +1,6 @@
 ---
 pageTitle: Namespacing
-descriptiong: By default und-css is set up to namespace the provided CSS class names to allow for more transparent UI code.
+description: By default und-css is set up to namespace the provided CSS class names to allow for more transparent UI code.
 ---
 
 ## Why use namespaces

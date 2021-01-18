@@ -9,7 +9,7 @@ $responsive--breakpoints: (
     @if map-has-key($responsive--breakpoints, $bp) {
       $bp: map-get($responsive--breakpoints, $bp);
     }
-    @media only screen and (min-width: #{$bp}) {
+    @media screen and #{$bp} {
       @content;
     }
   }
