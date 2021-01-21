@@ -1,0 +1,16 @@
+.#{$objects--prefix}switcher {
+  --o-switcher--spacing: var(--layout-spacing--default);
+  --o-switcher--threshold: 30rem;
+
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--o-switcher--spacing) / 2 * -1);
+  }
+
+  & > * > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--o-switcher--threshold) - (100% - var(--o-switcher--spacing))) * 999);
+    margin: calc(var(--o-switcher--spacing) / 2);
+  }
+}

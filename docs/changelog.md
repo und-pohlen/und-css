@@ -10,6 +10,9 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
+## unreleased
+* [new] Switcher Object
+
 ## 0.2.0
 * [breaking] Responsive Breakpoints are now designed to be mutually exclusive to
   avoid collisions when using responsive utility classes. This means, that
