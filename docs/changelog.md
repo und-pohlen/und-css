@@ -13,6 +13,10 @@ pageTitle: Changelog
 ## unreleased
 * [new] Switcher Object
 
+## 0.2.1
+* [fix] Renamed `styles.scss` to `_styles.scss` to prevent `src/style.css` from
+  being generated in development mode.
+
 ## 0.2.0
 * [breaking] Responsive Breakpoints are now designed to be mutually exclusive to
   avoid collisions when using responsive utility classes. This means, that
