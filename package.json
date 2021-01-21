@@ -1,6 +1,6 @@
 {
   "name": "@lnolte/und-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "license": "MIT",
   "repository": "git://github.com/lnolte/und-css.git",
@@ -12,7 +12,7 @@
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "node-sass -w docs/assets -o dist/css/",
+    "start:styles": "node-sass docs/assets -wo dist/css/",
     "start:eleventy": "eleventy --quiet --watch",
     "deploy": "yarn run build && gh-pages -d dist"
   },

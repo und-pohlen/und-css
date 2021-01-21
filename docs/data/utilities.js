@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs')
 
 module.exports = async function() {
-  const filePath = path.resolve(__dirname, '../../src/styles.scss')
+  const filePath = path.resolve(__dirname, '../../src/_styles.scss')
   const scssStyles = fs.readFileSync(filePath, 'utf8')
   const { css } = sass.renderSync({
     data: scssStyles,
