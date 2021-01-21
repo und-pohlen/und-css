@@ -1,0 +1,37 @@
+$o-switcher--limits: 2, 3, 4, 5, 6, 7, 8, 9, 10 !default;
+
+.#{$objects--prefix}switcher {
+  --o-switcher--spacing: var(--layout-spacing--default);
+  --o-switcher--threshold: 30rem;
+
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--o-switcher--spacing) / 2 * -1);
+  }
+
+  & > * > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--o-switcher--threshold) - (100% - var(--o-switcher--spacing))) * 999);
+    margin: calc(var(--o-switcher--spacing) / 2);
+  }
+
+  @each $spacing-name, $spacing-value in $layout-spacing--variants {
+    &[data-spacing='#{$spacing-name}'] {
+      --o-switcher--spacing: var(--layout-spacing--#{$spacing-name});
+    }
+  }
+
+  @each $measure-name, $measure-value in $typography--measures {
+    &[data-measure='#{$measure-name}'] {
+      --o-switcher--threshold: var(--typography-measure--#{$measure-name});
+    }
+  }
+
+  @each $limit in $o-switcher--limits {
+    &[data-limit='#{$limit}'] > * > :nth-last-child(n + #{$limit + 1}),
+    &[data-limit='#{$limit}'] > * > :nth-last-child(n + #{$limit + 1}) ~ * {
+      flex-basis: 100%;
+    }
+  }
+}

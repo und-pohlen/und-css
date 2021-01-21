@@ -10,6 +10,9 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
+## unreleased
+* [new] Switcher Object
+
 ## 0.2.1
 * [fix] Renamed `styles.scss` to `_styles.scss` to prevent `src/style.css` from
   being generated in development mode.
