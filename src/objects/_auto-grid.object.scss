@@ -6,6 +6,10 @@
   grid-gap: var(--o-auto-grid--spacing);
   grid-template-columns: repeat(auto-fill, minmax(var(--o-auto-grid--min-width), 1fr));
 
+  &[data-stretch] {
+    grid-template-columns: repeat(auto-fit, minmax(var(--o-auto-grid--min-width), 1fr));
+  }
+
   @each $spacing-name, $spacing-value in $layout-spacing--variants {
     &[data-spacing='#{$spacing-name}'] {
       --o-auto-grid--spacing: var(--layout-spacing--#{$spacing-name});
@@ -18,3 +22,4 @@
     }
   }
 }
+
