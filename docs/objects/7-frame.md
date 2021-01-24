@@ -1,6 +1,10 @@
 ---
 pageTitle: Frame Object
 sinceVersion: 0.1.0
+cssFeatures:
+  - css-sel2
+  - flexbox
+  - object-fit
 ---
 
 The frame object can be used to wrap images or videos to maintain or force their

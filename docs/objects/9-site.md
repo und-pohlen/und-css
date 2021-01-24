@@ -1,6 +1,8 @@
 ---
 pageTitle: Site Object
 sinceVersion: 0.1.0
+cssFeatures:
+  - viewport-units
 ---
 
 The site object is a simple helper object that helps you to to ensure an element

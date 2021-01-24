@@ -2,7 +2,8 @@
 pageTitle: Auto Grid
 sinceVersion: 0.1.0
 cssFeatures:
-  - grid
+  - css-grid
+  - css-math-functions
 ---
 
 The auto grid provides a simple way of creating a responsive grid without

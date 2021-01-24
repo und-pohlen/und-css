@@ -12,6 +12,7 @@ pageTitle: Changelog
 
 ## Unreleased
 * [update] add `data-stretch` modifier to `auto-grid`
+* [update] add information cross browser compatibility to docs
 
 ## 0.2.1
 * [fix] Renamed `styles.scss` to `_styles.scss` to prevent `src/style.css` from

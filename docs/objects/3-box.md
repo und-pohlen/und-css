@@ -1,6 +1,8 @@
 ---
 pageTitle: Box Object
 sinceVersion: 0.1.0
+cssFeatures:
+  - css-sel2
 ---
 
 The box object is a simple abstraction to box things of. Providing adjustable

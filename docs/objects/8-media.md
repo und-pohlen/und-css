@@ -4,6 +4,8 @@ sinceVersion: 0.1.0
 status: experimental
 cssFeatures:
   - flexbox
+  - css-sel2
+  - calc
 ---
 
 The media object is a simple abstraction over the – well – media objects. It

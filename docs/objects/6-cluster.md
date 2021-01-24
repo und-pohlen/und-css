@@ -3,6 +3,7 @@ pageTitle: Cluster Object
 sinceVersion: 0.1.0
 cssFeatures:
   - flexbox
+  - css-sel2
 ---
 
 The cluster provides a simple responsive way of putting items next to each other

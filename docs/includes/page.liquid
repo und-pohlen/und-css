@@ -26,6 +26,11 @@
         class="c-page__section"
       >
         <h1 class="u-text-xxl u-mb-lg">{{ item.data.pageTitle }}</h1>
+        {% if item.data.cssFeatures %}
+          <aside class="u-mb-xxl o-box u-bg-muted">
+            {% caniuse item.data.cssFeatures %}
+          </aside>
+        {% endif %}
         <main
           class="c-page__text o-stack"
           data-spacing="lg"

@@ -1,6 +1,8 @@
 ---
 pageTitle: Stack Object
 sinceVersion: 0.1.0
+cssFeatures:
+  - flexbox
 ---
 
 The stack object provides a simple way of creating vertical rhythm. The stack
