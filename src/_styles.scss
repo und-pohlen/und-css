@@ -21,9 +21,7 @@
 
 // BASE STYLES
 @import "globals/base.globals";
-@if $globals--print-reset {
-  @import "globals/print.globals";
-}
+@import "globals/print.globals";
 /* purgecss end ignore */
 
 // OBJECTS
