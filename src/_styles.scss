@@ -21,7 +21,10 @@
 
 // BASE STYLES
 @import "globals/base.globals";
-@import "globals/print.globals";
+@if $globals--print-reset {
+  @import "globals/print.globals";
+}
+/* purgecss end ignore */
 
 // OBJECTS
 @import "objects/auto-grid.object";
@@ -36,7 +39,6 @@
 @import "objects/stack.object";
 @import "objects/wrapper.object";
 
-/* purgecss end ignore */
 // UTILITIES
 @import "utilities/a11y.utility";
 

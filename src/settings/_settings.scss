@@ -118,9 +118,11 @@ $typography--measures: (
   wide: 90ch,
 ) !default;
 
+// INCLUDE CRUDE RESET
+$globals--print-reset: true !default;
+
 // UTILITY GENERATOR
 $utilities--generate: true !default;
-
 $utilities--important: true !default;
 
 $utilities--config: (
