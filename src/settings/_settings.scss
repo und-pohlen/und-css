@@ -7,10 +7,10 @@ $colors--default-background: #ffffff !default;
 $colors--default-text: #000000 !default;
 
 $colors--named-colors: (
-  accent: #0000ff,
-  muted: #f1f1f1,
-  black: #000000,
-  white: #ffffff,
+  'accent': #0000ff,
+  'muted': #f1f1f1,
+  'black': #000000,
+  'white': #ffffff,
 ) !default;
 
 // RESPONSIVE
@@ -392,3 +392,6 @@ $utilities--config: (
     'property': 'z-index'
   ),
 ) !default;
+
+// DOC COMMENTS
+$generate-doc-comments: false !default;

@@ -31,13 +31,15 @@
     $responsive:    map-get($utility-class-data, 'responsive');
     $variable:      map-get($utility-class-data, 'variable');
 
-    /*====================================
-     @name: #{$name}
-     @classname: #{utility-class-name($utility-class, null)}
-     @properties: #{$props}
-     @values: #{$items}
-     @responsive: #{$responsive}
-     */
+    @if $generate-doc-comments (
+      /*====================================
+       @name: #{$name}
+       @classname: #{utility-class-name($utility-class, null)}
+       @properties: #{$props}
+       @values: #{$items}
+       @responsive: #{$responsive}
+       */
+    }
     @each $utility-item-name, $utility-item-value in $items {
       #{utility-class-name($utility-class, $utility-item-name)} {
         @include utility-styles($props, $utility-item-name, $utility-item-value, $variable);
