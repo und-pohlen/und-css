@@ -31,7 +31,7 @@
     $responsive:    map-get($utility-class-data, 'responsive');
     $variable:      map-get($utility-class-data, 'variable');
 
-    @if $generate-doc-comments (
+    @if $generate-doc-comments {
       /*====================================
        @name: #{$name}
        @classname: #{utility-class-name($utility-class, null)}
