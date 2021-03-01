@@ -10,7 +10,7 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
-## Unreleased
+## 0.2.2
 * [update] add `data-stretch` modifier to `auto-grid`
 * [update] add information cross browser compatibility to docs
 * [update] add `$globals--print-reset` variable to settings, so users can decide if they want to include the crude print reset in their build.
