@@ -23,9 +23,22 @@ body {
 }
 
 img {
+  max-width: 100%;
+
   // No more weird whitespace below images
   display: block;
 
   // Distinguish Alt-Texts from surrounding text if image cannot be loaded
   font-style: italic;
+
+  // See: https://www.zachleat.com/web/fluid-images/
+  &[width] {
+    // Defer to max-width
+    width: auto;
+  }
+
+  &[width][height] {
+    // Preserve aspect ratio
+    height: auto;
+  }
 }

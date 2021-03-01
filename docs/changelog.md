@@ -14,6 +14,7 @@ pageTitle: Changelog
 * [update] add `data-stretch` modifier to `auto-grid`
 * [update] add information cross browser compatibility to docs
 * [update] add `$globals--print-reset` variable to settings, so users can decide if they want to include the crude print reset in their build.
+* [update] update sizing of responsive images
 
 ## 0.2.1
 * [fix] Renamed `styles.scss` to `_styles.scss` to prevent `src/style.css` from
