@@ -30,15 +30,4 @@ img {
 
   // Distinguish Alt-Texts from surrounding text if image cannot be loaded
   font-style: italic;
-
-  // See: https://www.zachleat.com/web/fluid-images/
-  &:not([class])[width] {
-    // Defer to max-width
-    width: auto;
-  }
-
-  &:not([class])[width][height] {
-    // Preserve aspect ratio
-    height: auto;
-  }
 }

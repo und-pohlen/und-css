@@ -11,7 +11,7 @@ pageTitle: Changelog
 * [fix] Bugfix
 
 ## Unreleased
-* [fix] Explicitly override image sizing in frame object.
+* [update] Remove fluid image handling from base styles.
 
 ## 0.2.3
 * [fix] Remove dynamically generated comments from utility tool, as this is not
