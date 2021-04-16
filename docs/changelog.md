@@ -13,6 +13,7 @@ pageTitle: Changelog
 ## UNRELEASED
 * [fix] Remove dynamically generated comments from utility tool, as this is not
   compatible with Dart SASS.
+* [fix] Add License Text to Repo.
 
 ## 0.2.2
 * [update] add `data-stretch` modifier to `auto-grid`
