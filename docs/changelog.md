@@ -10,7 +10,7 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
-## UNRELEASED
+## 0.2.3
 * [fix] Remove dynamically generated comments from utility tool, as this is not
   compatible with Dart SASS.
 * [fix] Add License Text to Repo.
