@@ -10,6 +10,10 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
+## UNRELEASED
+* [fix] Remove dynamically generated comments from utility tool, as this is not
+  compatible with Dart SASS.
+
 ## 0.2.2
 * [update] add `data-stretch` modifier to `auto-grid`
 * [update] add information cross browser compatibility to docs
