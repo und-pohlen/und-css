@@ -35,7 +35,10 @@ $o-frame--ratios: (
     align-items: center;
   }
 
+  // Explicitly override default image behavior
   & > img,
+  & > img[width],
+  & > img[width][height],
   & > svg,
   & > video {
     width: 100%;

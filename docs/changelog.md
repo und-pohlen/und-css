@@ -10,6 +10,9 @@ pageTitle: Changelog
 * [breaking] breaking change
 * [fix] Bugfix
 
+## Unreleased
+* [fix] Explicitly override image sizing in frame object.
+
 ## 0.2.3
 * [fix] Remove dynamically generated comments from utility tool, as this is not
   compatible with Dart SASS.
