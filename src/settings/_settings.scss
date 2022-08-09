@@ -14,6 +14,7 @@ $colors--named-colors: (
 ) !default;
 
 // RESPONSIVE
+$responsive--smallest-screen: 320px !default;
 $responsive--small-screen: 400px !default;
 $responsive--medium-screen: 920px !default;
 $responsive--biggest-screen: 1400px !default;
@@ -24,66 +25,24 @@ $responsive--breakpoints: (
   lg: '(min-width: #{$responsive--biggest-screen})',
 ) !default;
 
-// SPACING AND LAYOUT
-$layout-spacing--default: 1rem !default;
-$layout-spacing--ratio: 1.5 !default;
-
-$layout-spacing--variants: (
-  flush: 0,
-  xxxxs: $layout-spacing--default / pow($layout-spacing--ratio, 5),
-  xxxs: $layout-spacing--default / pow($layout-spacing--ratio, 4),
-  xxs: $layout-spacing--default / pow($layout-spacing--ratio, 3),
-  xs: $layout-spacing--default / pow($layout-spacing--ratio, 2),
-  sm: $layout-spacing--default / $layout-spacing--ratio,
-  md: $layout-spacing--default,
-  lg: $layout-spacing--default * $layout-spacing--ratio,
-  xl: $layout-spacing--default * pow($layout-spacing--ratio, 2),
-  xxl: $layout-spacing--default * pow($layout-spacing--ratio, 3),
-  xxxl: $layout-spacing--default * pow($layout-spacing--ratio, 4),
-  xxxxl: $layout-spacing--default * pow($layout-spacing--ratio, 5),
-) !default;
-
-$layout--spacing-shorthands: (
-  null: null,
-  t: '-top',
-  r: '-right',
-  b: '-bottom',
-  l: '-left',
-  x: '-right' '-left',
-  y: '-top' '-bottom',
-) !default;
-
-$layout--widths-max-width: 1400px !default;
-
-$layout--widths: (
-  '1\\/12': percentage(1 / 12),
-  '2\\/12': percentage(2 / 12),
-  '3\\/12': percentage(3 / 12),
-  '4\\/12': percentage(4 / 12),
-  '5\\/12': percentage(5 / 12),
-  '6\\/12': percentage(6 / 12),
-  '7\\/12': percentage(7 / 12),
-  '8\\/12': percentage(8 / 12),
-  '9\\/12': percentage(9 / 12),
-  '10\\/12': percentage(10 / 12),
-  '11\\/12': percentage(11 / 12),
-  '12\\/12': percentage(12 / 12),
-) !default;
 
 // TYPOGRAHPY
-$typography--base-size: 1rem !default;
+$typography--base-size-min: 1rem !default;
+$typography--base-size-max: 1.5rem !default;
 
-$typography--ratio: 1.2 !default;
+$typography--ratio-min: 1.2 !default;
+$typography--ratio-max: 1.3 !default;
 
 $typography--sizes: (
-  xs: $typography--base-size / $typography--ratio / $typography--ratio,
-  sm: $typography--base-size / $typography--ratio,
-  md: $typography--base-size,
-  lg: $typography--base-size * pow($typography--ratio, 2),
-  xl: $typography--base-size * pow($typography--ratio, 3),
-  xxl: $typography--base-size * pow($typography--ratio, 4),
-  xxxl: $typography--base-size * pow($typography--ratio, 5),
-  xxxxl: $typography--base-size * pow($typography--ratio, 6),
+  xs: fluid($typography--base-size-min / $typography--ratio-min /
+  $typography--ratio-min, $typography--base-size-max / $typography--ratio-max / $typography--ratio-max),
+  sm: fluid($typography--base-size-min / $typography--ratio-min, $typography--base-size-max / $typography--ratio-max),
+  md: fluid($typography--base-size-min, $typography--base-size-max),
+  lg: fluid($typography--base-size-min * pow($typography--ratio-min, 1), $typography--base-size-max * pow($typography--ratio-max, 1)),
+  xl: fluid($typography--base-size-min * pow($typography--ratio-min, 2), $typography--base-size-max * pow($typography--ratio-max, 2)),
+  xxl: fluid($typography--base-size-min * pow($typography--ratio-min, 3), $typography--base-size-max * pow($typography--ratio-max, 3)),
+  xxxl: fluid($typography--base-size-min * pow($typography--ratio-min, 4), $typography--base-size-max * pow($typography--ratio-max, 4)),
+  xxxxl: fluid($typography--base-size-min * pow($typography--ratio-min, 5), $typography--base-size-max * pow($typography--ratio-max, 5)),
 ) !default;
 
 $typography--leading: (
@@ -116,6 +75,54 @@ $typography--measures: (
   narrow: 30ch,
   medium: 60ch,
   wide: 90ch,
+) !default;
+
+// SPACING AND LAYOUT
+$layout-spacing--default-min: 1rem !default;
+$layout-spacing--default-max: 1.5rem !default;
+
+$layout-spacing--default: fluid($layout-spacing--default-min, $layout-spacing--default-max) !default;
+$layout-spacing--ratio: 1.5 !default;
+
+$layout-spacing--variants: (
+  flush: 0,
+  xxxxs: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, -5)),
+  xxxs: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, -4)),
+  xxs: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, -3)),
+  xs: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, -2)), sm: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, -1)),
+  md: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, 1),
+  lg: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, 1)),
+  xl: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, 2)),
+  xxl: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, 3)),
+  xxxl: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, 4)),
+  xxxxl: fluidScaleStep($layout-spacing--default-min, $layout-spacing--default-max, pow($layout-spacing--ratio, 5)),
+) !default;
+
+$layout--spacing-shorthands: (
+  null: null,
+  t: '-top',
+  r: '-right',
+  b: '-bottom',
+  l: '-left',
+  x: '-right' '-left',
+  y: '-top' '-bottom',
+) !default;
+
+$layout--widths-max-width: 1400px !default;
+
+$layout--widths: (
+  '1\\/12': percentage(1 / 12),
+  '2\\/12': percentage(2 / 12),
+  '3\\/12': percentage(3 / 12),
+  '4\\/12': percentage(4 / 12),
+  '5\\/12': percentage(5 / 12),
+  '6\\/12': percentage(6 / 12),
+  '7\\/12': percentage(7 / 12),
+  '8\\/12': percentage(8 / 12),
+  '9\\/12': percentage(9 / 12),
+  '10\\/12': percentage(10 / 12),
+  '11\\/12': percentage(11 / 12),
+  '12\\/12': percentage(12 / 12),
 ) !default;
 
 // INCLUDE CRUDE RESET

@@ -11,6 +11,14 @@ pageTitle: Changelog
 * [fix] Bugfix
 
 ## Unreleased
+* [breaking] Replace RFS with a custom implementation of truly fluid type based on the approach presented by utopia.fyi (using clamps)
+  * adds `fluid` function to generate a clamped value (`fluid(12px, 16px)`)
+  * replaces `$typography--base-size` with `$typography--base-size-min` and `$typography--base-size-max`
+  * adds `$typography--ratio-min` and `$typography--ratio-max` settings variables
+  * adds `$responsive--smallest-screen` settings variable
+* [breaking] Update spacings to use fluid values as well
+  * `$layout--spacing-default` is now defined as a clamped value using `fluid`
+  * adds `$layout--spacing-default-min` and `$layout--spacing-default-max` setting variables
 * [update] Remove fluid image handling from base styles.
 
 ## 0.2.3

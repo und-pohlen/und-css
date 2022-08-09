@@ -5,6 +5,10 @@
     @for $i from 1 through $exponent {
       $value: $value * $number;
     }
+  } @else {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
   }
 
   @return $value;
