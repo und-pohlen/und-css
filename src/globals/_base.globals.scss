@@ -11,10 +11,6 @@ html {
   font-size: 16px;
   text-size-adjust: 100%;
 
-  // Auto Scale Texts above the biggest breakpoint
-  @include respond-to(lg) {
-    font-size: calc(16px + 0.1vw);
-  }
 }
 
 body {

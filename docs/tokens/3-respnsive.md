@@ -5,13 +5,16 @@ pageTitle: Responsive Tokens
 To make your live with various breakpoints easier und-css allows you to keep
 track of your breakpoints. The settings offer you two variables to set.
 
-## Biggest Screen
-Typically this will be the width of your biggest breakpoint. Und-css needs this
-information to handle the fluid scaling of your text-sizes correctly. This value
-is directly passed to RFF (the library used for fluid text scaling). See the
-[RFS documentation](https://github.com/twbs/rfs) for more information.
+## Fluid Type and Spacing Scales
+und-css features fluid type and spacing values, where you set optimal size or
+spacing values for your smallest and your biggest viewport. und-css will
+generate a `clamp` statement for you and have your sizes scale smoothly in
+between min and max viewports. No more media queries needed for text sizes.
+
+See [Utopia](https://utopia.fyi/) for more information on this approach.
 
 ```scss
+$responsive--smallest-screen: 320px;
 $responsive--biggest-screen: 1400px;
 ```
 
