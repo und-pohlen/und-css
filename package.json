@@ -20,8 +20,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "minireset.css": "^0.0.6",
-    "rfs": "^9.0.3"
+    "minireset.css": "^0.0.6"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
