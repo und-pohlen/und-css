@@ -8,16 +8,16 @@
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
     "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
-    "build:styles": "node-sass docs/assets/index.scss dist/css/index.css",
+    "build:styles": "sass docs/assets/index.scss dist/css/index.css",
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "node-sass docs/assets -wo dist/css/",
+    "start:styles": "sass docs/assets -wo dist/css/",
     "start:eleventy": "eleventy --quiet --watch",
     "deploy": "yarn run build && gh-pages -d dist"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "peerDependencies": {
+    "sass": "^1.0.0"
   },
   "dependencies": {
     "minireset.css": "^0.0.6"
@@ -33,6 +33,7 @@
     "css-loader": "^4.2.0",
     "gh-pages": "^3.1.0",
     "node-sass": "^7.0.1",
+    "sass": "^1.54.3",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^9.0.2",

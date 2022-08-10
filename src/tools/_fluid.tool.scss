@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $typography--default-body-font-size: 16px !default;
 $responsive--smallest-screen: 320px !default;
 $responsive--biggest-screen: 1400px !default;
@@ -8,7 +10,7 @@ $responsive--biggest-screen: 1400px !default;
   }
 
   @if (unit($value) == 'px') {
-    @return ($value / $typography--default-body-font-size) * 1rem;
+    @return math.div($value, $typography--default-body-font-size) * 1rem;
   }
 
   @error "fluid expects its input values to be specified either in px or in rem. Got #{$value} instead.";
@@ -20,7 +22,7 @@ $responsive--biggest-screen: 1400px !default;
   $_vpMin: _toRem($responsive--smallest-screen);
   $_vpMax: _toRem($responsive--biggest-screen);
 
-  $slope: ($_min - $_max) / ($_vpMin - $_vpMax);
+  $slope: math.div(($_min - $_max), ($_vpMin - $_vpMax));
   $intercept: $_min - $slope * $_vpMin;
 
   @return "clamp(#{$_min}, calc(#{$intercept} + #{$slope * 100}vw), #{$_max})";
@@ -28,4 +30,8 @@ $responsive--biggest-screen: 1400px !default;
 
 @function fluidScaleStep($min, $max, $ratio) {
   @return fluid($min * $ratio, $max * $ratio); 
+}
+
+@function scaleStep($value, $ratio) {
+  @return $value * $ratio;
 }
