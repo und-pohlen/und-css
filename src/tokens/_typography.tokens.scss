@@ -1,6 +1,6 @@
 :root {
   @each $size-name, $size-value in $typography--sizes {
-    @include rfs($size-value, "--typography-size--#{$size-name}");
+    --typography-size--#{$size-name}: #{$size-value};
   }
 
   @each $leading-name, $leading-value in $typography--leading {

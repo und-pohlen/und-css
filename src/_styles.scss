@@ -1,9 +1,10 @@
 /* purgecss start ignore */
 // VENDOR IMPORTS
-@import "./node_modules/minireset.css/minireset.min";
+@import "../node_modules/minireset.css/minireset.min";
 
 // POWER OPERATOR FOR SCALES
 @import "tools/math.tool";
+@import "tools/fluid.tool";
 
 // SETTINGS
 @import "settings/settings";
@@ -11,7 +12,6 @@
 // IMPORT TOOLS
 @import "tools/responsive.tool";
 @import "tools/utilities.tool";
-@import "tools/vendor.tool";
 @import "tools/visibility.tool";
 
 // SET UP DESIGN TOKENS AS CSS VARIABLES
