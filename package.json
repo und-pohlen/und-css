@@ -1,6 +1,6 @@
 {
   "name": "@lnolte/und-css",
-  "version": "0.2.3",
+  "version": "1.0.0-alpha.1",
   "main": "index.js",
   "license": "MIT",
   "repository": "git://github.com/lnolte/und-css.git",
