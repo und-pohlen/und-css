@@ -1,4 +1,6 @@
 // NAMESPACING
+@use "sass:math";
+
 $objects--prefix: 'o-' !default;
 $utilities--prefix: 'u-' !default;
 
@@ -30,11 +32,11 @@ $layout-spacing--ratio: 1.5 !default;
 
 $layout-spacing--variants: (
   flush: 0,
-  xxxxs: $layout-spacing--default / pow($layout-spacing--ratio, 5),
-  xxxs: $layout-spacing--default / pow($layout-spacing--ratio, 4),
-  xxs: $layout-spacing--default / pow($layout-spacing--ratio, 3),
-  xs: $layout-spacing--default / pow($layout-spacing--ratio, 2),
-  sm: $layout-spacing--default / $layout-spacing--ratio,
+  xxxxs: math.div($layout-spacing--default, pow($layout-spacing--ratio, 5)),
+  xxxs: math.div($layout-spacing--default, pow($layout-spacing--ratio, 4)),
+  xxs: math.div($layout-spacing--default, pow($layout-spacing--ratio, 3)),
+  xs: math.div($layout-spacing--default, pow($layout-spacing--ratio, 2)),
+  sm: math.div($layout-spacing--default, $layout-spacing--ratio),
   md: $layout-spacing--default,
   lg: $layout-spacing--default * $layout-spacing--ratio,
   xl: $layout-spacing--default * pow($layout-spacing--ratio, 2),
@@ -56,18 +58,18 @@ $layout--spacing-shorthands: (
 $layout--widths-max-width: 1400px !default;
 
 $layout--widths: (
-  '1\\/12': percentage(1 / 12),
-  '2\\/12': percentage(2 / 12),
-  '3\\/12': percentage(3 / 12),
-  '4\\/12': percentage(4 / 12),
-  '5\\/12': percentage(5 / 12),
-  '6\\/12': percentage(6 / 12),
-  '7\\/12': percentage(7 / 12),
-  '8\\/12': percentage(8 / 12),
-  '9\\/12': percentage(9 / 12),
-  '10\\/12': percentage(10 / 12),
-  '11\\/12': percentage(11 / 12),
-  '12\\/12': percentage(12 / 12),
+  '1\\/12': percentage(math.div(1, 12)),
+  '2\\/12': percentage(math.div(2, 12)),
+  '3\\/12': percentage(math.div(3, 12)),
+  '4\\/12': percentage(math.div(4, 12)),
+  '5\\/12': percentage(math.div(5, 12)),
+  '6\\/12': percentage(math.div(6, 12)),
+  '7\\/12': percentage(math.div(7, 12)),
+  '8\\/12': percentage(math.div(8, 12)),
+  '9\\/12': percentage(math.div(9, 12)),
+  '10\\/12': percentage(math.div(10, 12)),
+  '11\\/12': percentage(math.div(11, 12)),
+  '12\\/12': percentage(math.div(12, 12)),
 ) !default;
 
 // TYPOGRAHPY
@@ -76,8 +78,8 @@ $typography--base-size: 1rem !default;
 $typography--ratio: 1.2 !default;
 
 $typography--sizes: (
-  xs: $typography--base-size / $typography--ratio / $typography--ratio,
-  sm: $typography--base-size / $typography--ratio,
+  xs: math.div(math.div($typography--base-size, $typography--ratio), $typography--ratio),
+  sm: math.div($typography--base-size, $typography--ratio),
   md: $typography--base-size,
   lg: $typography--base-size * pow($typography--ratio, 2),
   xl: $typography--base-size * pow($typography--ratio, 3),

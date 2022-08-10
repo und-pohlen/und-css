@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $o-frame--default-ratio: (16 : 9) !default;
 
 $o-frame--ratios: (
@@ -14,7 +16,7 @@ $o-frame--ratios: (
     @if (type-of($consequent) != number) {
       @error '`#{$consequent}` needs to be a number.';
     }
-    @return ($consequent / $antecedent);
+    @return math.div($consequent, $antecedent);
   }
 }
 
