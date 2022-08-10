@@ -12,6 +12,8 @@ pageTitle: Changelog
 
 ## Unreleased
 * [update] Remove fluid image handling from base styles.
+* [breaking] Replace node-sass with dart-sass.
+* [update] use sass math.div instead of slash for division
 
 ## 0.2.3
 * [fix] Remove dynamically generated comments from utility tool, as this is not
