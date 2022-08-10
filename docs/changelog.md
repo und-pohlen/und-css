@@ -11,6 +11,8 @@ pageTitle: Changelog
 * [fix] Bugfix
 
 ## Unreleased
+
+## 1.0.0-alpha.1
 * [breaking] Replace RFS with a custom implementation of truly fluid type based on the approach presented by utopia.fyi (using clamps)
   * adds `fluid` function to generate a clamped value (`fluid(12px, 16px)`)
   * replaces `$typography--base-size` with `$typography--base-size-min` and `$typography--base-size-max`
