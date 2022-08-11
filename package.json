@@ -12,7 +12,7 @@
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "sass docs/assets -wo dist/css/",
+    "start:styles": "sass docs/assets -w dist/css/",
     "start:eleventy": "eleventy --quiet --watch",
     "deploy": "yarn run build && gh-pages -d dist"
   },
@@ -23,7 +23,7 @@
     "minireset.css": "^0.0.6"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^1.0.1",
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
     "browserslist": "^4.16.1",
