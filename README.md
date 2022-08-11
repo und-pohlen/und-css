@@ -1,3 +1,5 @@
+![lint](https://github.com/und-pohlen/und-css/actions/workflows/ci.yml/badge.svg?branch=master)
+
 # und CSS
 
 und CSS is a SCSS-based low level toolkit used as the basis for all things CSS at [und Pohlen](https://und-pohlen.de).
