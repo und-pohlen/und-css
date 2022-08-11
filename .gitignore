@@ -4,3 +4,4 @@ node_modules
 dist/*
 tmp/*
 src/styles.css
+docs/assets/index.css**
