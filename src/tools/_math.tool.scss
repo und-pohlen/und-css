@@ -8,7 +8,7 @@
       $value: $value * $number;
     }
   } @else {
-    @for $i from 1 through -$exponent {
+    @for $i from 1 through - $exponent {
       $value: math.div($value, $number);
     }
   }
