@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @function utility-class-name($utility-class, $utility-item-name, $breakpoint: '') {
   $classname: '#{$utilities--prefix}#{$utility-class}#{$utility-item-name}';
   @if $breakpoint != '' {
@@ -9,7 +11,7 @@
 @mixin utility-styles($properties, $name, $value, $variable: null) {
   @each $property in $properties {
     $attributeString: "";
-    @if $variable != null {
+    @if $variable {
       $attributeString: "var(#{$variable}#{$name})";
     } @else {
       $attributeString: $value;
@@ -25,11 +27,11 @@
 
 @mixin generate-utilities {
   @each $utility-class, $utility-class-data in $utilities--config {
-    $name:          map-get($utility-class-data, 'name');
-    $items:         map-get($utility-class-data, 'items');
-    $props:         map-get($utility-class-data, 'property');
-    $responsive:    map-get($utility-class-data, 'responsive');
-    $variable:      map-get($utility-class-data, 'variable');
+    $name:          map.get($utility-class-data, 'name');
+    $items:         map.get($utility-class-data, 'items');
+    $props:         map.get($utility-class-data, 'property');
+    $responsive:    map.get($utility-class-data, 'responsive');
+    $variable:      map.get($utility-class-data, 'variable');
 
     @each $utility-item-name, $utility-item-value in $items {
       #{utility-class-name($utility-class, $utility-item-name)} {
