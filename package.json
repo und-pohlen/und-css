@@ -4,17 +4,31 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "git://github.com/und-pohlen/und-css.git",
+  "author": {
+    "name": "und Pohlen GmbH",
+    "email": "hallo@und-pohlen.de",
+    "url": "https://www.und-pohlen.de/"
+  },
+  "contributors": [
+    {
+      "name": "Lucas Nolte",
+      "email": "hello@lucas-nolte.com"
+    },
+    {
+      "name": "Max Pohlen",
+      "email": "max@und-pohlen.de"
+    }
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
     "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
-    "build:styles": "sass docs/assets/index.scss dist/css/index.css",
+    "build:styles": "sass docs/assets:dist/css",
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "sass docs/assets -w dist/css/",
-    "start:eleventy": "eleventy --quiet --watch",
-    "deploy": "yarn run build && gh-pages -d dist"
+    "start:styles": "sass --watch docs/assets:dist/css",
+    "start:eleventy": "eleventy --quiet --watch"
   },
   "peerDependencies": {
     "sass": "^1.0.0"
@@ -31,7 +45,6 @@
     "caniuse-lite": "^1.0.30001179",
     "cross-env": "^7.0.2",
     "css-loader": "^6.7.1",
-    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^7.0.1",
