@@ -4,6 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "git://github.com/und-pohlen/und-css.git",
+  "author": {
+    "name": "und Pohlen GmbH",
+    "email": "hallo@und-pohlen.de",
+    "url": "https://www.und-pohlen.de/"
+  },
+  "contributors": [
+    {
+      "name": "Lucas Nolte",
+      "email": "hello@lucas-nolte.com"
+    },
+    {
+      "name": "Max Pohlen",
+      "email": "max@und-pohlen.de"
+    }
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
