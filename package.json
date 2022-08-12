@@ -8,11 +8,11 @@
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
     "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
-    "build:styles": "sass docs/assets/index.scss dist/css/index.css",
+    "build:styles": "sass docs/assets:dist/css",
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "sass docs/assets/index.scss -w dist/css/index.css",
+    "start:styles": "sass --watch docs/assets:dist/css",
     "start:eleventy": "eleventy --quiet --watch",
     "deploy": "yarn run build && gh-pages -d dist"
   },
