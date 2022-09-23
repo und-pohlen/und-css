@@ -1,0 +1,21 @@
+name: Deploy Docs
+on:
+  release:
+     types: [published]
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build docs
+      run: yarn build:eleventy
+    - name: deploy docs to server
+      uses: easingthemes/ssh-deploy@v2.2.11
+      env:
+        SH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+        SOURCE: "dist/"
+        ARGS: "-rltzv --delete"
