@@ -1,6 +1,6 @@
 {
   "name": "@und-pohlen/und-css",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "src/_styles.scss",
   "license": "MIT",
   "repository": "git://github.com/und-pohlen/und-css.git",
