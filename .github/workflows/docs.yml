@@ -7,15 +7,19 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+
     steps:
+    - uses: actions/checkout@v2
+    - name: yarn
+      run: yarn install --frozen-lockfile
     - name: build docs
       run: yarn build:eleventy
     - name: deploy docs to server
       uses: easingthemes/ssh-deploy@v2.2.11
       env:
-        SH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
+        TARGET: ${{ secrets.TARGET }}
         SOURCE: "dist/"
         ARGS: "-rltzv --delete"
