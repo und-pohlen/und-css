@@ -14,6 +14,8 @@ jobs:
       run: yarn install --frozen-lockfile
     - name: build docs
       run: yarn build:eleventy
+    - name: build doc styles
+      run: yarn build:styles
     - name: Archive artifacts
       uses: actions/upload-artifact@v3
       with:
