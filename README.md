@@ -1,4 +1,5 @@
 ![lint](https://github.com/und-pohlen/und-css/actions/workflows/ci.yml/badge.svg?branch=master)
+![docs](https://github.com/und-pohlen/und-css/actions/workflows/docs.yml/badge.svg?branch=master)
 
 # und CSS
 
