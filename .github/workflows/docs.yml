@@ -14,6 +14,11 @@ jobs:
       run: yarn install --frozen-lockfile
     - name: build docs
       run: yarn build:eleventy
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist
     - name: deploy docs to server
       uses: easingthemes/ssh-deploy@v2.2.11
       env:
