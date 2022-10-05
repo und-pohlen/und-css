@@ -3,35 +3,21 @@ layout: main.liquid
 ---
 
 <div class="o-grid c-page">
-  <aside
-    role="navigation"
-    class="c-page__navigation md:u-w-3/12 lg:u-w-3/12 u-box-hide md:u-box-show"
-  >
+  <aside role="navigation" class="c-page__navigation md:u-w-3/12 lg:u-w-3/12 u-box-hide md:u-box-show">
     <ul class="c-page__navigation-list o-stack">
       {% for utility in utilities %}
         <li>
-          <a
-            href="#{{ utility.name | slug }}"
-            class="c-page__navigation-link"
-          >
+          <a href="#{{ utility.name | slug }}" class="c-page__navigation-link">
             {{ utility.name }}
           </a>
         </li>
       {% endfor %}
     </ul>
   </aside>
-  <main
-    class="md:u-w-9/12 lg:u-w-9/12 o-stack"
-    data-spacing="huge"
-  >
+  <main class="md:u-w-9/12 lg:u-w-9/12 o-stack" data-spacing="huge">
     {% for utility in utilities %}
-      <section
-        id="{{ utility.name | slug }}"
-        class="c-page__section"
-      >
-        <h1
-          class="u-text-lg u-mb-md"
-        >
+      <section id="{{ utility.name | slug }}" class="c-page__section">
+        <h1 class="u-text-lg u-mb-md">
           {{ utility.name }}
         </h1>
         <ol class="o-grid u-mb-sm">
@@ -58,6 +44,7 @@ layout: main.liquid
             <div class="u-o50 u-text-sm">
               Responsive
             </div>
+          </li>
         </ol>
         <pre class="language-css">
 <code class="language-css">{% for utilityHash in utility.values %}{% for utilityObject in utilityHash %}{{ utilityObject[0] }} // {{ utilityObject[1] }}{% endfor %}

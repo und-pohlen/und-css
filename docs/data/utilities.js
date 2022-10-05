@@ -1,22 +1,22 @@
 const sass = require("sass");
-const path = require("path");
-const fs = require("fs");
 
 module.exports = async function () {
-  const filePath = path.resolve(__dirname, "../../src/_styles.scss");
-  const scssStyles = fs.readFileSync(filePath, "utf8");
-  const { css } = sass.renderSync({
-    data: scssStyles,
-    includePaths: [path.resolve(__dirname, "../../src")],
-  });
-
-  const pattern = /((\/\*(\=+)([\s\S]+?)\*\/))/gm;
+  const filePath = __dirname + "/../../src/_styles.scss";
+  const { css } = sass.compile(filePath, {style: "expanded", verbose: true});
+  const pattern = /((\/\*(\=+)([\s\S]+?)(\=+)\*\/))/gm;
   const hashPattern = /(@[a-z]+)(\:\s)(.+)/gm;
 
-  return (css.toString().match(pattern) || [])
+  const result = (css.toString().match(pattern) || [])
     .map((item) => {
       let resp = {};
-      item.match(hashPattern).forEach((match) => {
+      const cleanItem = item
+        .replace(/\/\*/gm, "")
+        .replace(/\*\//gm, "")
+        .replace(/\,\s*?\n/gm, ", ")
+        .replace(/\(\s*?\n\s/gm, "[")
+        .replace(/\)\s/gm, "]")
+        .replace(/\=+/gm, "")
+      cleanItem.match(hashPattern).forEach((match) => {
         const line = match.split(hashPattern);
         resp[line[1].replace("@", "")] = line[3];
       });
@@ -27,19 +27,21 @@ module.exports = async function () {
         properties: resp.properties.split(" "),
         responsive: !!resp.properties.responsive,
         values: resp.values
-          .replace("(", "")
-          .replace(")", "")
-          .replace(/\"/gm, "")
-          .replace(/\s/gm, "")
-          .split(",")
+          .replace("[", "")
+          .replace("]", "")
+          .split(/\,\s{2,}/gm)
           .map((item) => {
             const i = item.split(":");
-            let prop = {};
-            prop[`${resp.classname}${i[0].replace(/\\+/gm, "")}`] = i[1];
-            return prop;
+            if (i[1]) {
+              let prop = {};
+              prop[`${
+                resp.classname}${i[0]
+              }`] = i[1];
+              return prop;
+            }
           }),
-      };
-    })
+        };
+      })
     .sort((a, b) => {
       if (a.name < b.name) {
         return -1;
@@ -49,4 +51,5 @@ module.exports = async function () {
       }
       return 0;
     });
+    return result;
 };
