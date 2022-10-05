@@ -12,6 +12,9 @@ pageTitle: Changelog
 
 ## Unreleased
 
+## 1.0.0-rc.1
+* [fix] Readd dynamically generated comments (which has been removed in 0.2.3) and fix automated utility docs page creation
+
 ## 1.0.0-alpha.1
 * [breaking] Replace RFS with a custom implementation of truly fluid type based on the approach presented by utopia.fyi (using clamps)
   * adds `fluid` function to generate a clamped value (`fluid(12px, 16px)`)
