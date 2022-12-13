@@ -44,28 +44,28 @@ $typography--sizes: (
     scaleStep($typography--base-size-max, pow($typography--ratio-max, -1)),
   ),
   md: fluid(
-    scaleStep($typography--base-size-min, $typography--ratio-min),
-    scaleStep($typography--base-size-max, $typography--ratio-max),
-  ),
-  lg: fluid(
     scaleStep($typography--base-size-min, pow($typography--ratio-min, 1)),
     scaleStep($typography--base-size-max, pow($typography--ratio-max, 1)),
   ),
-  xl: fluid(
+  lg: fluid(
     scaleStep($typography--base-size-min, pow($typography--ratio-min, 2)),
     scaleStep($typography--base-size-max, pow($typography--ratio-max, 2)),
   ),
-  xxl: fluid(
+  xl: fluid(
     scaleStep($typography--base-size-min, pow($typography--ratio-min, 3)),
     scaleStep($typography--base-size-max, pow($typography--ratio-max, 3)),
   ),
-  xxxl: fluid(
+  xxl: fluid(
     scaleStep($typography--base-size-min, pow($typography--ratio-min, 4)),
     scaleStep($typography--base-size-max, pow($typography--ratio-max, 4)),
   ),
-  xxxxl: fluid(
+  xxxl: fluid(
     scaleStep($typography--base-size-min, pow($typography--ratio-min, 5)),
     scaleStep($typography--base-size-max, pow($typography--ratio-max, 5)),
+  ),
+  xxxxl: fluid(
+    scaleStep($typography--base-size-min, pow($typography--ratio-min, 6)),
+    scaleStep($typography--base-size-max, pow($typography--ratio-max, 6)),
   ),
 ) !default;
 

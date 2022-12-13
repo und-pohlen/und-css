@@ -11,6 +11,7 @@ pageTitle: Changelog
 * [fix] Bugfix
 
 ## Unreleased
+* [breaking] [fix] `typography--sizes` scaling gets enlarged by one step to fix `md` and `lg` having the same size.
 
 ## 1.0.0-rc.1
 * [fix] Readd dynamically generated comments (which has been removed in 0.2.3) and fix automated utility docs page creation
