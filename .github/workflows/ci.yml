@@ -4,7 +4,7 @@ on: [push]
 jobs:
   yarn-lint:
     name: yarn lint
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
