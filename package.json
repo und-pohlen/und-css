@@ -40,7 +40,7 @@
     "@11ty/eleventy": "^1.0.1",
     "autoprefixer": "^10.4.8",
     "browser-sync": "^2.26.12",
-    "browserslist": "^4.16.1",
+    "browserslist": "^4.28.7",
     "caniuse-api": "^3.0.0",
     "caniuse-lite": "^1.0.30001179",
     "cross-env": "^7.0.2",
