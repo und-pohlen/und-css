@@ -29,11 +29,11 @@
     "clean": "rm -rf dist",
     "serve": "browser-sync dist -w --no-notify",
     "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
-    "build:styles": "sass docs/assets:dist/css",
+    "build:styles": "sass --load-path=node_modules docs/assets:dist/css",
     "build:eleventy": "eleventy --quiet",
     "lint": "stylelint \"./src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "dev": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:styles --parallel start:* serve",
-    "start:styles": "sass --watch docs/assets:dist/css",
+    "start:styles": "sass --load-path=node_modules --watch docs/assets:dist/css",
     "start:eleventy": "eleventy --quiet --watch"
   },
   "peerDependencies": {
