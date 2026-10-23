@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 :root {
   @each $size-name, $size-value in $typography--sizes {
     --typography-size--#{$size-name}: #{$size-value};

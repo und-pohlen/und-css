@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 .#{$objects--prefix}wrapper {
   --o-wrapper--width: var(--layout-widths--max-width);
   --o-wrapper--spacing: var(--layout-spacing--default);

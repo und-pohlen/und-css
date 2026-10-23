@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 .#{$objects--prefix}auto-grid {
   --o-auto-grid--spacing: var(--layout-spacing--default);
   --o-auto-grid--min-width: 20rem;

@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+@use "sass:meta";
 @use "sass:math";
 
 $o-frame--default-ratio: (16 : 9) !default;
@@ -10,10 +12,10 @@ $o-frame--ratios: (
 
 @function calculate-ratio($ratio) {
   @each $antecedent, $consequent in $ratio {
-    @if (type-of($antecedent) != number) {
+    @if (meta.type-of($antecedent) != number) {
       @error '`#{$antecedent}` needs to be a number.';
     }
-    @if (type-of($consequent) != number) {
+    @if (meta.type-of($consequent) != number) {
       @error '`#{$consequent}` needs to be a number.';
     }
     @return math.div($consequent, $antecedent);

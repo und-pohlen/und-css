@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 @if $globals--print-reset {
   // Crude print reset
   // Taken from HTML5Boilerplate

@@ -21,7 +21,7 @@ via webpack or some other task runner) you then simple required the und-css
 entry file in your SASS stylesheet.
 
 ```scss
-@import '@und-pohlen/und-css';
+@use '@und-pohlen/und-css';
 ```
 
 ## Important Globals

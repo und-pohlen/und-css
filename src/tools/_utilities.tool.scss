@@ -1,4 +1,6 @@
 @use "sass:map";
+@use "../settings/settings" as *;
+@use "responsive.tool" as *;
 
 @function utility-class-name($utility-class, $utility-item-name, $breakpoint: '') {
   $classname: '#{$utilities--prefix}#{$utility-class}#{$utility-item-name}';

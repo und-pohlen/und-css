@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 :root {
   --color--default-background: #{$colors--default-background};
   --color--default-text: #{$colors--default-text};

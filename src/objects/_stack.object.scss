@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 .#{$objects--prefix}stack {
   --o-stack--spacing: var(--layout-spacing--default);
   display: flex;

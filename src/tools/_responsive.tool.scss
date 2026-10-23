@@ -1,10 +1,5 @@
 @use "sass:map";
-
-$responsive--breakpoints: (
-  small: 640px,
-  medium: 920px,
-  large: 1200px
-) !default;
+@use "../settings/settings" as *;
 
 @mixin respond-to($args...) {
   @each $bp in $args {

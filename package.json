@@ -36,19 +36,24 @@
   "dependencies": {
     "minireset.css": "^0.0.7"
   },
+  "resolutions": {
+    "browserslist": "^4.28.7",
+    "postcss": "^8.5.28",
+    "shell-quote": "^1.10.0",
+    "socket.io-parser": "^4.2.7"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "autoprefixer": "^10.4.8",
     "browser-sync": "^2.26.12",
-    "browserslist": "^4.16.1",
+    "browserslist": "^4.28.7",
     "caniuse-api": "^3.0.0",
-    "caniuse-lite": "^1.0.30001179",
+    "caniuse-lite": "^1.0.30001819",
     "cross-env": "^7.0.2",
     "css-loader": "^6.7.1",
-    "node-sass": "^7.0.1",
     "npm-run-all": "^4.1.5",
     "postcss-loader": "^7.0.1",
-    "sass": "^1.54.3",
+    "sass": "^1.90.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "stylelint": "^15.10.1",
