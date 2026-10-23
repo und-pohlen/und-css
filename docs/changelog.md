@@ -12,11 +12,15 @@ pageTitle: Changelog
 
 ## Unreleased
 
-## 1.0.0-rc.4
+## 1.0.0-rc.5
 * [breaking] Migrate Sass from `@import` to the `@use` / `@forward` module system. Configure settings via `@use '…/settings' with ( … )` before loading styles.
 * [fix] `@use` math and fluid tools inside settings so `fluid()`, `scaleStep()`, and `pow()` evaluate at load time (avoids invalid CSS custom properties)
 * [fix] Import `minireset.css` via package name so consumer installs work when dependencies are hoisted (ensure `node_modules` is on the Sass load path)
 * [update] Document module-system setup in Getting Started (configure settings, load styles, optional tools for components, Sass `loadPaths`)
+* [update] Publish release candidates to the `latest` dist-tag on npm
+
+## 1.0.0-rc.4
+* Incomplete npm publish (pre-minireset fix); use `1.0.0-rc.5` instead.
 
 ## 1.0.0-rc.1
 * [fix] Readd dynamically generated comments (which has been removed in 0.2.3) and fix automated utility docs page creation
