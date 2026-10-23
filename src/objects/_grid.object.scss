@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 .#{$objects--prefix}grid {
   --o-grid--spacing: var(--layout-spacing--default);
   display: flex;

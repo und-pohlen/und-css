@@ -1,3 +1,5 @@
+@use "../settings/settings" as *;
+
 :root {
   --layout-spacing--default: #{$layout-spacing--default};
   --layout-widths--max-width: #{$layout--widths-max-width};

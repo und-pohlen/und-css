@@ -1,44 +1,44 @@
 /* purgecss start ignore */
 // VENDOR IMPORTS
-@import "../node_modules/minireset.css/minireset.min";
+@use "../node_modules/minireset.css/minireset.min" as *;
 
 // POWER OPERATOR FOR SCALES
-@import "tools/math.tool";
-@import "tools/fluid.tool";
+@use "tools/math.tool" as *;
+@use "tools/fluid.tool" as *;
 
 // SETTINGS
-@import "settings/settings";
+@use "settings/settings" as *;
 
 // IMPORT TOOLS
-@import "tools/responsive.tool";
-@import "tools/utilities.tool";
-@import "tools/visibility.tool";
+@use "tools/responsive.tool" as *;
+@use "tools/utilities.tool" as *;
+@use "tools/visibility.tool" as *;
 
 // SET UP DESIGN TOKENS AS CSS VARIABLES
-@import "tokens/color.tokens";
-@import "tokens/spacing.tokens";
-@import "tokens/typography.tokens";
+@use "tokens/color.tokens" as *;
+@use "tokens/spacing.tokens" as *;
+@use "tokens/typography.tokens" as *;
 
 // BASE STYLES
-@import "globals/base.globals";
-@import "globals/print.globals";
+@use "globals/base.globals" as *;
+@use "globals/print.globals" as *;
 /* purgecss end ignore */
 
 // OBJECTS
-@import "objects/auto-grid.object";
-@import "objects/box.object";
-@import "objects/cluster.object";
-@import "objects/cover.object";
-@import "objects/frame.object";
-@import "objects/grid.object";
-@import "objects/media.object";
-@import "objects/pack.object";
-@import "objects/site.object";
-@import "objects/stack.object";
-@import "objects/wrapper.object";
+@use "objects/auto-grid.object" as *;
+@use "objects/box.object" as *;
+@use "objects/cluster.object" as *;
+@use "objects/cover.object" as *;
+@use "objects/frame.object" as *;
+@use "objects/grid.object" as *;
+@use "objects/media.object" as *;
+@use "objects/pack.object" as *;
+@use "objects/site.object" as *;
+@use "objects/stack.object" as *;
+@use "objects/wrapper.object" as *;
 
 // UTILITIES
-@import "utilities/a11y.utility";
+@use "utilities/a11y.utility" as *;
 
 @if $utilities--generate {
   @include generate-utilities;
