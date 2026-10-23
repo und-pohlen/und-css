@@ -1,5 +1,10 @@
 // NAMESPACING
 @use "sass:math";
+// Needed here: maps below call these at module load time. With @use they are
+// not global (unlike the old @import setup), so unknown names become plain CSS
+// functions and leak into custom properties as invalid values.
+@use "../tools/math.tool" as *;
+@use "../tools/fluid.tool" as *;
 
 $objects--prefix: 'o-' !default;
 $utilities--prefix: 'u-' !default;
