@@ -12,11 +12,13 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      # Do not set registry-url: setup-node would write an empty _authToken into
+      # .npmrc and that blocks npm Trusted Publishing OIDC (ENEEDAUTH).
+      # See actions/setup-node#1551.
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: yarn
-          registry-url: https://registry.npmjs.org/
       - run: yarn install --frozen-lockfile
       # Prereleases (e.g. 1.0.0-rc.4) need an explicit dist-tag; stables publish to latest.
       - name: Publish to npm
