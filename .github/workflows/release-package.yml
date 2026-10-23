@@ -2,13 +2,13 @@ name: Publish Package to npmjs
 
 on:
   release:
-     types: [published]
+    types: [published]
 
 jobs:
-  publish-gpr:
+  publish:
     runs-on: ubuntu-latest
     permissions:
-      packages: write
+      id-token: write # Required for npm Trusted Publishing (OIDC)
       contents: read
     steps:
       - uses: actions/checkout@v4
@@ -29,5 +29,3 @@ jobs:
           else
             npm publish
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

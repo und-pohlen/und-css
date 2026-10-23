@@ -3,7 +3,10 @@
   "version": "1.0.0-rc.4",
   "main": "src/_styles.scss",
   "license": "MIT",
-  "repository": "git://github.com/und-pohlen/und-css.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/und-pohlen/und-css.git"
+  },
   "publishConfig": {
     "access": "public"
   },
