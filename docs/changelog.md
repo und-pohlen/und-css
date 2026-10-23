@@ -12,9 +12,10 @@ pageTitle: Changelog
 
 ## Unreleased
 
-## 1.0.0-alpha.3
+## 1.0.0-rc.4
 * [breaking] Migrate Sass from `@import` to the `@use` / `@forward` module system. Configure settings via `@use '…/settings' with ( … )` before loading styles.
 * [fix] `@use` math and fluid tools inside settings so `fluid()`, `scaleStep()`, and `pow()` evaluate at load time (avoids invalid CSS custom properties)
+* [update] Document module-system setup in Getting Started (configure settings, load styles, optional tools for components)
 
 ## 1.0.0-rc.1
 * [fix] Readd dynamically generated comments (which has been removed in 0.2.3) and fix automated utility docs page creation
