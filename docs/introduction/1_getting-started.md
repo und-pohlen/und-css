@@ -41,8 +41,24 @@ overrides:
 );
 ```
 
-Use whatever Sass/webpack alias you already have (`~`, `includePaths`, etc.) so
-the path resolves to the package under `node_modules`.
+Use whatever Sass/webpack alias you already have (`~`, `includePaths` /
+`loadPaths`, etc.) so the path resolves to the package under `node_modules`.
+
+und-css itself loads its dependency with a **package import**
+(`@use "minireset.css/minireset.min.css"`). Your Sass build must therefore
+resolve packages from `node_modules`—for example:
+
+```bash
+sass --load-path=node_modules styles:dist/css
+```
+
+```js
+// webpack / sass-loader
+{ loader: 'sass-loader', options: { sassOptions: { loadPaths: ['node_modules'] } } }
+```
+
+`minireset.css` is declared as a dependency of `@und-pohlen/und-css` and is
+installed automatically; you do not need to `@use` it yourself.
 
 ### 2. Load configured settings, then styles
 
@@ -60,7 +76,7 @@ instance—do not configure it twice.
 
 `@use '@und-pohlen/und-css'` resolves to the package `main` (`src/_styles.scss`)
 and is equivalent to the `src/styles` path above—as long as settings were already
-configured in this compilation.
+configured in this compilation and `node_modules` is on the Sass load path.
 
 ### 3. Mixins in component styles (optional)
 

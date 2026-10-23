@@ -20,11 +20,14 @@ jobs:
           node-version-file: '.nvmrc'
           cache: yarn
       - run: yarn install --frozen-lockfile
-      # Prereleases (e.g. 1.0.0-rc.4) need an explicit dist-tag; stables publish to latest.
+      # Release candidates publish to latest so npm shows them as the default.
+      # Other prereleases (alpha/beta) keep an explicit dist-tag.
       - name: Publish to npm
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          if [[ "$VERSION" == *-* ]]; then
+          if [[ "$VERSION" == *-rc.* || "$VERSION" == *-rc ]]; then
+            npm publish --tag latest
+          elif [[ "$VERSION" == *-* ]]; then
             TAG=${VERSION##*-}
             TAG=${TAG%%.*}
             npm publish --tag "$TAG"
