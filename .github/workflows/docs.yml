@@ -21,7 +21,7 @@ jobs:
     - name: build doc styles
       run: yarn build:styles
     - name: Archive artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v5
       with:
         name: dist
         path: dist
