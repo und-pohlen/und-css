@@ -1,6 +1,6 @@
 /* purgecss start ignore */
 // VENDOR IMPORTS
-@use "../node_modules/minireset.css/minireset.min" as *;
+@use "minireset.css/minireset.min.css" as *;
 
 // POWER OPERATOR FOR SCALES
 @use "tools/math.tool" as *;
