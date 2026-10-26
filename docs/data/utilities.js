@@ -1,8 +1,13 @@
+const path = require("path");
 const sass = require("sass");
 
 module.exports = async function () {
   const filePath = __dirname + "/../../src/_styles.scss";
-  const { css } = sass.compile(filePath, {style: "expanded", verbose: true});
+  const { css } = sass.compile(filePath, {
+    style: "expanded",
+    verbose: true,
+    loadPaths: [path.resolve(__dirname, "../../node_modules")],
+  });
   const pattern = /((\/\*(\=+)([\s\S]+?)(\=+)\*\/))/gm;
   const hashPattern = /(@[a-z]+)(\:\s)(.+)/gm;
 

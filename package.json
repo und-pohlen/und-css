@@ -46,10 +46,11 @@
     "browserslist": "^4.28.7",
     "postcss": "^8.5.28",
     "shell-quote": "^1.10.0",
-    "socket.io-parser": "^4.2.7"
+    "socket.io-parser": "^4.2.7",
+    "liquidjs": "^10.30.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^3.1.7",
     "autoprefixer": "^10.4.8",
     "browser-sync": "^2.26.12",
     "browserslist": "^4.28.7",
